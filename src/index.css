@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ── Brand Colors (Health Alliance So Cal Brand Guidelines) ── */
+  --color-brand-primary: #2C6E91;               /* Blue – primary CTA, buttons, footer bg */
+  --color-brand-primary-content: #ffffff;       /* White text on primary */
+  --color-brand-primary-text: #2C6E91;          /* Blue for headings & links */
+  --color-brand-secondary: #2E8B8B;             /* Teal for hover states & accents */
+  --color-brand-accent: #f0f7f0;                /* Very light green tint for subtle backgrounds */
+  --color-brand-green: #4CAF50;                 /* Primary Green for icons/highlights */
+  --color-brand-green-light: #8BC34A;           /* Light Green for badges/tags */
+  --color-brand-ink: #2F2F2F;                   /* Primary text color */
+  --color-brand-paper: #ffffff;                 /* Pure white background */
+  --color-brand-border: #e0ebe0;                /* Light green-tinted border */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-brand-ink bg-white antialiased text-[1.05rem] leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold tracking-tight;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/95 backdrop-blur-md border-b border-brand-border;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-5 md:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-brand-primary text-brand-primary-content px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-brand-secondary transition-all shadow-sm active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-secondary text-white px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-brand-secondary/90 transition-all shadow-sm active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-brand-primary-text border border-brand-primary/20 px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-brand-accent transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .card-practical {
+    @apply bg-white border border-brand-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .badge-practical {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded bg-brand-accent border border-brand-border text-brand-primary-text text-[10px] font-bold uppercase tracking-widest;
+  }
+
+  /* Consistent page hero title — used for all inner-page H1s */
+  .page-hero-title {
+    @apply text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-serif font-extrabold text-brand-primary-text leading-[1.2] mb-5;
+  }
+
+  /* Consistent section heading */
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif font-extrabold text-brand-primary-text;
+  }
+
+  /* CTA heading inside dark sections */
+  .cta-title {
+    @apply text-3xl md:text-4xl lg:text-[3rem] font-serif font-extrabold;
+  }
+}
