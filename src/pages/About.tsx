@@ -41,8 +41,6 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-brand-primary/5 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full bg-brand-secondary/5 blur-2xl" />
         </div>
         <div className="container-custom relative z-10">
           <motion.div
@@ -72,7 +70,7 @@ export default function About() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative w-11/12 md:w-10/12 lg:w-full mx-auto"
             >
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
                 <img
@@ -205,8 +203,6 @@ export default function About() {
       {/* CTA Section */}
       <section className="section-padding bg-brand-primary relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
         </div>
         <div className="container-custom relative z-10 text-center max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white mb-6">
@@ -215,16 +211,16 @@ export default function About() {
           <p className="text-brand-accent/80 mb-10 leading-relaxed">
             Partner with Health Alliance So Cal and transform your behavioral health services.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 justify-center">
             <Link
               to="/contact"
-              className="bg-white text-brand-primary-text px-10 py-4 rounded-full font-bold hover:bg-brand-accent transition-all shadow-xl hover:shadow-2xl"
+              className="bg-white text-brand-primary-text px-4 sm:px-10 py-4 rounded-full font-bold text-xs sm:text-base hover:bg-brand-accent transition-all shadow-xl hover:shadow-2xl flex-1 sm:flex-none text-center"
             >
               Request a Partnership
             </Link>
             <Link
               to="/services"
-              className="bg-transparent border border-white/30 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all"
+              className="bg-transparent border border-white/30 text-white px-4 sm:px-10 py-4 rounded-full font-bold text-xs sm:text-base hover:bg-white/10 transition-all flex-1 sm:flex-none text-center"
             >
               Explore Our Services
             </Link>

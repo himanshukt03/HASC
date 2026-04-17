@@ -52,8 +52,6 @@ export default function Careers() {
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-brand-primary/5 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full bg-brand-secondary/5 blur-2xl" />
         </div>
         <div className="container-custom relative z-10">
           <motion.div
@@ -162,8 +160,6 @@ export default function Careers() {
         <div className="container-custom">
           <div className="bg-brand-primary rounded-2xl p-10 md:p-16 text-brand-primary-content text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10">
-              <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-              <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
             </div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-5">

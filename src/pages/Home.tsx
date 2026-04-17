@@ -128,17 +128,17 @@ export default function Home() {
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3">
                 <Link
                   to="/contact"
-                  className="bg-brand-primary text-brand-primary-content px-6 py-3 rounded-xl font-semibold text-sm hover:bg-brand-secondary transition-colors shadow-md flex items-center justify-center gap-2 group"
+                  className="bg-brand-primary text-brand-primary-content px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-secondary transition-colors shadow-md flex items-center justify-center gap-2 group flex-1 sm:flex-none text-center"
                 >
                   Partner With Us
                   <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <Link
                   to="/resources"
-                  className="bg-white text-brand-primary-text border border-brand-primary/15 px-6 py-3 rounded-xl font-semibold text-sm hover:bg-brand-accent transition-colors flex items-center justify-center"
+                  className="bg-white text-brand-primary-text border border-brand-primary/15 px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent transition-colors flex items-center justify-center flex-1 sm:flex-none text-center"
                 >
                   Family Resources
                 </Link>
@@ -160,9 +160,9 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.75, delay: 0.15 }}
-              className="order-1 lg:order-2 relative lg:h-[min(70vh,560px)]"
+              className="order-1 lg:order-2 relative w-11/12 mx-auto lg:w-full lg:h-[min(65vh,500px)]"
             >
-              <div className="relative w-full aspect-[16/10] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-xl max-h-[300px] lg:max-h-none mx-auto lg:mx-0">
+              <div className="relative w-full aspect-[16/10] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-xl max-h-[250px] lg:max-h-none mx-auto lg:mx-0">
                 <img
                   src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1200"
                   alt="Compassionate caregiver with elderly resident"
@@ -170,9 +170,6 @@ export default function Home() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              {/* decorative */}
-              <div className="absolute -bottom-3 -left-3 w-20 h-20 bg-brand-accent rounded-2xl -z-10" />
-              <div className="absolute -top-3 -right-3 w-14 h-14 border-4 border-brand-secondary/20 rounded-full -z-10" />
             </motion.div>
 
           </div>
@@ -274,9 +271,9 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="relative"
+              className="relative w-11/12 md:w-10/12 lg:w-full mx-auto"
             >
-              <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl">
+              <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=900"
                   alt="Clinical psychiatry consultation"
@@ -328,14 +325,9 @@ export default function Home() {
                 {/* Image top */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img src={item.image} alt={item.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  
-                  {/* Overlapping Icon box */}
-                  <div className="absolute -bottom-1 left-5 w-12 h-12 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-md transform translate-y-1/2 z-10">
-                    <item.icon size={22} />
-                  </div>
                 </div>
 
-                <div className="p-6 pt-10 flex-grow flex flex-col">
+                <div className="p-6 flex-grow flex flex-col">
                   <h3 className="font-serif font-semibold text-brand-ink text-lg mb-3">{item.label}</h3>
                   <p className="text-gray-600 text-[0.95rem] leading-relaxed mb-6 flex-grow">{item.description}</p>
                   
@@ -407,16 +399,16 @@ export default function Home() {
           <p className="text-white/60 text-sm mb-8 max-w-md mx-auto leading-relaxed">
             Partner with Health Alliance So Cal and bring specialized psychiatric expertise directly to your residents.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 justify-center">
             <Link
               to="/contact"
-              className="bg-white text-brand-primary-text px-7 py-3 rounded-xl font-bold text-sm hover:bg-brand-accent transition-colors shadow-lg"
+              className="bg-white text-brand-primary-text px-4 sm:px-7 py-3 rounded-xl font-bold text-xs sm:text-sm hover:bg-brand-accent transition-colors shadow-lg flex-1 sm:flex-none text-center"
             >
               Schedule a Consultation
             </Link>
             <Link
               to="/contact"
-              className="bg-white/10 border border-white/20 text-white px-7 py-3 rounded-xl font-semibold text-sm hover:bg-white/20 transition-colors"
+              className="bg-white/10 border border-white/20 text-white px-4 sm:px-7 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-white/20 transition-colors flex-1 sm:flex-none text-center"
             >
               Request Partnership Info
             </Link>

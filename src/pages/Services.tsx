@@ -60,8 +60,6 @@ export default function Services() {
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-brand-primary/5 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full bg-brand-secondary/5 blur-2xl" />
         </div>
         <div className="container-custom relative z-10">
           <motion.div
@@ -122,7 +120,7 @@ export default function Services() {
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-                <div className="flex-1 w-full">
+                <div className="flex-1 w-full mx-auto w-11/12 md:w-10/12 lg:w-full">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative group">
                     <img
                       src={service.image}
@@ -143,7 +141,6 @@ export default function Services() {
       <section className="section-padding bg-brand-paper">
         <div className="container-custom">
           <div className="bg-white rounded-2xl p-8 md:p-14 shadow-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/50 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
             
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div>
