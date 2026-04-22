@@ -15,6 +15,9 @@ import Portal from './pages/Portal';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import Standards from './pages/Standards';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import HIPAA from './pages/HIPAA';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -37,6 +40,9 @@ function AnimatedRoutes() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/standards" element={<Standards />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/hipaa" element={<HIPAA />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
