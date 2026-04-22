@@ -128,7 +128,7 @@ export default function Home() {
         keywords="psychiatric care, behavioral health, long-term care psychiatry, skilled nursing facility psychiatry, memory care psychiatry, Southern California psychiatrists"
       />
       {/* ── HERO ── */}
-      <section className="relative flex items-center min-h-[600px] pt-32 lg:pt-24 pb-10 overflow-hidden bg-brand-accent/30 lg:h-screen">
+      <section className="relative flex items-center min-h-[100dvh] pt-32 lg:pt-24 pb-10 overflow-hidden bg-brand-accent/30 lg:h-screen">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-brand-accent/60 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-44 h-44 rounded-full bg-brand-accent/30 blur-2xl" />
@@ -153,17 +153,17 @@ export default function Home() {
                 Supporting residents, families, and care teams with compassionate, evidence-based psychiatric services in skilled nursing, assisted living, memory care, and residential settings.
               </p>
 
-              <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/contact"
-                  className="bg-brand-primary text-brand-primary-content px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-secondary transition-colors shadow-md flex items-center justify-center gap-2 group flex-1 sm:flex-none text-center"
+                  className="bg-brand-primary text-brand-primary-content px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-secondary transition-colors shadow-md flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
                 >
                   Schedule a Consultation
                   <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <Link
                   to="/about"
-                  className="bg-white text-brand-primary-text border border-brand-primary/15 px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent transition-colors flex items-center justify-center flex-1 sm:flex-none text-center"
+                  className="bg-white text-brand-primary-text border border-brand-primary/15 px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent transition-colors flex items-center justify-center w-full sm:w-auto text-center"
                 >
                   Learn About Our Approach
                 </Link>
