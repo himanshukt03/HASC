@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, Clock, CheckCircle2, Lock, Search, LayoutDashboard, BookOpen, Video, Settings, LogOut, ChevronRight, Star, Award, X } from 'lucide-react';
 import { cn } from '../lib/utils';
+import SEO from '../components/SEO';
 
 const sidebarLinks = [
   { name: 'Dashboard', icon: LayoutDashboard, active: true },
@@ -74,6 +75,10 @@ export default function Portal() {
   if (!isLoggedIn) {
     return (
       <div className="min-h-screen bg-brand-accent/30 flex items-center justify-center p-6 pt-20">
+        <SEO 
+          title="Facility Portal" 
+          description="Access the Health Alliance SoCal facility education portal for psychiatric training and resources."
+        />
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -122,6 +127,10 @@ export default function Portal() {
 
   return (
     <div className="flex min-h-screen bg-brand-accent/10 pt-16">
+      <SEO 
+        title="Facility Portal" 
+        description="Access the Health Alliance SoCal facility education portal for psychiatric training and resources."
+      />
       {/* Sidebar */}
       <aside className="hidden lg:flex flex-col w-64 bg-white border-r border-brand-border p-6 sticky top-16 h-[calc(100vh-64px)]">
         <div className="flex flex-col gap-1.5 flex-grow">

@@ -1,24 +1,25 @@
 import { motion } from 'motion/react';
 import { Users, Heart, Award, GraduationCap, ArrowRight, CheckCircle2, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const positions = [
   {
     title: 'Psychiatric Nurse Practitioner',
     type: 'Full-time / Part-time',
-    location: 'So Cal Region',
+    location: 'SoCal Region',
     description: 'Provide specialized psychiatric evaluations and medication management in long-term care settings.',
   },
   {
     title: 'Psychiatrist',
     type: 'Full-time / Consulting',
-    location: 'So Cal Region',
+    location: 'SoCal Region',
     description: 'Lead clinical teams and provide expert psychiatric care for medically complex residents.',
   },
   {
     title: 'Behavioral Health Specialist',
     type: 'Full-time',
-    location: 'So Cal Region',
+    location: 'SoCal Region',
     description: 'Support facility staff and residents with behavioral interventions and de-escalation strategies.',
   },
 ];
@@ -31,7 +32,7 @@ const benefits = [
   },
   {
     title: 'Supportive Clinical Team',
-    description: 'Work alongside board-certified psychiatrists and experienced clinical leadership.',
+    description: 'Work alongside experienced, board-certified clinicians and supportive clinical leadership.',
     icon: Users,
   },
   {
@@ -49,6 +50,10 @@ const benefits = [
 export default function Careers() {
   return (
     <div className="flex flex-col">
+      <SEO 
+        title="Careers" 
+        description="Join Health Alliance SoCal and build a career with purpose. Explore open psychiatric and clinical positions in Southern California."
+      />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -79,7 +84,7 @@ export default function Careers() {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-4">Why Work With Us</h2>
             <p className="text-gray-600">
-              At Health Alliance So Cal, we value our clinical team as our greatest asset. We provide the support and environment you need to excel.
+            At Health Alliance SoCal, we value our clinical team as our greatest asset. We provide the support and environment you need to excel.
             </p>
           </div>
 

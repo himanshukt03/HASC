@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Stethoscope, Pill, ClipboardCheck, Users, GraduationCap, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '../lib/utils';
+import SEO from '../components/SEO';
 
 const services = [
   {
@@ -14,7 +15,7 @@ const services = [
       'Behavioral health screenings',
       'Risk assessments',
     ],
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
+    image: '/images/Psychiatric Evaluations.png',
   },
   {
     title: 'Medication Management',
@@ -57,6 +58,10 @@ const services = [
 export default function Services() {
   return (
     <div className="flex flex-col">
+      <SEO 
+        title="Psychiatric Services" 
+        description="Comprehensive psychiatric evaluations, medication management, CMS compliance support, and staff training for long-term care facilities."
+      />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -104,11 +109,11 @@ export default function Services() {
                   <p className="text-gray-600 leading-relaxed mb-7">
                     {service.description}
                   </p>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                     {service.details.map((detail) => (
-                      <li key={detail} className="flex items-center gap-3 text-brand-primary-text font-medium">
-                        <CheckCircle2 size={20} className="text-brand-secondary" />
-                        <span>{detail}</span>
+                      <li key={detail} className="flex items-start gap-3 bg-brand-accent/20 border border-brand-border/50 rounded-xl p-4">
+                        <CheckCircle2 size={18} className="text-brand-secondary shrink-0 mt-0.5" />
+                        <span className="text-brand-primary-text text-[0.95rem] leading-snug">{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -121,7 +126,7 @@ export default function Services() {
                   </Link>
                 </div>
                 <div className="flex-1 w-full mx-auto w-11/12 md:w-10/12 lg:w-full">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative group">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative group border border-brand-border/50">
                     <img
                       src={service.image}
                       alt={service.title}
@@ -193,17 +198,17 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-brand-primary text-brand-primary-content text-center">
+      <section className="section-padding bg-[#faf9f7] border-t border-brand-border/60 text-center">
         <div className="container-custom max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-5">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-brand-ink mb-5">
             Comprehensive Care, Simplified.
           </h2>
-          <p className="text-brand-accent/80 mb-10 leading-relaxed">
+          <p className="text-gray-500 mb-10 leading-relaxed">
             Let us handle the complexities of behavioral healthcare so you can focus on what matters most: your residents.
           </p>
           <Link
             to="/contact"
-            className="bg-white text-brand-primary-text px-10 py-4 rounded-full font-bold hover:bg-brand-accent transition-all shadow-xl hover:shadow-2xl"
+            className="inline-block bg-brand-primary text-brand-primary-content px-10 py-4 rounded-full font-bold hover:bg-brand-secondary transition-all shadow-md"
           >
             Request a Partnership Proposal
           </Link>

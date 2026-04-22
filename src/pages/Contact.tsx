@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, Phone, MapPin, Building2, Send, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
+import { Mail, Phone, MapPin, Building2, Send, CheckCircle2, ShieldCheck, Award, Printer } from 'lucide-react';
 import { cn } from '../lib/utils';
+import SEO from '../components/SEO';
 
 export default function Contact() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -16,6 +17,10 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col">
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with Health Alliance SoCal to discuss psychiatric partnerships for your skilled nursing or memory care facility."
+      />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -57,7 +62,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Our Headquarters</h4>
-                      <p className="text-gray-500 leading-relaxed">123 Medical Plaza Dr, Suite 400<br />Los Angeles, CA 90001</p>
+                      <p className="text-gray-500 leading-relaxed">501 E. Hardy St. Ste. 425<br />Inglewood, CA 90301</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-6">
@@ -66,7 +71,16 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Call Us</h4>
-                      <p className="text-gray-500 leading-relaxed">(800) 555-0123<br />Mon-Fri, 8am - 6pm PST</p>
+                      <p className="text-gray-500 leading-relaxed">310.462.3879<br />Mon-Fri, 8am - 6pm PST</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-6">
+                    <div className="w-11 h-11 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
+                      <Printer size={22} />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Fax</h4>
+                      <p className="text-gray-500 leading-relaxed">310.356.3417</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-6">
@@ -75,7 +89,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Email Us</h4>
-                      <p className="text-gray-500 leading-relaxed">partnerships@healthalliancesocal.com<br />info@healthalliancesocal.com</p>
+                      <p className="text-gray-500 leading-relaxed">DRamage@healthalliancesocal.com</p>
                     </div>
                   </div>
                 </div>
@@ -149,7 +163,7 @@ export default function Contact() {
                           required
                           type="text"
                           placeholder="John Doe"
-                          className="bg-brand-paper border-none rounded-2xl py-4 px-6 focus:ring-2 focus:ring-brand-primary transition-all"
+                          className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
                       <div className="flex flex-col gap-2">
@@ -158,7 +172,7 @@ export default function Contact() {
                           required
                           type="text"
                           placeholder="Administrator"
-                          className="bg-brand-paper border-none rounded-2xl py-4 px-6 focus:ring-2 focus:ring-brand-primary transition-all"
+                          className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
                     </div>
@@ -170,7 +184,7 @@ export default function Contact() {
                           required
                           type="email"
                           placeholder="john@facility.com"
-                          className="bg-brand-paper border-none rounded-2xl py-4 px-6 focus:ring-2 focus:ring-brand-primary transition-all"
+                          className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
                       <div className="flex flex-col gap-2">
@@ -179,7 +193,7 @@ export default function Contact() {
                           required
                           type="tel"
                           placeholder="(555) 000-0000"
-                          className="bg-brand-paper border-none rounded-2xl py-4 px-6 focus:ring-2 focus:ring-brand-primary transition-all"
+                          className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
                     </div>
@@ -190,13 +204,13 @@ export default function Contact() {
                         required
                         type="text"
                         placeholder="Health Care Center of So Cal"
-                        className="bg-brand-paper border-none rounded-2xl py-4 px-6 focus:ring-2 focus:ring-brand-primary transition-all"
+                        className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                       />
                     </div>
 
                     <div className="flex flex-col gap-2">
                       <label className="text-xs uppercase tracking-widest font-bold text-gray-400 ml-4">Facility Type</label>
-                      <select className="bg-brand-paper border-none rounded-2xl py-4 px-6 focus:ring-2 focus:ring-brand-primary transition-all appearance-none">
+                      <select className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all appearance-none">
                         <option>Skilled Nursing (SNF)</option>
                         <option>Assisted Living (ALF)</option>
                         <option>Memory Care</option>
@@ -209,7 +223,7 @@ export default function Contact() {
                       <textarea
                         rows={4}
                         placeholder="Tell us about your facility's specific needs..."
-                        className="bg-brand-paper border-none rounded-2xl py-4 px-6 focus:ring-2 focus:ring-brand-primary transition-all resize-none"
+                        className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all resize-none"
                       />
                     </div>
 
@@ -217,7 +231,7 @@ export default function Contact() {
                       disabled={formState === 'submitting'}
                       type="submit"
                       className={cn(
-                        "w-full bg-brand-primary text-brand-primary-content py-5 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 group",
+                        "w-full bg-brand-primary text-brand-primary-content py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 group",
                         formState === 'submitting' && "opacity-70 cursor-not-allowed"
                       )}
                     >

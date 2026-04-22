@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Target, Users, Heart, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const values = [
   {
@@ -22,15 +23,17 @@ const values = [
 
 const team = [
   {
-    name: 'Dr. Danielle Ramage',
-    role: 'Co-Founder & CEO',
-    bio: 'Dr. Ramage leads Health Alliance So Cal with a commitment to compassionate, evidence-based psychiatric care in long-term settings.',
+    name: 'Danielle Ramage DNP, PMHNP-BC',
+    role: 'Co-Founder',
+    credentials: 'Doctor of Nursing Practice (DNP) · Psychiatric Mental Health Nurse Practitioner, Board Certified (PMHNP-BC)',
+    bio: 'Danielle Ramage leads Health Alliance SoCal with a commitment to compassionate, evidence-based psychiatric care in long-term settings.',
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800',
   },
   {
-    name: 'Dr. Anil Sharma',
-    role: 'Co-Founder & CMO',
-    bio: 'Dr. Sharma oversees medical operations, ensuring all clinical programs align with the highest standards of CMS-compliant psychiatric practice.',
+    name: 'Anil Sharma MD',
+    role: 'Co-Founder',
+    credentials: 'Medical Doctor (MD)',
+    bio: 'Anil Sharma oversees medical operations, ensuring all clinical programs align with the highest standards of CMS-compliant psychiatric practice.',
     image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800',
   },
 ];
@@ -38,6 +41,10 @@ const team = [
 export default function About() {
   return (
     <div className="flex flex-col">
+      <SEO 
+        title="About Us" 
+        description="Learn about Health Alliance SoCal's mission to elevate behavioral healthcare in long-term care facilities through clinical excellence and compassionate service."
+      />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -56,7 +63,7 @@ export default function About() {
               Dedicated to Elevating Behavioral Health Standards
             </h1>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl">
-              Health Alliance So Cal was founded on a simple premise: residents in long-term care facilities deserve the same high-quality psychiatric care available in any other clinical setting.
+              Health Alliance SoCal was founded on a simple premise: residents in long-term care facilities deserve the same high-quality psychiatric care available in any other clinical setting.
             </p>
           </motion.div>
         </div>
@@ -72,9 +79,9 @@ export default function About() {
               viewport={{ once: true }}
               className="relative w-11/12 md:w-10/12 lg:w-full mx-auto"
             >
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200"
+                  src="/images/closeup-female-patient-mental-health-professional.jpg"
                   alt="Our Story"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -90,10 +97,10 @@ export default function About() {
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-6">Our Story</h2>
               <div className="space-y-5 text-gray-600 leading-relaxed">
                 <p>
-                  Health Alliance So Cal emerged from a recognized gap in the Southern California healthcare landscape. While physical health services in skilled nursing facilities were robust, behavioral health often remained underserved, leading to poor resident outcomes and regulatory challenges.
+                  Health Alliance SoCal emerged from a recognized gap in the Southern California healthcare landscape. While physical health services in skilled nursing facilities were robust, behavioral health often remained underserved, leading to poor resident outcomes and regulatory challenges.
                 </p>
                 <p>
-                  Our founders, a group of board-certified psychiatrists and healthcare administrators, envisioned a partnership model that would integrate seamless psychiatric care directly into the facility's workflow.
+                  Our founders—board-certified clinicians and healthcare administrators—envisioned a partnership model that would integrate seamless psychiatric care directly into the facility's workflow.
                 </p>
                 <p>
                   Our mission from day one has been to provide a lifeline for residents and a trusted clinical partner for facility administrators — building a new standard for behavioral health in long-term care.
@@ -122,7 +129,54 @@ export default function About() {
         </div>
       </section>
 
+      {/* ── Mission & Vision ── */}
+      <section style={{ backgroundColor: '#faf9f7' }} className="section-padding">
+        <div className="container-custom">
+
+          {/* Header */}
+          <div className="max-w-2xl mb-12">
+            <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-3">Our Purpose</p>
+            <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink mb-3">Mission &amp; Vision</h2>
+            <p className="text-gray-500 text-sm leading-relaxed max-w-lg">
+              Delivering compassionate, patient-centered, evidence-based psychiatric care that enhances the lives of individuals across all care settings.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            {/* Mission */}
+            <div className="bg-white rounded-2xl border border-brand-border p-8 sm:p-10">
+              <div className="flex items-center gap-4 mb-6 pb-6 border-b border-gray-100">
+                <div className="w-12 h-12 rounded-xl bg-brand-accent flex items-center justify-center text-brand-primary-text shrink-0">
+                  <Target size={24} />
+                </div>
+                <h3 className="font-serif font-bold text-xl text-brand-ink m-0">Mission Statement</h3>
+              </div>
+              <p className="text-gray-600 text-[0.95rem] leading-relaxed">
+                Health Alliance SoCal's mission is to deliver high-quality, evidence-based psychiatric care across skilled nursing facilities, assisted living communities, memory care units, and board and care homes. We are dedicated to enhancing the mental health, safety, and overall quality of life of every patient we serve through compassionate, patient-centered care, while partnering with families and facility teams to provide reliable, compliant, and responsive behavioral health services.
+              </p>
+            </div>
+
+            {/* Vision */}
+            <div className="bg-white rounded-2xl border border-brand-border p-8 sm:p-10">
+              <div className="flex items-center gap-4 mb-6 pb-6 border-b border-gray-100">
+                <div className="w-12 h-12 rounded-xl bg-[#4A9E8E]/10 flex items-center justify-center text-brand-secondary shrink-0">
+                  <Heart size={24} />
+                </div>
+                <h3 className="font-serif font-bold text-xl text-brand-ink m-0">Vision Statement</h3>
+              </div>
+              <p className="text-gray-600 text-[0.95rem] leading-relaxed">
+                Our vision is to redefine behavioral health care in post-acute and long-term care settings by setting the standard for patient-centered, clinically excellent, and compliant care. Health Alliance SoCal strives to be the trusted partner for patients, families, and facilities—advancing the integration of psychiatry into whole-person care, expanding access to mental health education, and building a scalable, innovative model rooted in dignity and respect.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Core Values */}
+
       <section className="section-padding bg-brand-paper">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -164,7 +218,7 @@ export default function About() {
                 Clinical Leadership
               </h2>
               <p className="text-gray-600">
-                Meet the experts dedicated to elevating the standard of care in your facility.
+                Meet the clinicians dedicated to elevating the standard of behavioral health care in your facility.
               </p>
             </div>
           </div>
@@ -194,6 +248,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-serif font-semibold text-brand-primary-text mb-1">{member.name}</h3>
                 <p className="text-brand-secondary font-semibold text-sm uppercase tracking-widest">{member.role}</p>
+                <p className="text-gray-400 text-xs leading-tight mt-1">{member.credentials}</p>
               </motion.div>
             ))}
           </div>
@@ -201,26 +256,26 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-brand-primary relative overflow-hidden">
+      <section className="section-padding bg-[#faf9f7] border-t border-brand-border/60 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
         </div>
         <div className="container-custom relative z-10 text-center max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-brand-ink mb-6">
             Ready to Elevate Your Facility's Clinical Performance?
           </h2>
-          <p className="text-brand-accent/80 mb-10 leading-relaxed">
-            Partner with Health Alliance So Cal and transform your behavioral health services.
+          <p className="text-gray-500 mb-10 leading-relaxed">
+            Partner with Health Alliance SoCal and transform your behavioral health services.
           </p>
           <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 justify-center">
             <Link
               to="/contact"
-              className="bg-white text-brand-primary-text px-4 sm:px-10 py-4 rounded-full font-bold text-xs sm:text-base hover:bg-brand-accent transition-all shadow-xl hover:shadow-2xl flex-1 sm:flex-none text-center"
+              className="bg-brand-primary text-brand-primary-content px-4 sm:px-10 py-4 rounded-full font-bold text-xs sm:text-base hover:bg-brand-secondary transition-all shadow-md flex-1 sm:flex-none text-center"
             >
               Request a Partnership
             </Link>
             <Link
               to="/services"
-              className="bg-transparent border border-white/30 text-white px-4 sm:px-10 py-4 rounded-full font-bold text-xs sm:text-base hover:bg-white/10 transition-all flex-1 sm:flex-none text-center"
+              className="bg-white border border-brand-primary/20 text-brand-primary-text px-4 sm:px-10 py-4 rounded-full font-bold text-xs sm:text-base hover:bg-brand-accent transition-all flex-1 sm:flex-none text-center shadow-sm"
             >
               Explore Our Services
             </Link>

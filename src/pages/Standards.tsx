@@ -1,12 +1,14 @@
 import { motion } from 'motion/react';
 import { ShieldCheck, ClipboardCheck, Award, Target, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const standards = [
   {
     title: 'Evidence-Based Prescribing',
     description: 'Our clinical protocols are rooted in the latest psychiatric research and geriatric medicine guidelines.',
     icon: Target,
+    image: '/images/Evidence-Based_Prescribing.jpg',
     details: [
       'Strict adherence to APA and AGS guidelines',
       'Focus on non-pharmacological interventions first',
@@ -18,6 +20,7 @@ const standards = [
     title: 'CMS Psychotropic Standards',
     description: 'We ensure your facility stays ahead of CMS regulations regarding psychotropic medication use.',
     icon: ShieldCheck,
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200',
     details: [
       'Expertise in F-Tag 758 compliance',
       'Rigorous Gradual Dose Reduction (GDR) protocols',
@@ -29,6 +32,7 @@ const standards = [
     title: 'Quality Assurance Approach',
     description: 'Our multi-layered QA system ensures consistent, high-quality care across all partner facilities.',
     icon: ClipboardCheck,
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200',
     details: [
       'Monthly clinical performance reviews',
       'Facility-specific outcome tracking',
@@ -41,6 +45,10 @@ const standards = [
 export default function Standards() {
   return (
     <div className="flex flex-col">
+      <SEO 
+        title="Clinical Standards" 
+        description="Explore Health Alliance SoCal's rigorous clinical standards, CMS psychotropic compliance, and our commitment to evidence-based prescribing."
+      />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -85,29 +93,23 @@ export default function Standards() {
                   <p className="text-gray-600 leading-relaxed mb-7">
                     {standard.description}
                   </p>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                     {standard.details.map((detail) => (
-                      <li key={detail} className="flex items-center gap-3 text-brand-primary-text font-medium">
-                        <CheckCircle2 size={20} className="text-brand-secondary" />
-                        <span>{detail}</span>
+                      <li key={detail} className="flex items-start gap-3 bg-brand-accent/20 border border-brand-border/50 rounded-xl p-4">
+                        <CheckCircle2 size={18} className="text-brand-secondary shrink-0 mt-0.5" />
+                        <span className="text-brand-primary-text text-[0.95rem] leading-snug">{detail}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="flex-1 w-full mx-auto w-11/12 md:w-10/12 lg:w-full">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative group">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative group border border-brand-border/50">
                     <img
-                      src={index === 0 
-                        ? "https://images.unsplash.com/photo-1581056310664-3d4d74630ff9?auto=format&fit=crop&q=80&w=1200"
-                        : index === 1
-                        ? "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"
-                        : "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200"
-                      }
+                      src={standard.image}
                       alt={standard.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       referrerPolicy="no-referrer"
                     />
-                    {/* overlay removed */}
                   </div>
                 </div>
               </motion.div>
@@ -161,7 +163,7 @@ export default function Standards() {
                     "Our commitment to clinical standards ensures that every resident receives the highest quality of care, every time."
                   </p>
                   <p className="mt-4 text-xs uppercase tracking-widest font-bold text-brand-accent">
-                    — Dr. Danielle Ramage, CEO
+                    — Danielle Ramage DNP, PMHNP-BC, Co-Founder
                   </p>
                 </div>
               </div>
@@ -171,17 +173,17 @@ export default function Standards() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-brand-primary text-brand-primary-content text-center">
+      <section className="section-padding bg-[#faf9f7] border-t border-brand-border/60 text-center">
         <div className="container-custom max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-5">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-brand-ink mb-5">
             Partner with a Clinical Leader
           </h2>
-          <p className="text-brand-accent/80 mb-10 leading-relaxed">
+          <p className="text-gray-500 mb-10 leading-relaxed">
             Experience the difference that specialized psychiatric leadership and rigorous clinical standards can make in your facility.
           </p>
           <Link
             to="/contact"
-            className="bg-white text-brand-primary-text px-10 py-4 rounded-full font-bold hover:bg-brand-accent transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 mx-auto w-fit"
+            className="bg-brand-primary text-brand-primary-content px-10 py-4 rounded-full font-bold hover:bg-brand-secondary transition-all shadow-md flex items-center justify-center gap-2 mx-auto w-fit"
           >
             Request a Partnership Proposal
             <ArrowRight size={20} />
