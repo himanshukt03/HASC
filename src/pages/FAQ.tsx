@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, ChevronDown, ChevronUp, HelpCircle, MessageCircle, Phone, Mail } from 'lucide-react';
 import { cn } from '../lib/utils';
+import SEO from '../components/SEO';
 
 const faqCategories = [
   { id: 'general', name: 'General Information' },
@@ -15,7 +16,7 @@ const faqs = [
     id: 1,
     category: 'general',
     question: 'What areas of Southern California do you serve?',
-    answer: 'Health Alliance So Cal provides specialized psychiatric services to facilities across Los Angeles, Orange, Riverside, and San Bernardino counties. We are continuously expanding our network to reach more communities.',
+    answer: 'Health Alliance SoCal provides specialized psychiatric services to facilities across Los Angeles, Orange, Riverside, and San Bernardino counties. We are continuously expanding our network to reach more communities.',
   },
   {
     id: 2,
@@ -33,7 +34,7 @@ const faqs = [
     id: 4,
     category: 'compliance',
     question: 'How do your services support F-Tag 758 compliance?',
-    answer: 'Our psychiatrists and nurse practitioners are experts in psychotropic medication oversight. We implement rigorous gradual dose reduction (GDR) protocols and provide the necessary documentation to satisfy CMS and state survey requirements.',
+    answer: 'Our clinical team of nurse practitioners and physicians are experts in psychotropic medication oversight. We implement rigorous gradual dose reduction (GDR) protocols and provide the necessary documentation to satisfy CMS and state survey requirements.',
   },
   {
     id: 5,
@@ -63,6 +64,10 @@ export default function FAQ() {
 
   return (
     <div className="flex flex-col">
+      <SEO 
+        title="FAQ" 
+        description="Find answers to common questions about our psychiatric services, facility partnerships, and patient care standards."
+      />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -92,7 +97,7 @@ export default function FAQ() {
               <input
                 type="text"
                 placeholder="Search for questions..."
-                className="w-full bg-white border border-brand-border rounded-full py-4 pl-14 pr-6 shadow-sm focus:ring-2 focus:ring-brand-primary transition-all"
+                className="w-full bg-white border border-brand-primary rounded-full py-4 pl-14 pr-6 shadow-md focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all hover:shadow-lg"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -117,10 +122,10 @@ export default function FAQ() {
                       setSearchQuery('');
                     }}
                     className={cn(
-                      "w-full text-left px-5 py-3 rounded-xl font-semibold text-sm transition-all flex items-center justify-between group",
+                      "w-full text-left px-5 py-3 rounded-xl font-semibold text-sm transition-all flex items-center justify-between group border border-brand-border",
                       activeCategory === cat.id && searchQuery === ''
                         ? "bg-brand-primary text-brand-primary-content shadow-lg"
-                        : "hover:bg-brand-accent text-brand-primary-text"
+                        : "bg-white hover:bg-brand-accent text-brand-primary-text"
                     )}
                   >
                     {cat.name}
@@ -139,18 +144,18 @@ export default function FAQ() {
                       key={faq.id}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-brand-paper rounded-2xl overflow-hidden border border-transparent hover:border-brand-accent transition-all"
+                      className="bg-white rounded-2xl overflow-hidden border border-brand-border hover:border-brand-primary shadow-md transition-all"
                     >
                       <button
                         onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-                        className="w-full text-left p-6 flex items-center justify-between gap-4 group"
+                        className="w-full text-left p-6 flex items-center justify-between gap-4 group hover:bg-brand-accent/10 transition-colors"
                       >
                         <span className="text-lg font-serif font-semibold text-brand-primary-text group-hover:text-brand-secondary transition-colors">
                           {faq.question}
                         </span>
                         <div className={cn(
                           "w-10 h-10 rounded-full flex items-center justify-center transition-all",
-                          openId === faq.id ? "bg-brand-primary text-brand-primary-content" : "bg-white text-brand-primary-text"
+                          openId === faq.id ? "bg-brand-primary text-brand-primary-content" : "bg-gray-100 text-brand-primary-text"
                         )}>
                           {openId === faq.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                         </div>
@@ -163,7 +168,7 @@ export default function FAQ() {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <div className="px-6 pb-6 text-gray-600 leading-relaxed text-base border-t border-brand-accent/30 pt-5">
+                            <div className="px-6 pb-6 text-gray-700 leading-relaxed text-base border-t border-brand-primary/20 pt-5 bg-brand-paper rounded-b-xl">
                               {faq.answer}
                             </div>
                           </motion.div>
@@ -187,11 +192,11 @@ export default function FAQ() {
                   <p className="text-gray-600">Our support team is here to help you with any inquiries.</p>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <a href="tel:8005550123" className="bg-white text-brand-primary-text px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-brand-primary hover:text-brand-primary-content transition-all shadow-sm">
+                  <a href="tel:3104623879" className="bg-white text-brand-primary-text px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-brand-primary hover:text-brand-primary-content transition-all shadow-sm">
                     <Phone size={18} />
-                    (800) 555-0123
+                    310.462.3879
                   </a>
-                  <a href="mailto:info@healthalliancesocal.com" className="bg-brand-primary text-brand-primary-content px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-brand-secondary transition-all shadow-md">
+                  <a href="mailto:DRamage@healthalliancesocal.com" className="bg-brand-primary text-brand-primary-content px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-brand-secondary transition-all shadow-md">
                     <Mail size={18} />
                     Email Support
                   </a>

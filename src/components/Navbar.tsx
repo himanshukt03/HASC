@@ -39,7 +39,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-2 group">
           <img
             src="/HASC_logo.png"
-            alt="Health Alliance So Cal"
+            alt="Health Alliance SoCal"
             className="h-10 md:h-12 w-auto"
           />
         </Link>
@@ -64,7 +64,7 @@ export default function Navbar() {
             to="/contact"
             className="btn-primary py-2 text-sm"
           >
-            Partnership Request
+            Schedule Consultation
           </Link>
         </div>
 
@@ -107,7 +107,7 @@ export default function Navbar() {
                 className="btn-primary w-full"
                 onClick={() => setIsOpen(false)}
               >
-                Partnership Request
+                Schedule Consultation
               </Link>
             </div>
           </motion.div>
