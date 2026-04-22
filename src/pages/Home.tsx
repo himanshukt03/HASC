@@ -551,7 +551,7 @@ export default function Home() {
             >
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-brand-border/50">
                 <img
-                  src="/images/family_confidence.png"
+                  src="/images/family_confidence.jpg"
                   alt="Positive resident outcomes"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
