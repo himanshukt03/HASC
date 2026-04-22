@@ -15,7 +15,7 @@ const services = [
       'Behavioral health screenings',
       'Risk assessments',
     ],
-    image: '/images/Psychiatric Evaluations.png',
+    image: '/images/Psychiatric Evaluations.jpg',
   },
   {
     title: 'Medication Management',
@@ -58,8 +58,8 @@ const services = [
 export default function Services() {
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="Psychiatric Services" 
+      <SEO
+        title="Psychiatric Services"
         description="Comprehensive psychiatric evaluations, medication management, CMS compliance support, and staff training for long-term care facilities."
       />
       {/* Hero Section */}
@@ -146,7 +146,7 @@ export default function Services() {
       <section className="section-padding bg-brand-paper">
         <div className="container-custom">
           <div className="bg-white rounded-2xl p-8 md:p-14 shadow-sm relative overflow-hidden">
-            
+
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div>
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-6">Regulatory Compliance &amp; Survey Readiness</h2>
