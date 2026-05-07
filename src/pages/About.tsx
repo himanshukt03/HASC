@@ -27,14 +27,14 @@ const team = [
     role: 'Co-Founder',
     credentials: 'Doctor of Nursing Practice (DNP) · Psychiatric Mental Health Nurse Practitioner, Board Certified (PMHNP-BC)',
     bio: 'Danielle Ramage leads Health Alliance SoCal with a commitment to compassionate, evidence-based psychiatric care in long-term settings.',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800',
+    image: '/DanielleRamage.jpg',
   },
   {
     name: 'Anil Sharma MD',
     role: 'Co-Founder',
     credentials: 'Medical Doctor (MD)',
     bio: 'Anil Sharma oversees medical operations, ensuring all clinical programs align with the highest standards of CMS-compliant psychiatric practice.',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800',
+    image: '/Anil_Sharma.jpg',
   },
 ];
 
@@ -223,7 +223,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -231,9 +231,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col"
+                className="flex flex-col max-w-[270px]"
               >
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-5 shadow-lg relative group">
+                <div className="aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg relative group">
                   <img
                     src={member.image}
                     alt={member.name}
