@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import {
   ArrowRight, ShieldCheck, Users, Stethoscope, Building2, Heart, CheckCircle2,
   PhoneCall, Star, Activity, Pill, ClipboardList, HandHeart,
-  GraduationCap,
+  GraduationCap, MapPin, Palmtree, Trees,
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
@@ -106,14 +106,14 @@ const doctors = [
     role: 'Co-Founder',
     credentials: 'Doctor of Nursing Practice (DNP) · Psychiatric Mental Health Nurse Practitioner, Board Certified (PMHNP-BC)',
     bio: 'Danielle Ramage leads Health Alliance SoCal with a commitment to compassionate, evidence-based psychiatric care in long-term settings.',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800',
+    image: '/DanielleRamage.jpg',
   },
   {
     name: 'Anil Sharma MD',
     role: 'Co-Founder',
     credentials: 'Medical Doctor (MD)',
     bio: 'Anil Sharma oversees medical operations, ensuring clinical programs align with the highest standards of CMS-compliant psychiatric practice.',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800',
+    image: '/Anil_Sharma.jpg',
   },
 ];
 
@@ -607,7 +607,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl">
             {doctors.map((doctor, index) => (
               <motion.div
                 key={doctor.name}
@@ -615,9 +615,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col"
+                className="flex flex-col max-w-[240px]"
               >
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-4 shadow-lg relative group">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-3 shadow-lg relative group">
                   <img
                     src={doctor.image}
                     alt={doctor.name}
@@ -634,6 +634,97 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── COMING SOON LOCATIONS ── */}
+      <section className="py-16 md:py-24 bg-white border-t border-brand-border/60">
+        <div className="container-custom max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <p className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-4">
+              <MapPin size={14} />
+              Coming Soon
+            </p>
+
+            <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-brand-ink leading-tight mb-4">
+              Expanding to New Partner Regions
+            </h2>
+
+            <p className="text-gray-500 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+              We're bringing specialized psychiatric care to more communities. If your facility is in these regions, let's connect.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10">
+            {[
+              {
+                name: 'Florida',
+                icon: Palmtree,
+                description: 'The Sunshine State',
+                cardTint: 'bg-brand-accent/30',
+              },
+              {
+                name: 'Oregon',
+                icon: Trees,
+                description: 'The Pacific Northwest',
+                cardTint: 'bg-brand-accent/40',
+              },
+            ].map((location) => {
+              const IconComponent = location.icon;
+              return (
+                <motion.div
+                  key={location.name}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className={`group relative overflow-hidden rounded-2xl border border-brand-border/70 bg-white p-6 sm:p-8 shadow-sm hover:shadow-lg hover:border-brand-primary/20 transition-all duration-300`}
+                >
+                  <div className={`absolute inset-x-0 top-0 h-1 ${location.cardTint}`} />
+                  <div className="absolute top-0 right-0 -mr-12 -mt-12 w-32 h-32 rounded-full bg-brand-primary/5 blur-2xl pointer-events-none" />
+                  
+                  <div className="relative">
+                    <div className="w-14 h-14 rounded-xl bg-brand-accent flex items-center justify-center mb-5 text-brand-primary-text group-hover:bg-brand-primary group-hover:text-brand-primary-content transition-colors">
+                      <IconComponent size={28} />
+                    </div>
+
+                    <h3 className="font-serif font-bold text-2xl sm:text-3xl text-brand-ink mb-2">
+                      {location.name}
+                    </h3>
+                    <p className="text-gray-500 text-sm font-medium">
+                      {location.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gradient-to-r from-brand-primary/5 to-brand-secondary/5 rounded-xl border border-brand-primary/10 p-6 sm:p-8 text-center"
+          >
+            <p className="text-gray-600 text-sm leading-relaxed mb-5">
+              Don't see your region? We're always exploring new partnership opportunities.
+            </p>
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-primary px-6 py-3 text-sm font-semibold text-white hover:bg-brand-secondary transition-colors shadow-md"
+            >
+              <PhoneCall size={18} />
+              Share a Partner Connection
+            </Link>
+          </motion.div>
         </div>
       </section>
 
