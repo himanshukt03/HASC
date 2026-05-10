@@ -3,25 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect & DNS Prefetch for third-party domains -->
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+    <!-- Preload Hero Image for LCP Optimization -->
+    <link rel="preload" as="image" href="/images/hero-caregiver.webp" fetchpriority="high" />
+
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="HASC" />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>Health Alliance So Cal | Specialized Psychiatric Care</title>
-    <meta name="description" content="Evidence-based mental health care for medically complex adults across Southern California. Expert psychiatric services for skilled nursing and memory care communities." />
-    <meta name="keywords" content="psychiatric care, behavioral health, long-term care psychiatry, skilled nursing facility psychiatry, memory care psychiatry, Southern California psychiatrists" />
-    <meta property="og:title" content="Health Alliance So Cal | Specialized Psychiatric Care" />
-    <meta property="og:description" content="Evidence-based mental health care for medically complex adults across Southern California." />
+    
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://www.healthalliancesocal.com/" id="canonical-url" />
+
+    <!-- Primary Meta Tags -->
+    <title>Health Alliance SoCal | Southern California Home Health Care</title>
+    <meta name="title" content="Health Alliance SoCal | Southern California Home Health Care" />
+    <meta name="description" content="Expert, compassionate in-home caregivers and personal care services for elderly and medically complex adults across Southern California and Los Angeles." />
+    <meta name="keywords" content="home health care Southern California, in-home senior care SoCal, Health Alliance SoCal caregivers, compassionate elderly care Los Angeles, licensed home health agency California, personal care services Orange County, 24-hour home care services" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Health Alliance SoCal" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Health Alliance So Cal" />
-    <meta name="twitter:description" content="Expert psychiatric services for skilled nursing and memory care communities in Southern California." />
+    <meta property="og:url" content="https://www.healthalliancesocal.com/" />
+    <meta property="og:title" content="Health Alliance SoCal | Southern California Home Health Care" />
+    <meta property="og:description" content="Expert, compassionate in-home caregivers and personal care services for elderly and medically complex adults across Southern California and Los Angeles." />
+    <meta property="og:image" content="https://www.healthalliancesocal.com/images/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.healthalliancesocal.com/" />
+    <meta property="twitter:title" content="Health Alliance SoCal | Southern California Home Health Care" />
+    <meta property="twitter:description" content="Expert, compassionate in-home caregivers and personal care services for elderly and medically complex adults across Southern California and Los Angeles." />
+    <meta property="twitter:image" content="https://www.healthalliancesocal.com/images/og-image.jpg" />
+
+    <!-- Inline Critical CSS Placeholder -->
+    <style>
+      /* Insert above-the-fold CSS here */
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+    </style>
+
+    <!-- Async non-critical CSS -->
+    <!-- <link rel="stylesheet" href="/styles/non-critical.css" media="print" onload="this.media='all'"> -->
+
+    <!-- Google Analytics 4 (GA4) - Replace G-XXXXXXXXXX with real ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        page_path: window.location.pathname,
+      });
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MedicalBusiness",
+          "@id": "https://www.healthalliancesocal.com/#organization",
+          "name": "Health Alliance SoCal",
+          "url": "https://www.healthalliancesocal.com/",
+          "logo": "https://www.healthalliancesocal.com/images/logo.png",
+          "image": "https://www.healthalliancesocal.com/images/og-image.jpg",
+          "description": "Licensed home health agency providing compassionate in-home caregivers and personal care services in Southern California.",
+          "telephone": "+1-555-555-5555",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Health Way",
+            "addressLocality": "Los Angeles",
+            "addressRegion": "CA",
+            "postalCode": "90001",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.healthalliancesocal.com/#website",
+          "url": "https://www.healthalliancesocal.com/",
+          "name": "Health Alliance SoCal",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.healthalliancesocal.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Email Obfuscation Helper -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".protected-email").forEach(el => {
+          const user = el.getAttribute("data-user");
+          const domain = el.getAttribute("data-domain");
+          if (user && domain) {
+            el.innerHTML = `<a href="mailto:${user}&#64;${domain}">${user}&#64;${domain}</a>`;
+          }
+        });
+      });
+    </script>
   </body>
 </html>
-

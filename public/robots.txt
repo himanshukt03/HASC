@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*?*
+
+Sitemap: https://www.healthalliancesocal.com/sitemap.xml
