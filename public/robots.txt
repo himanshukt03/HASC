@@ -1,3 +1,6 @@
+# robots.txt — Health Alliance SoCal
+# https://www.healthalliancesocal.com
+
 User-agent: *
 Allow: /
 Disallow: /admin/
@@ -5,4 +8,5 @@ Disallow: /private/
 Disallow: /tmp/
 Disallow: /*?*
 
+# Sitemap
 Sitemap: https://www.healthalliancesocal.com/sitemap.xml
