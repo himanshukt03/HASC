@@ -622,17 +622,15 @@ export default function Home() {
       {/* ── LEADERSHIP ── */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
-            <div>
-              <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-2">Our Founders</p>
-              <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink">Clinical Leadership</h2>
-            </div>
-            <p className="text-gray-500 text-sm max-w-xs leading-relaxed">
+          <div className="text-center md:text-left mb-12">
+            <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-2">Our Founders</p>
+            <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink mb-3">Clinical Leadership</h2>
+            <p className="text-gray-500 text-sm max-w-xs mx-auto md:mx-0 leading-relaxed">
               Board-certified clinicians dedicated to elevating behavioral health standards in long-term care.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl">
+          <div className="flex flex-col items-center gap-10 md:grid md:grid-cols-2 md:gap-6 md:max-w-xl md:items-start">
             {doctors.map((doctor, index) => (
               <motion.div
                 key={doctor.name}
@@ -640,16 +638,16 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col max-w-[240px]"
+                className="flex flex-col items-center text-center w-full max-w-[300px] bg-brand-accent/30 rounded-2xl p-5 pb-6 border border-brand-border/60 md:items-start md:text-left md:max-w-[240px] md:bg-transparent md:rounded-none md:p-0 md:pb-0 md:border-0"
               >
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-3 shadow-lg relative group">
+                <div className="aspect-[4/5] w-full rounded-2xl overflow-hidden mb-4 shadow-lg relative group">
                   <img
                     src={doctor.image}
                     alt={doctor.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
-                    width={240}
-                    height={300}
+                    width={300}
+                    height={375}
                     loading="lazy"
                     decoding="async"
                   />
@@ -659,7 +657,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-serif font-bold text-brand-primary-text text-lg mb-0.5">{doctor.name}</h3>
                 <p className="text-brand-secondary font-semibold text-xs uppercase tracking-widest">{doctor.role}</p>
-                <p className="text-gray-500 text-[0.7rem] leading-tight mt-1">{doctor.credentials}</p>
+                <p className="text-gray-500 text-[0.7rem] leading-tight mt-2 px-2 md:px-0">{doctor.credentials}</p>
               </motion.div>
             ))}
           </div>
