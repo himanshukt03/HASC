@@ -8,7 +8,7 @@ const standards = [
     title: 'Evidence-Based Prescribing',
     description: 'Our clinical protocols are rooted in the latest psychiatric research and geriatric medicine guidelines.',
     icon: Target,
-    image: '/images/Evidence-Based_Prescribing.jpg',
+    image: '/images/Evidence-Based_Prescribing.webp',
     details: [
       'Strict adherence to APA and AGS guidelines',
       'Focus on non-pharmacological interventions first',
@@ -109,6 +109,10 @@ export default function Standards() {
                       alt={standard.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       referrerPolicy="no-referrer"
+                      width={800}
+                      height={600}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>
@@ -153,9 +157,13 @@ export default function Standards() {
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1200"
-                    alt="Quality Assurance"
+                    alt="Health Alliance SoCal quality assurance and clinical standards"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
+                    width={1200}
+                    height={1200}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 bg-brand-primary p-6 rounded-2xl text-brand-primary-content shadow-xl max-w-xs">

@@ -117,7 +117,7 @@ export default function Portal() {
             </button>
           </form>
           
-          <p className="mt-8 text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+          <p className="mt-8 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
             Authorized facility personnel only. All access is monitored and logged.
           </p>
         </motion.div>
@@ -171,7 +171,7 @@ export default function Portal() {
             </div>
             <div className="flex items-center gap-3">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
                 <input
                   type="text"
                   placeholder="Search modules..."
@@ -230,11 +230,15 @@ export default function Portal() {
                 </div>
                 <div className="relative aspect-video lg:aspect-auto cursor-pointer" onClick={() => setSelectedModule(modules[1])}>
                   <img
-                    src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=1200"
-                    alt="Featured Module"
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
+                     src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=1200"
+                     alt="Psychotropic medication safety training module"
+                     className="w-full h-full object-cover"
+                     referrerPolicy="no-referrer"
+                     width={1200}
+                     height={675}
+                     loading="lazy"
+                     decoding="async"
+                   />
                   <div className="absolute inset-0 flex items-center justify-center group-hover:bg-transparent transition-colors duration-500">
                     <div className="w-16 h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-brand-primary-text shadow-xl transform group-hover:scale-105 transition-transform">
                       <Play size={28} fill="currentColor" />
@@ -267,11 +271,15 @@ export default function Portal() {
                 >
                   <div className="aspect-video relative overflow-hidden border-b border-brand-border">
                     <img
-                      src={module.image}
-                      alt={module.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
+                       src={module.image}
+                       alt={module.title}
+                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                       referrerPolicy="no-referrer"
+                       width={800}
+                       height={450}
+                       loading="lazy"
+                       decoding="async"
+                     />
                     <div className="absolute inset-0" />
                     {module.status === 'locked' && (
                       <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center text-white">
@@ -288,7 +296,7 @@ export default function Portal() {
                     <h4 className="text-base font-serif font-bold text-brand-primary-text mb-3 leading-tight group-hover:text-brand-secondary transition-colors">
                       {module.title}
                     </h4>
-                    <div className="flex items-center gap-4 text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-5">
+                    <div className="flex items-center gap-4 text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-5">
                       <div className="flex items-center gap-1.5">
                         <Clock size={12} />
                         <span>{module.duration}</span>
@@ -299,7 +307,7 @@ export default function Portal() {
                       </div>
                     </div>
                     <div className="mt-auto">
-                      <div className="flex justify-between text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">
+                      <div className="flex justify-between text-[9px] font-bold uppercase tracking-widest text-gray-500 mb-1.5">
                         <span>Progress</span>
                         <span>{module.progress}%</span>
                       </div>

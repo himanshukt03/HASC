@@ -109,7 +109,7 @@ export default function SEO({ title, description, keywords, ogImage }: SEOProps)
     
     // Update Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
-    const url = `https://healthalliancesocal.com${location.pathname === '/' ? '' : location.pathname}`;
+    const url = `https://www.healthalliancesocal.com${location.pathname === '/' ? '' : location.pathname}`;
     if (canonical) {
       canonical.setAttribute('href', url);
     } else {

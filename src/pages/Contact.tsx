@@ -158,7 +158,7 @@ export default function Contact() {
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div className="flex flex-col gap-2">
-                        <label className="text-xs uppercase tracking-widest font-bold text-gray-400 ml-4">Full Name</label>
+                        <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Full Name</label>
                         <input
                           required
                           type="text"
@@ -167,7 +167,7 @@ export default function Contact() {
                         />
                       </div>
                       <div className="flex flex-col gap-2">
-                        <label className="text-xs uppercase tracking-widest font-bold text-gray-400 ml-4">Job Title</label>
+                        <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Job Title</label>
                         <input
                           required
                           type="text"
@@ -179,7 +179,7 @@ export default function Contact() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div className="flex flex-col gap-2">
-                        <label className="text-xs uppercase tracking-widest font-bold text-gray-400 ml-4">Email Address</label>
+                        <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Email Address</label>
                         <input
                           required
                           type="email"
@@ -188,7 +188,7 @@ export default function Contact() {
                         />
                       </div>
                       <div className="flex flex-col gap-2">
-                        <label className="text-xs uppercase tracking-widest font-bold text-gray-400 ml-4">Phone Number</label>
+                        <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Phone Number</label>
                         <input
                           required
                           type="tel"
@@ -199,7 +199,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label className="text-xs uppercase tracking-widest font-bold text-gray-400 ml-4">Facility Name</label>
+                      <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Facility Name</label>
                       <input
                         required
                         type="text"
@@ -209,7 +209,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label className="text-xs uppercase tracking-widest font-bold text-gray-400 ml-4">Facility Type</label>
+                      <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Facility Type</label>
                       <select className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all appearance-none">
                         <option>Skilled Nursing (SNF)</option>
                         <option>Assisted Living (ALF)</option>
@@ -219,7 +219,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label className="text-xs uppercase tracking-widest font-bold text-gray-400 ml-4">Additional Information</label>
+                      <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Additional Information</label>
                       <textarea
                         rows={4}
                         placeholder="Tell us about your facility's specific needs..."

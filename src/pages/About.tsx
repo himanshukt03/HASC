@@ -81,11 +81,15 @@ export default function About() {
             >
               <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="/images/closeup-female-patient-mental-health-professional.jpg"
-                  alt="Our Story"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
+                   src="/images/closeup-female-patient-mental-health-professional.webp"
+                   alt="Mental health professional in a compassionate care session"
+                   className="w-full h-full object-cover"
+                   referrerPolicy="no-referrer"
+                   width={800}
+                   height={800}
+                   loading="lazy"
+                   decoding="async"
+                 />
               </div>
             </motion.div>
 
@@ -212,18 +216,16 @@ export default function About() {
       {/* Team Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-12">
-            <div className="max-w-2xl">
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-4">
-                Clinical Leadership
-              </h2>
-              <p className="text-gray-600">
-                Meet the clinicians dedicated to elevating the standard of behavioral health care in your facility.
-              </p>
-            </div>
+          <div className="text-center md:text-left mb-12">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-4">
+              Clinical Leadership
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto md:mx-0">
+              Meet the clinicians dedicated to elevating the standard of behavioral health care in your facility.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
+          <div className="flex flex-col items-center gap-10 md:grid md:grid-cols-2 md:gap-6 md:max-w-2xl md:items-start">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -231,16 +233,20 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col max-w-[270px]"
+                className="flex flex-col items-center text-center w-full max-w-[320px] bg-brand-accent/30 rounded-2xl p-5 pb-6 border border-brand-border/60 md:items-start md:text-left md:max-w-[270px] md:bg-transparent md:rounded-none md:p-0 md:pb-0 md:border-0"
               >
-                <div className="aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg relative group">
+                <div className="aspect-square w-full rounded-2xl overflow-hidden mb-5 shadow-lg relative group">
                   <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                     src={member.image}
+                     alt={member.name}
+                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                     referrerPolicy="no-referrer"
+                     width={320}
+                     height={320}
+                     loading="lazy"
+                     decoding="async"
+                   />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 md:p-8">
                     <p className="text-white text-sm leading-relaxed italic drop-shadow-md bg-black/30 p-4 rounded-xl">
                       "{member.bio}"
                     </p>
@@ -248,7 +254,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-serif font-semibold text-brand-primary-text mb-1">{member.name}</h3>
                 <p className="text-brand-secondary font-semibold text-sm uppercase tracking-widest">{member.role}</p>
-                <p className="text-gray-400 text-xs leading-tight mt-1">{member.credentials}</p>
+                <p className="text-gray-500 text-xs leading-tight mt-2 px-2 md:px-0">{member.credentials}</p>
               </motion.div>
             ))}
           </div>

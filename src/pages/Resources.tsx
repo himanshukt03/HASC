@@ -359,7 +359,7 @@ function StaffCard({ resource }: { resource: StaffResource; key?: string | numbe
         </div>
 
         {/* Source */}
-        <p className="text-xs text-gray-400 mb-4 pl-9">{resource.source}</p>
+        <p className="text-xs text-gray-500 mb-4 pl-9">{resource.source}</p>
 
         {/* Why useful */}
         <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-brand-border pl-4">
@@ -424,7 +424,7 @@ function FamilyCard({ resource }: { resource: FamilyResource; key?: string | num
       <h3 className="text-base font-semibold text-brand-ink leading-snug mb-1">
         {resource.title}
       </h3>
-      <p className="text-xs text-gray-400 mb-4">{resource.source}</p>
+      <p className="text-xs text-gray-500 mb-4">{resource.source}</p>
       <p className="text-sm text-gray-600 leading-relaxed flex-1 border-l-2 border-brand-border pl-4">
         {resource.overview}
       </p>

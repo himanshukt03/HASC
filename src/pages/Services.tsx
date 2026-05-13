@@ -15,7 +15,7 @@ const services = [
       'Behavioral health screenings',
       'Risk assessments',
     ],
-    image: '/images/Psychiatric Evaluations.jpg',
+    image: '/images/Psychiatric Evaluations.webp',
   },
   {
     title: 'Medication Management',
@@ -128,11 +128,15 @@ export default function Services() {
                 <div className="flex-1 w-full mx-auto w-11/12 md:w-10/12 lg:w-full">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative group border border-brand-border/50">
                     <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
+                       src={service.image}
+                       alt={service.title}
+                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                       referrerPolicy="no-referrer"
+                       width={800}
+                       height={600}
+                       loading="lazy"
+                       decoding="async"
+                     />
                     {/* overlay removed */}
                   </div>
                 </div>
@@ -177,11 +181,15 @@ export default function Services() {
               <div className="relative">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"
-                    alt="Compliance Support"
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
+                     src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"
+                     alt="CMS regulatory compliance documentation and audit support"
+                     className="w-full h-full object-cover"
+                     referrerPolicy="no-referrer"
+                     width={1200}
+                     height={1200}
+                     loading="lazy"
+                     decoding="async"
+                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 bg-brand-primary p-6 rounded-2xl text-brand-primary-content shadow-xl max-w-xs">
                   <p className="text-sm italic font-medium leading-relaxed">

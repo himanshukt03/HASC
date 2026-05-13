@@ -41,6 +41,8 @@ export default function Navbar() {
             src="/HASC_logo.png"
             alt="Health Alliance SoCal"
             className="h-10 md:h-12 w-auto"
+            width={160}
+            height={48}
           />
         </Link>
 
@@ -72,6 +74,8 @@ export default function Navbar() {
         <button
           className="md:hidden text-brand-primary-text p-2"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

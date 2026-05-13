@@ -141,7 +141,7 @@ export default function Careers() {
                     <span className="bg-brand-accent text-brand-primary-text text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                       {pos.type}
                     </span>
-                    <span className="text-gray-400 text-xs font-medium flex items-center gap-1">
+                    <span className="text-gray-500 text-xs font-medium flex items-center gap-1">
                       <CheckCircle2 size={14} />
                       {pos.location}
                     </span>

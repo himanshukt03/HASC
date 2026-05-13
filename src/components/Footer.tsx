@@ -12,6 +12,9 @@ export default function Footer() {
               src="/HASC_logo_white.png"
               alt="Health Alliance SoCal"
               className="h-12 md:h-14 w-auto opacity-95 group-hover:opacity-100 transition-opacity"
+              width={186}
+              height={56}
+              loading="lazy"
             />
           </Link>
           <p className="text-brand-accent/70 text-sm leading-relaxed max-w-xs">

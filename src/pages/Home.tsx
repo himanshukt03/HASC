@@ -32,7 +32,7 @@ const services = [
     title: 'Families',
     description: 'Resources and counseling for families navigating long-term behavioral health care.',
     icon: Stethoscope,
-    image: '/images/family.jpg',
+    image: '/images/family.webp',
   },
 ];
 
@@ -171,7 +171,7 @@ export default function Home() {
 
               <div className="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-5">
                 {['Board-Certified Clinicians', 'HIPAA Compliant', 'CMS-Aligned Care'].map((label) => (
-                  <div key={label} className="flex items-center gap-1.5 text-xs text-gray-400 font-medium">
+                  <div key={label} className="flex items-center gap-1.5 text-xs text-gray-500 font-medium">
                     <CheckCircle2 size={13} className="text-brand-primary-text" />
                     {label}
                   </div>
@@ -192,6 +192,11 @@ export default function Home() {
                   alt="Compassionate caregiver with elderly resident"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  width={1200}
+                  height={750}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </div>
             </motion.div>
@@ -224,10 +229,14 @@ export default function Home() {
             >
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="/images/family_healthcare.jpg"
+                  src="/images/family_healthcare.webp"
                   alt="Collaborative behavioral health care"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </motion.div>
@@ -352,6 +361,10 @@ export default function Home() {
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
+                    width={800}
+                    height={533}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-5">
@@ -387,7 +400,7 @@ export default function Home() {
               {
                 title: 'Reduced Hospitalizations',
                 description: 'Proactive psychiatric management helps keep residents stable and avoids costly ER transfers.',
-                image: '/images/Reduced Hospitalizations.jpg',
+                image: '/images/Reduced Hospitalizations.webp',
               },
               {
                 title: 'Support for Difficult Cases',
@@ -397,7 +410,7 @@ export default function Home() {
               {
                 title: 'Regulatory Documentation',
                 description: 'Audit-ready records and CMS-aligned care plans that protect facilities during surveys.',
-                image: '/images/Regulatory Documentation.jpg',
+                image: '/images/Regulatory Documentation.webp',
               },
               {
                 title: 'Reliable Coverage',
@@ -419,6 +432,10 @@ export default function Home() {
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
+                    width={800}
+                    height={533}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-4 flex flex-col flex-1">
@@ -488,6 +505,10 @@ export default function Home() {
                   alt="Clinical psychiatry consultation"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  width={900}
+                  height={1125}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* floating badge */}
@@ -497,7 +518,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-semibold text-brand-primary-text text-sm">CMS-Aligned</p>
-                  <p className="text-gray-400 text-xs">Fully regulatory-compliant</p>
+                  <p className="text-gray-500 text-xs">Fully regulatory-compliant</p>
                 </div>
               </div>
             </motion.div>
@@ -551,10 +572,14 @@ export default function Home() {
             >
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-brand-border/50">
                 <img
-                  src="/images/family_confidence.jpg"
+                  src="/images/family_confidence.webp"
                   alt="Positive resident outcomes"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* badge */}
@@ -564,7 +589,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-semibold text-brand-primary-text text-sm">Proven Results</p>
-                  <p className="text-gray-400 text-xs">Measurable clinical impact</p>
+                  <p className="text-gray-500 text-xs">Measurable clinical impact</p>
                 </div>
               </div>
             </motion.div>
@@ -623,6 +648,10 @@ export default function Home() {
                     alt={doctor.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
+                    width={240}
+                    height={300}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5 bg-gradient-to-t from-black/50 to-transparent">
                     <p className="text-white text-xs leading-relaxed italic drop-shadow-md">"{doctor.bio}"</p>
@@ -630,7 +659,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-serif font-bold text-brand-primary-text text-lg mb-0.5">{doctor.name}</h3>
                 <p className="text-brand-secondary font-semibold text-xs uppercase tracking-widest">{doctor.role}</p>
-                <p className="text-gray-400 text-[0.7rem] leading-tight mt-1">{doctor.credentials}</p>
+                <p className="text-gray-500 text-[0.7rem] leading-tight mt-1">{doctor.credentials}</p>
               </motion.div>
             ))}
           </div>

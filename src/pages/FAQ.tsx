@@ -93,7 +93,7 @@ export default function FAQ() {
 
             {/* Search Bar */}
             <div className="relative max-w-xl">
-              <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
               <input
                 type="text"
                 placeholder="Search for questions..."
@@ -113,7 +113,7 @@ export default function FAQ() {
             {/* Sidebar Categories */}
             <div className="lg:w-1/4">
               <div className="sticky top-32 space-y-2">
-                <h4 className="text-xs uppercase tracking-widest font-bold text-gray-400 mb-6 px-4">Categories</h4>
+                <h4 className="text-xs uppercase tracking-widest font-bold text-gray-500 mb-6 px-4">Categories</h4>
                 {faqCategories.map((cat) => (
                   <button
                     key={cat.id}
