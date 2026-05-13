@@ -342,7 +342,7 @@ const legalResources: LegalResource[] = [
 
 // ─── Staff Card ───────────────────────────────────────────────────────────────
 
-function StaffCard({ resource }: { resource: StaffResource }) {
+function StaffCard({ resource }: { resource: StaffResource; key?: string | number }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -418,7 +418,7 @@ function StaffCard({ resource }: { resource: StaffResource }) {
 
 // ─── Family Card ──────────────────────────────────────────────────────────────
 
-function FamilyCard({ resource }: { resource: FamilyResource }) {
+function FamilyCard({ resource }: { resource: FamilyResource; key?: string | number }) {
   return (
     <div className="bg-white border-2 border-brand-primary/40 rounded-xl p-6 hover:shadow-md transition-shadow duration-300 flex flex-col">
       <h3 className="text-base font-semibold text-brand-ink leading-snug mb-1">
