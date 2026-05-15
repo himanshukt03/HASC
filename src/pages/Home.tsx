@@ -15,24 +15,28 @@ const services = [
     description: 'Specialized psychiatric care for medically complex adults in SNF settings.',
     icon: Building2,
     image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800',
+    srcSet: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800 800w',
   },
   {
     title: 'Assisted Living Communities',
     description: 'Behavioral health support tailored for assisted living residents and staff.',
     icon: Heart,
     image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800',
+    srcSet: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800 800w',
   },
   {
     title: 'Memory Care Units',
     description: 'Expert care for residents with dementia and related cognitive impairments.',
     icon: Users,
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800',
+    srcSet: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800 800w',
   },
   {
     title: 'Families',
     description: 'Resources and counseling for families navigating long-term behavioral health care.',
     icon: Stethoscope,
     image: '/images/family.webp',
+    srcSet: undefined,
   },
 ];
 
@@ -141,7 +145,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65 }}
+              transition={{ duration: 0.35 }}
               className="order-2 lg:order-1"
             >
               <h1 className="font-serif font-extrabold text-[1.7rem] sm:text-[2rem] lg:text-[2.4rem] text-brand-ink leading-[1.18] tracking-tight mb-4">
@@ -183,12 +187,14 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.75, delay: 0.15 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
               className="order-1 lg:order-2 relative w-11/12 mx-auto lg:w-full lg:h-[min(65vh,500px)]"
             >
               <div className="relative w-full aspect-[16/10] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-xl max-h-[250px] lg:max-h-none mx-auto lg:mx-0">
                 <img
                   src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1200"
+                  srcSet="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=640 640w, https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=960 960w, https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1200 1200w"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
                   alt="Compassionate caregiver with elderly resident"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -358,6 +364,8 @@ export default function Home() {
                 <div className="aspect-[3/2] overflow-hidden">
                   <img
                     src={service.image}
+                    srcSet={service.srcSet}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
@@ -401,21 +409,25 @@ export default function Home() {
                 title: 'Reduced Hospitalizations',
                 description: 'Proactive psychiatric management helps keep residents stable and avoids costly ER transfers.',
                 image: '/images/Reduced Hospitalizations.webp',
+                srcSet: undefined,
               },
               {
                 title: 'Support for Difficult Cases',
                 description: 'Expert consultation on complex behavioral presentations that challenge facility staff.',
                 image: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=800',
+                srcSet: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=800 800w',
               },
               {
                 title: 'Regulatory Documentation',
                 description: 'Audit-ready records and CMS-aligned care plans that protect facilities during surveys.',
                 image: '/images/Regulatory Documentation.webp',
+                srcSet: undefined,
               },
               {
                 title: 'Reliable Coverage',
                 description: 'Consistent psychiatric presence your residents and staff can count on week after week.',
                 image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800',
+                srcSet: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800 800w',
               },
             ].map((item, index) => (
               <motion.div
@@ -429,6 +441,8 @@ export default function Home() {
                 <div className="aspect-[3/2] overflow-hidden rounded-xl">
                   <img
                     src={item.image}
+                    srcSet={item.srcSet}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
