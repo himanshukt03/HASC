@@ -1,18 +1,75 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Phone, MapPin, Building2, Send, CheckCircle2, ShieldCheck, Award, Printer } from 'lucide-react';
+import { toast } from 'sonner';
 import { cn } from '../lib/utils';
 import SEO from '../components/SEO';
 
+const WEB3FORMS_ACCESS_KEY = 'e7e66c3d-2b75-4c14-90d3-c1fc7d3ddb1b';
+
 export default function Contact() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [formData, setFormData] = useState({
+    name: '',
+    job_title: '',
+    email: '',
+    phone: '',
+    facility_name: '',
+    facility_type: 'Skilled Nursing (SNF)',
+    message: '',
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('submitting');
-    setTimeout(() => {
-      setFormState('success');
-    }, 1500);
+
+    try {
+      const submitData = new FormData();
+      submitData.append('access_key', WEB3FORMS_ACCESS_KEY);
+      submitData.append('name', formData.name);
+      submitData.append('email', formData.email);
+      submitData.append('phone', formData.phone);
+      submitData.append('job_title', formData.job_title);
+      submitData.append('facility_name', formData.facility_name);
+      submitData.append('facility_type', formData.facility_type);
+      submitData.append('message', formData.message);
+      submitData.append('from_name', 'Health Alliance SoCal Contact Form');
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: submitData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormState('success');
+        setFormData({
+          name: '',
+          job_title: '',
+          email: '',
+          phone: '',
+          facility_name: '',
+          facility_type: 'Skilled Nursing (SNF)',
+          message: '',
+        });
+        toast.success('Partnership request submitted successfully!', {
+          description: 'Our clinical team will contact you within 24 business hours.',
+        });
+      } else {
+        throw new Error(data.message || 'Form submission failed');
+      }
+    } catch (error) {
+      setFormState('idle');
+      toast.error('Failed to submit form', {
+        description: error instanceof Error ? error.message : 'Please try again or contact us directly.',
+      });
+    }
   };
 
   return (
@@ -162,7 +219,10 @@ export default function Contact() {
                         <input
                           required
                           type="text"
+                          name="name"
                           placeholder="John Doe"
+                          value={formData.name}
+                          onChange={handleChange}
                           className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
@@ -171,7 +231,10 @@ export default function Contact() {
                         <input
                           required
                           type="text"
+                          name="job_title"
                           placeholder="Administrator"
+                          value={formData.job_title}
+                          onChange={handleChange}
                           className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
@@ -183,7 +246,10 @@ export default function Contact() {
                         <input
                           required
                           type="email"
+                          name="email"
                           placeholder="john@facility.com"
+                          value={formData.email}
+                          onChange={handleChange}
                           className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
@@ -192,7 +258,10 @@ export default function Contact() {
                         <input
                           required
                           type="tel"
+                          name="phone"
                           placeholder="(555) 000-0000"
+                          value={formData.phone}
+                          onChange={handleChange}
                           className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
@@ -203,17 +272,26 @@ export default function Contact() {
                       <input
                         required
                         type="text"
+                        name="facility_name"
                         placeholder="Health Care Center of So Cal"
+                        value={formData.facility_name}
+                        onChange={handleChange}
                         className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
                       />
                     </div>
 
                     <div className="flex flex-col gap-2">
                       <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Facility Type</label>
-                      <select className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all appearance-none">
+                      <select
+                        name="facility_type"
+                        value={formData.facility_type}
+                        onChange={handleChange}
+                        className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all appearance-none"
+                      >
                         <option>Skilled Nursing (SNF)</option>
                         <option>Assisted Living (ALF)</option>
                         <option>Memory Care</option>
+                        <option>Board & Care</option>
                         <option>Other</option>
                       </select>
                     </div>
@@ -221,8 +299,11 @@ export default function Contact() {
                     <div className="flex flex-col gap-2">
                       <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-4">Additional Information</label>
                       <textarea
+                        name="message"
                         rows={4}
                         placeholder="Tell us about your facility's specific needs..."
+                        value={formData.message}
+                        onChange={handleChange}
                         className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all resize-none"
                       />
                     </div>

@@ -188,7 +188,9 @@ export default function Home() {
             >
               <div className="relative w-full aspect-[16/10] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-xl max-h-[250px] lg:max-h-none mx-auto lg:mx-0">
                 <img
-                  src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1200"
+                  srcSet="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=600 600w, https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1200 1200w"
+                  sizes="(max-width: 1024px) 92vw, (max-width: 1536px) 80vw, 60vw"
+                  src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=600"
                   alt="Compassionate caregiver with elderly resident"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion, AnimatePresence } from 'motion/react';
@@ -17,6 +18,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <Toaster richColors position="top-right" />
       <Navbar />
       <main className="flex-grow">
         <AnimatePresence mode="wait">

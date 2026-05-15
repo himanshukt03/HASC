@@ -319,9 +319,9 @@ export default function Navbar() {
                       <AnimatePresence>
                         {mobileServicesOpen && (
                           <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
+                            initial={{ maxHeight: 0, opacity: 0 }}
+                            animate={{ maxHeight: 500, opacity: 1 }}
+                            exit={{ maxHeight: 0, opacity: 0 }}
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden"
                           >
@@ -373,9 +373,9 @@ export default function Navbar() {
                       <AnimatePresence>
                         {mobileLocationsOpen && (
                           <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
+                            initial={{ maxHeight: 0, opacity: 0 }}
+                            animate={{ maxHeight: 500, opacity: 1 }}
+                            exit={{ maxHeight: 0, opacity: 0 }}
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden"
                           >
