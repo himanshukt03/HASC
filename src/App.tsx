@@ -22,6 +22,9 @@ const Standards = lazy(() => import('./pages/Standards'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
 const HIPAA = lazy(() => import('./pages/HIPAA'));
+const ServicePage = lazy(() => import('./pages/services/ServicePage'));
+const Locations = lazy(() => import('./pages/Locations'));
+const LocationPage = lazy(() => import('./pages/locations/LocationPage'));
 
 // Minimal loading fallback that doesn't cause layout shift
 function PageLoader() {
@@ -48,6 +51,9 @@ function AnimatedRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServicePage />} />
+            <Route path="/locations" element={<Locations />} />
+            <Route path="/locations/:county" element={<LocationPage />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/portal" element={<Portal />} />

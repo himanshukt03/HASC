@@ -1,58 +1,16 @@
 import { motion } from 'motion/react';
-import { Stethoscope, Pill, ClipboardCheck, Users, GraduationCap, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { cn } from '../lib/utils';
 import SEO from '../components/SEO';
+import { allServices } from './services/serviceData';
 
-const services = [
-  {
-    title: 'Psychiatric Evaluations',
-    description: 'Comprehensive initial assessments and ongoing psychiatric evaluations for residents in long-term care settings.',
-    icon: Stethoscope,
-    details: [
-      'Diagnostic clarification',
-      'Cognitive assessments',
-      'Behavioral health screenings',
-      'Risk assessments',
-    ],
-    image: '/images/Psychiatric Evaluations.webp',
-  },
-  {
-    title: 'Medication Management',
-    description: 'Expert oversight of psychotropic medications, focusing on efficacy, safety, and gradual dose reduction (GDR).',
-    icon: Pill,
-    details: [
-      'Psychotropic medication monitoring',
-      'Side effect management',
-      'Drug interaction screening',
-      'GDR protocol implementation',
-    ],
-    image: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=800',
-  },
-  {
-    title: 'CMS Compliance Support',
-    description: 'Specialized support to ensure your facility meets and exceeds CMS behavioral health regulations.',
-    icon: ClipboardCheck,
-    details: [
-      'F-Tag 758 compliance support',
-      'Survey preparation',
-      'Quality measure improvement',
-      'Documentation audits',
-    ],
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800',
-  },
-  {
-    title: 'Staff Training & Education',
-    description: 'Empowering your clinical and non-clinical staff with the knowledge to manage behavioral health effectively.',
-    icon: GraduationCap,
-    details: [
-      'Dementia care training',
-      'De-escalation techniques',
-      'Medication administration safety',
-      'Behavioral intervention plans',
-    ],
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800',
-  },
+const highlights = [
+  'Board-certified psychiatric clinicians',
+  'CMS-aligned documentation & compliance',
+  'Seamless care team integration',
+  'Ongoing staff education & support',
+  'Family communication & guidance',
+  'Responsive consultation & coverage',
 ];
 
 export default function Services() {
@@ -60,12 +18,12 @@ export default function Services() {
     <div className="flex flex-col">
       <SEO
         title="Psychiatric Services"
-        description="Comprehensive psychiatric evaluations, medication management, CMS compliance support, and staff training for long-term care facilities."
+        description="Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes across Southern California to deliver integrated behavioral health services."
+        keywords="psychiatric services long-term care, behavioral health SNF, assisted living psychiatry, memory care behavioral health, CMS compliance behavioral health, Southern California psychiatry"
       />
-      {/* Hero Section */}
+
+      {/* ── HERO ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        </div>
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,145 +32,159 @@ export default function Services() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-brand-border text-brand-primary-text text-xs font-semibold uppercase tracking-widest mb-6">
               <ShieldCheck size={14} />
-              <span>Clinical Excellence</span>
+              <span>Behavioral Health Partnership</span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif font-semibold text-brand-ink leading-[1.2] mb-5">
-              Elevating Behavioral Healthcare Standards
+            <h1 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif font-bold text-brand-ink leading-[1.2] mb-5">
+              Integrated Psychiatric Services Across Every Level of Care
             </h1>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl">
-              Our comprehensive suite of psychiatric services is designed to integrate seamlessly into your facility's workflow, improving resident outcomes and ensuring regulatory compliance.
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mb-8">
+              Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes to deliver seamless, evidence-based behavioral health care across Southern California.
             </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-brand-primary text-brand-primary-content px-6 py-3 rounded-xl font-semibold text-sm hover:bg-brand-secondary transition-colors shadow-md group"
+              >
+                Request a Partnership Proposal
+                <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center bg-white border border-brand-primary/15 text-brand-primary-text px-6 py-3 rounded-xl font-semibold text-sm hover:bg-brand-accent transition-colors"
+              >
+                Learn About Our Approach
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* ── SERVICE DIRECTORY ── */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="space-y-20">
-            {services.map((service, index) => (
+          <div className="max-w-2xl mb-12">
+            <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-3">Our Services</p>
+            <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink leading-snug">
+              Comprehensive Behavioral Health Services
+            </h2>
+            <p className="text-gray-500 text-[0.95rem] leading-relaxed mt-3">
+              Each service below represents a dedicated partnership model tailored to the unique needs of that care setting or clinical challenge.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {allServices.map((service, i) => (
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 40 }}
+                key={service.slug}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={cn(
-                  "flex flex-col lg:flex-row gap-10 lg:gap-14 items-center",
-                  index % 2 === 1 && "lg:flex-row-reverse"
-                )}
+                transition={{ delay: i * 0.06 }}
               >
-                <div className="flex-1">
-                  <div className="w-12 h-12 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text mb-6">
-                    <service.icon size={24} />
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-5">{service.title}</h2>
-                  <p className="text-gray-600 leading-relaxed mb-7">
-                    {service.description}
-                  </p>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-                    {service.details.map((detail) => (
-                      <li key={detail} className="flex items-start gap-3 bg-brand-accent/20 border border-brand-border/50 rounded-xl p-4">
-                        <CheckCircle2 size={18} className="text-brand-secondary shrink-0 mt-0.5" />
-                        <span className="text-brand-primary-text text-[0.95rem] leading-snug">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 bg-brand-primary text-brand-primary-content px-6 py-3 rounded-full font-semibold text-sm hover:bg-brand-secondary transition-all shadow-md hover:shadow-lg group"
-                  >
-                    Inquire About This Service
-                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-                <div className="flex-1 w-full mx-auto w-11/12 md:w-10/12 lg:w-full">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative group border border-brand-border/50">
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="group flex flex-col h-full bg-white rounded-2xl border border-brand-border hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden"
+                >
+                  <div className="aspect-[16/9] overflow-hidden">
                     <img
-                       src={service.image}
-                       alt={service.title}
-                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                       referrerPolicy="no-referrer"
-                       width={800}
-                       height={600}
-                       loading="lazy"
-                       decoding="async"
-                     />
-                    {/* overlay removed */}
+                      src={service.heroImage}
+                      alt={service.navLabel}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                      width={800}
+                      height={450}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
-                </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <div className="w-9 h-9 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shadow-sm mb-3 group-hover:bg-brand-primary group-hover:text-brand-primary-content transition-colors shrink-0">
+                      <service.icon size={17} />
+                    </div>
+                    <h3 className="font-serif font-semibold text-brand-ink text-[1rem] mb-2 leading-snug flex-1">
+                      {service.navLabel}
+                    </h3>
+                    <div className="inline-flex items-center gap-1 text-brand-primary-text text-xs font-semibold mt-auto group-hover:gap-2 transition-all pt-2">
+                      Learn more <ArrowRight size={11} />
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Regulatory Compliance Section */}
-      <section className="section-padding bg-brand-paper">
+      {/* ── HIGHLIGHTS ── */}
+      <section style={{ backgroundColor: '#faf9f7' }} className="section-padding">
         <div className="container-custom">
-          <div className="bg-white rounded-2xl p-8 md:p-14 shadow-sm relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-6">Regulatory Compliance &amp; Survey Readiness</h2>
-                <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                  Navigating the complex landscape of CMS behavioral health regulations can be challenging. Our clinical leadership team provides the expertise needed to ensure your facility is always survey-ready.
-                </p>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0">
-                      <ShieldCheck size={24} />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">F-Tag 758 Expertise</h4>
-                      <p className="text-gray-500 text-sm">We specialize in psychotropic medication oversight and gradual dose reduction (GDR) compliance.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0">
-                      <ClipboardCheck size={24} />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Quality Measure Improvement</h4>
-                      <p className="text-gray-500 text-sm">Our interventions are designed to positively impact your facility's Five-Star Quality Rating.</p>
-                    </div>
-                  </div>
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-3">Why Partner With Us</p>
+              <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink mb-6 leading-snug">
+                What Every Partnership Includes
+              </h2>
+              <p className="text-gray-500 text-[0.95rem] leading-relaxed mb-8">
+                Regardless of the service, every Health Alliance SoCal partnership is built on the same foundation: clinical excellence, regulatory integrity, and a genuine commitment to resident well-being.
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {highlights.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-600 text-[0.9rem]">
+                    <CheckCircle2 size={16} className="text-brand-primary-text shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="relative w-11/12 md:w-10/12 lg:w-full mx-auto"
+            >
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=900"
+                  alt="Collaborative psychiatric care partnership"
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                  width={900}
+                  height={675}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="absolute -bottom-5 -right-5 bg-white rounded-xl px-5 py-4 shadow-xl border border-gray-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-brand-accent flex items-center justify-center text-brand-primary-text">
+                  <ShieldCheck size={20} />
+                </div>
+                <div>
+                  <p className="font-semibold text-brand-primary-text text-sm">CMS-Aligned</p>
+                  <p className="text-gray-500 text-xs">Fully regulatory-compliant</p>
                 </div>
               </div>
-              <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                     src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"
-                     alt="CMS regulatory compliance documentation and audit support"
-                     className="w-full h-full object-cover"
-                     referrerPolicy="no-referrer"
-                     width={1200}
-                     height={1200}
-                     loading="lazy"
-                     decoding="async"
-                   />
-                </div>
-                <div className="absolute -bottom-6 -left-6 bg-brand-primary p-6 rounded-2xl text-brand-primary-content shadow-xl max-w-xs">
-                  <p className="text-sm italic font-medium leading-relaxed">
-                    "Their expertise in CMS compliance has been a game-changer for our facility's survey readiness."
-                  </p>
-                  <p className="mt-4 text-xs uppercase tracking-widest font-bold text-brand-accent">
-                    — Facility Administrator
-                  </p>
-                </div>
-              </div>
-            </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* ── CTA ── */}
       <section className="section-padding bg-[#faf9f7] border-t border-brand-border/60 text-center">
         <div className="container-custom max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-brand-ink mb-5">
-            Comprehensive Care, Simplified.
+            Ready to Build a Behavioral Health Partnership?
           </h2>
-          <p className="text-gray-500 mb-10 leading-relaxed">
-            Let us handle the complexities of behavioral healthcare so you can focus on what matters most: your residents.
+          <p className="text-gray-500 mb-10 leading-relaxed max-w-lg mx-auto">
+            Let's talk about how Health Alliance SoCal can integrate seamlessly into your facility and support your residents.
           </p>
           <Link
             to="/contact"
