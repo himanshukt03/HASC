@@ -41,9 +41,10 @@ const team = [
 export default function About() {
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="About Us" 
+      <SEO
+        title="About Us"
         description="Learn about Health Alliance SoCal's mission to elevate behavioral healthcare in long-term care facilities through clinical excellence and compassionate service."
+        keywords="Health Alliance SoCal, HASC, behavioral health provider, psychiatric services long-term care, clinical excellence healthcare, SNF psychiatry Southern California"
       />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">

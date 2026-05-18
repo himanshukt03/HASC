@@ -50,9 +50,10 @@ const benefits = [
 export default function Careers() {
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="Careers" 
+      <SEO
+        title="Careers"
         description="Join Health Alliance SoCal and build a career with purpose. Explore open psychiatric and clinical positions in Southern California."
+        keywords="psychiatric careers, behavioral health jobs, nursing positions, HASC careers, long-term care healthcare jobs, Southern California medical positions"
       />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">

@@ -122,10 +122,10 @@ const doctors = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="Home" 
+      <SEO
+        title="Home"
         description="Evidence-based mental health care for medically complex adults across Southern California. Expert psychiatric services for skilled nursing and memory care communities."
-        keywords="psychiatric care, behavioral health, long-term care psychiatry, skilled nursing facility psychiatry, memory care psychiatry, Southern California psychiatrists"
+        keywords="psychiatric care, behavioral health, long-term care psychiatry, skilled nursing facility psychiatry, memory care psychiatry, Southern California psychiatrists, HASC, Health Alliance SoCal"
       />
       {/* ── HERO ── */}
       <section className="relative flex items-center min-h-[100dvh] pt-32 lg:pt-24 pb-10 overflow-hidden bg-brand-accent/30 lg:h-screen">

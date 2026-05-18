@@ -452,9 +452,10 @@ export default function Resources() {
 
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="Resource Library" 
+      <SEO
+        title="Resource Library"
         description="Curated, evidence-based resources to help care teams and families better understand psychiatric care and medication safety."
+        keywords="psychiatric care resources, behavioral health education, medication safety, care team training, HASC resources, long-term care support materials"
       />
       {/* Hero */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">

@@ -64,9 +64,10 @@ export default function FAQ() {
 
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="FAQ" 
+      <SEO
+        title="FAQ"
         description="Find answers to common questions about our psychiatric services, facility partnerships, and patient care standards."
+        keywords="psychiatric services FAQ, behavioral health questions, HASC support, long-term care psychiatry FAQs, SNF partnership questions"
       />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">

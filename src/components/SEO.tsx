@@ -6,9 +6,11 @@ interface SEOProps {
   description: string;
   keywords?: string;
   ogImage?: string;
+  ogImageAlt?: string;
+  schema?: string;
 }
 
-export default function SEO({ title, description, keywords, ogImage }: SEOProps) {
+export default function SEO({ title, description, keywords, ogImage, ogImageAlt, schema }: SEOProps) {
   const location = useLocation();
 
   useEffect(() => {
@@ -72,6 +74,49 @@ export default function SEO({ title, description, keywords, ogImage }: SEOProps)
       meta.setAttribute('content', imageUrl);
       document.head.appendChild(meta);
     }
+
+    // Open Graph Image Alt Text
+    if (ogImageAlt) {
+      const ogImageAltTag = document.querySelector('meta[property="og:image:alt"]');
+      if (ogImageAltTag) ogImageAltTag.setAttribute('content', ogImageAlt);
+      else {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:image:alt');
+        meta.setAttribute('content', ogImageAlt);
+        document.head.appendChild(meta);
+      }
+    }
+
+    // Open Graph URL
+    const canonicalUrl = `https://www.healthalliancesocal.com${location.pathname === '/' ? '' : location.pathname}`;
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+    else {
+      const meta = document.createElement('meta');
+      meta.setAttribute('property', 'og:url');
+      meta.setAttribute('content', canonicalUrl);
+      document.head.appendChild(meta);
+    }
+
+    // Open Graph Type
+    const ogType = document.querySelector('meta[property="og:type"]');
+    if (ogType) ogType.setAttribute('content', 'website');
+    else {
+      const meta = document.createElement('meta');
+      meta.setAttribute('property', 'og:type');
+      meta.setAttribute('content', 'website');
+      document.head.appendChild(meta);
+    }
+
+    // Open Graph Locale
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', 'en_US');
+    else {
+      const meta = document.createElement('meta');
+      meta.setAttribute('property', 'og:locale');
+      meta.setAttribute('content', 'en_US');
+      document.head.appendChild(meta);
+    }
     
     // Twitter Card Tags
     const twitterCard = document.querySelector('meta[name="twitter:card"]');
@@ -118,7 +163,21 @@ export default function SEO({ title, description, keywords, ogImage }: SEOProps)
       canonical.setAttribute('href', url);
       document.head.appendChild(canonical);
     }
-  }, [title, description, keywords, location.pathname]);
+
+    // Update JSON-LD Schema if provided
+    if (schema) {
+      let schemaTag = document.querySelector('script[id="page-schema-ld"]');
+      if (schemaTag) {
+        schemaTag.textContent = schema;
+      } else {
+        schemaTag = document.createElement('script');
+        schemaTag.setAttribute('id', 'page-schema-ld');
+        schemaTag.setAttribute('type', 'application/ld+json');
+        schemaTag.textContent = schema;
+        document.head.appendChild(schemaTag);
+      }
+    }
+  }, [title, description, keywords, ogImage, ogImageAlt, schema, location.pathname]);
 
   return null;
 }

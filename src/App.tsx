@@ -5,9 +5,16 @@
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, ReactNode } from 'react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import {
+  GenericPageSkeleton,
+  ServicesIndexSkeleton,
+  LocationsIndexSkeleton,
+  ServiceDetailSkeleton,
+  LocationDetailSkeleton,
+} from './components/skeletons/PageSkeletons';
 
 // Lazy-loaded pages — only loaded when the user navigates to them.
 // This reduces the initial JS bundle size by ~40%, improving mobile performance (TBT & FCP).
@@ -26,13 +33,9 @@ const ServicePage = lazy(() => import('./pages/services/ServicePage'));
 const Locations = lazy(() => import('./pages/Locations'));
 const LocationPage = lazy(() => import('./pages/locations/LocationPage'));
 
-// Minimal loading fallback that doesn't cause layout shift
-function PageLoader() {
-  return (
-    <div className="min-h-[60vh] flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-brand-primary/20 border-t-brand-primary rounded-full animate-spin" />
-    </div>
-  );
+// Route wrapper to provide skeleton fallback
+function RouteWrapper({ children, fallback }: { children: ReactNode; fallback: ReactNode }) {
+  return <Suspense fallback={fallback}>{children}</Suspense>;
 }
 
 function AnimatedRoutes() {
@@ -46,25 +49,23 @@ function AnimatedRoutes() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.18 }}
       >
-        <Suspense fallback={<PageLoader />}>
-          <Routes location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/:slug" element={<ServicePage />} />
-            <Route path="/locations" element={<Locations />} />
-            <Route path="/locations/:county" element={<LocationPage />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/portal" element={<Portal />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/standards" element={<Standards />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/hipaa" element={<HIPAA />} />
-          </Routes>
-        </Suspense>
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<RouteWrapper fallback={<GenericPageSkeleton />}><About /></RouteWrapper>} />
+          <Route path="/services" element={<RouteWrapper fallback={<ServicesIndexSkeleton />}><Services /></RouteWrapper>} />
+          <Route path="/services/:slug" element={<RouteWrapper fallback={<ServiceDetailSkeleton />}><ServicePage /></RouteWrapper>} />
+          <Route path="/locations" element={<RouteWrapper fallback={<LocationsIndexSkeleton />}><Locations /></RouteWrapper>} />
+          <Route path="/locations/:county" element={<RouteWrapper fallback={<LocationDetailSkeleton />}><LocationPage /></RouteWrapper>} />
+          <Route path="/faq" element={<RouteWrapper fallback={<GenericPageSkeleton />}><FAQ /></RouteWrapper>} />
+          <Route path="/resources" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Resources /></RouteWrapper>} />
+          <Route path="/portal" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Portal /></RouteWrapper>} />
+          <Route path="/contact" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Contact /></RouteWrapper>} />
+          <Route path="/careers" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Careers /></RouteWrapper>} />
+          <Route path="/standards" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Standards /></RouteWrapper>} />
+          <Route path="/privacy" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Privacy /></RouteWrapper>} />
+          <Route path="/terms" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Terms /></RouteWrapper>} />
+          <Route path="/hipaa" element={<RouteWrapper fallback={<GenericPageSkeleton />}><HIPAA /></RouteWrapper>} />
+        </Routes>
       </motion.div>
     </AnimatePresence>
   );

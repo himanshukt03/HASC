@@ -19,7 +19,7 @@ export default function Services() {
       <SEO
         title="Psychiatric Services"
         description="Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes across Southern California to deliver integrated behavioral health services."
-        keywords="psychiatric services long-term care, behavioral health SNF, assisted living psychiatry, memory care behavioral health, CMS compliance behavioral health, Southern California psychiatry"
+        keywords="psychiatric services long-term care, behavioral health SNF, assisted living psychiatry, memory care behavioral health, CMS compliance behavioral health, Southern California psychiatry, HASC, Health Alliance SoCal"
       />
 
       {/* ── HERO ── */}

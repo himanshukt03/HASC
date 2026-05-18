@@ -74,9 +74,10 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="Contact Us" 
+      <SEO
+        title="Contact Us"
         description="Get in touch with Health Alliance SoCal to discuss psychiatric partnerships for your skilled nursing or memory care facility."
+        keywords="contact Health Alliance SoCal, HASC partnerships, psychiatric services inquiries, behavioral health partnership request, SNF psychiatry contact"
       />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">

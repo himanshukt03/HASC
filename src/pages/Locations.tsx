@@ -46,7 +46,7 @@ export default function Locations() {
       <SEO
         title="Locations We Serve"
         description="Health Alliance SoCal provides integrated behavioral health and psychiatric care across Los Angeles, Orange, San Diego, Riverside, and Ventura counties — partnering with long-term care facilities throughout Southern California."
-        keywords="behavioral health Southern California, psychiatry Los Angeles County, behavioral health Orange County, psychiatry San Diego County, long-term care psychiatry Riverside County, Ventura County behavioral health"
+        keywords="behavioral health Southern California, psychiatry Los Angeles County, behavioral health Orange County, psychiatry San Diego County, long-term care psychiatry Riverside County, Ventura County behavioral health, HASC, Health Alliance SoCal, psychiatric services Southern California"
       />
 
       {/* ── HERO ── */}

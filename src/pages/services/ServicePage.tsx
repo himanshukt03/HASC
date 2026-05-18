@@ -12,12 +12,57 @@ export default function ServicePage() {
 
   const related = allServices.filter((s) => service.relatedSlugs.includes(s.slug));
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'MedicalBusiness',
+        '@id': `https://www.healthalliancesocal.com/services/${service.slug}/#service`,
+        name: service.title,
+        description: service.metaDescription,
+        url: `https://www.healthalliancesocal.com/services/${service.slug}`,
+        medicalSpecialty: 'Psychiatry',
+        provider: {
+          '@id': 'https://www.healthalliancesocal.com/#organization',
+        },
+        knowsAbout: ['Behavioral Health', 'Psychiatric Care', 'Geriatric Psychiatry'],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `https://www.healthalliancesocal.com/services/${service.slug}/#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.healthalliancesocal.com/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: 'https://www.healthalliancesocal.com/services',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: service.title,
+            item: `https://www.healthalliancesocal.com/services/${service.slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col">
       <SEO
         title={service.title}
         description={service.metaDescription}
-        keywords={service.keywords}
+        keywords={`${service.keywords}, HASC, Health Alliance SoCal`}
+        ogImage={service.heroImage}
+        ogImageAlt={service.title}
+        schema={JSON.stringify(serviceSchema)}
       />
 
       {/* ── HERO ── */}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, ArrowLeft, MapPin, CheckCircle2, PhoneCall, Building2, ChevronDown } from 'lucide-react';
@@ -48,24 +48,6 @@ export default function LocationPage() {
   const { county } = useParams<{ county: string }>();
   const location = getLocationBySlug(county ?? '');
 
-  useEffect(() => {
-    if (!location) return;
-
-    const scriptId = 'location-schema-ld';
-    const existing = document.getElementById(scriptId);
-    if (existing) existing.remove();
-
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(location.schema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.getElementById(scriptId)?.remove();
-    };
-  }, [location]);
-
   if (!location) return <Navigate to="/locations" replace />;
 
   const related = allLocations.filter((l) => l.slug !== location.slug).slice(0, 3);
@@ -75,7 +57,10 @@ export default function LocationPage() {
       <SEO
         title={`Behavioral Health Services in ${location.county}`}
         description={`Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, and memory care units in ${location.county} to deliver integrated behavioral health care and psychiatric support.`}
-        keywords={`behavioral health ${location.county}, psychiatry ${location.county}, skilled nursing psychiatry ${location.county}, long-term care behavioral health ${location.county}, ${location.county} psychiatric services`}
+        keywords={`behavioral health ${location.county}, HASC, psychiatry ${location.county}, skilled nursing psychiatry ${location.county}, long-term care behavioral health ${location.county}, ${location.county} psychiatric services, Health Alliance SoCal`}
+        ogImage={location.heroImage}
+        ogImageAlt={`Behavioral health services in ${location.county}`}
+        schema={JSON.stringify(location.schema)}
       />
 
       {/* ── HERO ── */}
