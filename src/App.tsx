@@ -32,6 +32,7 @@ const HIPAA = lazy(() => import('./pages/HIPAA'));
 const ServicePage = lazy(() => import('./pages/services/ServicePage'));
 const Locations = lazy(() => import('./pages/Locations'));
 const LocationPage = lazy(() => import('./pages/locations/LocationPage'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Route wrapper to provide skeleton fallback
 function RouteWrapper({ children, fallback }: { children: ReactNode; fallback: ReactNode }) {
@@ -65,6 +66,7 @@ function AnimatedRoutes() {
           <Route path="/privacy" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Privacy /></RouteWrapper>} />
           <Route path="/terms" element={<RouteWrapper fallback={<GenericPageSkeleton />}><Terms /></RouteWrapper>} />
           <Route path="/hipaa" element={<RouteWrapper fallback={<GenericPageSkeleton />}><HIPAA /></RouteWrapper>} />
+          <Route path="*" element={<RouteWrapper fallback={<GenericPageSkeleton />}><NotFound /></RouteWrapper>} />
         </Routes>
       </motion.div>
     </AnimatePresence>
