@@ -66,7 +66,7 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-serif font-semibold text-brand-ink mb-4">6. Contact Information</h2>
               <p>
-                To ask questions or comment about these Terms of Service, contact us at: DRamage@healthalliancesocal.com.
+                To ask questions or comment about these Terms of Service, contact us at: info@healthalliancesocal.com.
               </p>
             </div>
           </div>

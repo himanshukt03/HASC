@@ -120,12 +120,64 @@ const doctors = [
 /* ─────────────── Component ─────────────── */
 
 export default function Home() {
+  const homeFaqSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is Health Alliance SoCal?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Health Alliance SoCal (HASC) is a behavioral health and psychiatric care provider that partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes across Southern California.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What counties does Health Alliance SoCal serve?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Health Alliance SoCal provides services in Los Angeles County, Orange County, San Diego County, Riverside County, and Ventura County, California.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What types of facilities does Health Alliance SoCal serve?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'HASC partners with skilled nursing facilities (SNFs), assisted living communities, memory care units, and board and care homes across Southern California.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What psychiatric services does Health Alliance SoCal provide?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Services include skilled nursing facility psychiatry, psychotropic medication management, dementia behavioral management, CMS F-Tag 758 compliance support, telepsychiatry for long-term care, and assisted living psychiatry.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do I request a behavioral health partnership for my facility?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Contact Health Alliance SoCal at 310.462.3879 or submit a partnership request at healthalliancesocal.com/contact. A member of the clinical leadership team will respond within 24 business hours.',
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col">
       <SEO
         title="Home"
         description="Evidence-based mental health care for medically complex adults across Southern California. Expert psychiatric services for skilled nursing and memory care communities."
         keywords="psychiatric care, behavioral health, long-term care psychiatry, skilled nursing facility psychiatry, memory care psychiatry, Southern California psychiatrists, HASC, Health Alliance SoCal"
+        schema={JSON.stringify(homeFaqSchema)}
       />
       {/* ── HERO ── */}
       <section className="relative flex items-center min-h-[100dvh] pt-32 lg:pt-24 pb-10 overflow-hidden bg-brand-accent/30 lg:h-screen">

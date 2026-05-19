@@ -16,7 +16,7 @@ const faqs = [
     id: 1,
     category: 'general',
     question: 'What areas of Southern California do you serve?',
-    answer: 'Health Alliance SoCal provides specialized psychiatric services to facilities across Los Angeles, Orange, Riverside, and San Bernardino counties. We are continuously expanding our network to reach more communities.',
+    answer: 'Health Alliance SoCal provides specialized psychiatric services to facilities across Los Angeles, Orange, San Diego, Riverside, and Ventura counties. We are continuously expanding our network to reach more communities.',
   },
   {
     id: 2,
@@ -48,6 +48,36 @@ const faqs = [
     question: 'Are your services HIPAA compliant?',
     answer: 'Absolutely. We utilize secure, HIPAA-compliant electronic health records and communication platforms to ensure the privacy and security of all patient health information.',
   },
+  {
+    id: 7,
+    category: 'general',
+    question: 'What is behavioral health care for seniors in long-term settings?',
+    answer: 'Behavioral health care for seniors in long-term care encompasses psychiatric evaluation, diagnosis, and treatment of mental health conditions including depression, anxiety, cognitive decline, and adjustment disorders. Our approach integrates medication management with psychosocial interventions tailored to each resident\'s unique clinical needs and life circumstances.',
+  },
+  {
+    id: 8,
+    category: 'facilities',
+    question: 'How does HASC coordinate with existing facility staff and care teams?',
+    answer: 'We believe behavioral health is a team effort. Our clinicians meet regularly with nursing staff, social workers, and dietary personnel to ensure seamless care coordination. We provide training on behavioral health best practices, attend care planning meetings, and maintain open communication channels so your staff feels supported and informed.',
+  },
+  {
+    id: 9,
+    category: 'facilities',
+    question: 'What types of long-term care facilities does Health Alliance SoCal serve?',
+    answer: 'Health Alliance SoCal partners with skilled nursing facilities (SNFs), assisted living communities (ALCs), memory care units, and board and care homes across Southern California. We adapt our clinical model to fit the unique regulatory environment and resident population of each facility type.',
+  },
+  {
+    id: 10,
+    category: 'general',
+    question: 'Does Health Alliance SoCal accept Medicare or Medicaid?',
+    answer: 'Yes. Our services are covered through Medicare Part B, Medicaid, and most private insurance plans. We handle billing directly with these payers so your facility and residents face minimal administrative burden. Contact us to discuss coverage details for your specific situation.',
+  },
+  {
+    id: 11,
+    category: 'facilities',
+    question: 'How quickly can Health Alliance SoCal begin services at our facility?',
+    answer: 'Once a partnership agreement is signed, we can typically begin clinical services within 14-21 business days. This timeline includes necessary credentialing, EHR integration, and an onboarding visit to meet your care team and review current resident census for psychiatric support needs.',
+  },
 ];
 
 export default function FAQ() {
@@ -62,12 +92,30 @@ export default function FAQ() {
         faq.answer.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
+  const faqPageSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col">
       <SEO
         title="FAQ"
         description="Find answers to common questions about our psychiatric services, facility partnerships, and patient care standards."
         keywords="psychiatric services FAQ, behavioral health questions, HASC support, long-term care psychiatry FAQs, SNF partnership questions"
+        schema={JSON.stringify(faqPageSchema)}
       />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
@@ -197,7 +245,7 @@ export default function FAQ() {
                     <Phone size={18} />
                     310.462.3879
                   </a>
-                  <a href="mailto:DRamage@healthalliancesocal.com" className="bg-brand-primary text-brand-primary-content px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-brand-secondary transition-all shadow-md">
+                  <a href="mailto:info@healthalliancesocal.com" className="bg-brand-primary text-brand-primary-content px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-brand-secondary transition-all shadow-md">
                     <Mail size={18} />
                     Email Support
                   </a>

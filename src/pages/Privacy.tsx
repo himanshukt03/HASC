@@ -65,7 +65,7 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-serif font-semibold text-brand-ink mb-4">5. Contact Us</h2>
               <p>
-                If you have questions or comments about this policy, you may email us at DRamage@healthalliancesocal.com or by post to:
+                If you have questions or comments about this policy, you may email us at info@healthalliancesocal.com or by post to:
                 <br /><br />
                 Health Alliance SoCal<br />
                 501 E. Hardy St. Ste. 425<br />

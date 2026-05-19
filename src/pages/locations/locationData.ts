@@ -29,6 +29,9 @@ export interface LocationData {
   areasServed: string[];
   localHighlights: { title: string; description: string }[];
   faq: LocationFAQ[];
+  geo?: { latitude: number; longitude: number };
+  keywords?: string;
+  hasMap?: string;
   schema: object;
 }
 
@@ -47,7 +50,7 @@ const organizationSchema = {
   },
   telephone: '+13104623879',
   faxNumber: '+13103563417',
-  email: 'DRamage@healthalliancesocal.com',
+  email: 'info@healthalliancesocal.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '501 E. Hardy St. Ste. 425',
@@ -112,6 +115,9 @@ function buildLocationSchema(loc: Omit<LocationData, 'schema'>): object {
           telephone: '+13104623879',
           contactType: 'customer service',
         },
+        ...(loc.geo && { geo: { '@type': 'GeoCoordinates', latitude: loc.geo.latitude, longitude: loc.geo.longitude } }),
+        ...(loc.hasMap && { hasMap: loc.hasMap }),
+        ...(loc.keywords && { keywords: loc.keywords }),
       },
       {
         '@type': 'BreadcrumbList',
@@ -161,6 +167,9 @@ const locationDataRaw: RawLocation[] = [
     county: 'Los Angeles County',
     navLabel: 'Los Angeles County',
     badge: 'Los Angeles County',
+    geo: { latitude: 34.0522, longitude: -118.2437 },
+    hasMap: 'https://maps.google.com/?q=Los+Angeles+County,+CA',
+    keywords: 'behavioral health Los Angeles County, psychiatry Los Angeles County, SNF psychiatry Los Angeles, assisted living behavioral health Los Angeles, memory care psychiatry LA County, CMS F-Tag 758 compliance Los Angeles, geriatric psychiatry Southern California, HASC, Health Alliance SoCal',
     heroImage:
       'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -271,6 +280,9 @@ const locationDataRaw: RawLocation[] = [
     county: 'Orange County',
     navLabel: 'Orange County',
     badge: 'Orange County',
+    geo: { latitude: 33.7175, longitude: -117.8311 },
+    hasMap: 'https://maps.google.com/?q=Orange+County,+CA',
+    keywords: 'behavioral health Orange County, psychiatry Orange County, SNF psychiatry OC, assisted living behavioral health Orange County, memory care psychiatry Orange County, GDR compliance Orange County, family-centered psychiatric care, HASC, Health Alliance SoCal',
     heroImage:
       'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -379,6 +391,9 @@ const locationDataRaw: RawLocation[] = [
     county: 'San Diego County',
     navLabel: 'San Diego County',
     badge: 'San Diego County',
+    geo: { latitude: 32.7157, longitude: -117.1611 },
+    hasMap: 'https://maps.google.com/?q=San+Diego+County,+CA',
+    keywords: 'behavioral health San Diego County, psychiatry San Diego County, veteran mental health care, PTSD treatment San Diego, SNF psychiatry San Diego, coastal to inland psychiatric coverage, dementia behavioral management San Diego, HASC, Health Alliance SoCal',
     heroImage:
       'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -489,6 +504,9 @@ const locationDataRaw: RawLocation[] = [
     county: 'Riverside County',
     navLabel: 'Riverside County',
     badge: 'Riverside County',
+    geo: { latitude: 33.9806, longitude: -116.4194 },
+    hasMap: 'https://maps.google.com/?q=Riverside+County,+CA',
+    keywords: 'behavioral health Riverside County, Inland Empire psychiatry, SNF psychiatry Riverside, telepsychiatry long-term care, Coachella Valley psychiatric care, Temecula Valley memory care, HASC, Health Alliance SoCal',
     heroImage:
       'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -597,6 +615,9 @@ const locationDataRaw: RawLocation[] = [
     county: 'Ventura County',
     navLabel: 'Ventura County',
     badge: 'Ventura County',
+    geo: { latitude: 34.2805, longitude: -119.2945 },
+    hasMap: 'https://maps.google.com/?q=Ventura+County,+CA',
+    keywords: 'behavioral health Ventura County, psychiatry Thousand Oaks, Simi Valley memory care, coastal to inland psychiatric services, assisted living psychiatry Ventura, board and care mental health support, HASC, Health Alliance SoCal',
     heroImage:
       'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200',
     tagline:

@@ -57,7 +57,7 @@ export default function LocationPage() {
       <SEO
         title={`Behavioral Health Services in ${location.county}`}
         description={`Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, and memory care units in ${location.county} to deliver integrated behavioral health care and psychiatric support.`}
-        keywords={`behavioral health ${location.county}, HASC, psychiatry ${location.county}, skilled nursing psychiatry ${location.county}, long-term care behavioral health ${location.county}, ${location.county} psychiatric services, Health Alliance SoCal`}
+        keywords={location.keywords ?? `behavioral health ${location.county}, HASC, psychiatry ${location.county}, skilled nursing psychiatry ${location.county}, long-term care behavioral health ${location.county}, ${location.county} psychiatric services, Health Alliance SoCal`}
         ogImage={location.heroImage}
         ogImageAlt={`Behavioral health services in ${location.county}`}
         schema={JSON.stringify(location.schema)}

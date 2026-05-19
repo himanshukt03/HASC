@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Phone, MapPin, Building2, Send, CheckCircle2, ShieldCheck, Award, Printer } from 'lucide-react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { toast } from 'sonner';
 import { cn } from '../lib/utils';
 import SEO from '../components/SEO';
@@ -9,6 +10,8 @@ const WEB3FORMS_ACCESS_KEY = 'e7e66c3d-2b75-4c14-90d3-c1fc7d3ddb1b';
 
 export default function Contact() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [hcaptchaToken, setHcaptchaToken] = useState<string>('');
+  const hcaptchaRef = useRef<HCaptcha>(null);
   const [formData, setFormData] = useState({
     name: '',
     job_title: '',
@@ -26,6 +29,14 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!hcaptchaToken) {
+      toast.error('Please verify the captcha', {
+        description: 'You must complete the hCaptcha verification to submit the form.',
+      });
+      return;
+    }
+
     setFormState('submitting');
 
     try {
@@ -38,6 +49,7 @@ export default function Contact() {
       submitData.append('facility_name', formData.facility_name);
       submitData.append('facility_type', formData.facility_type);
       submitData.append('message', formData.message);
+      submitData.append('h-captcha-response', hcaptchaToken);
       submitData.append('from_name', 'Health Alliance SoCal Contact Form');
 
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -49,6 +61,10 @@ export default function Contact() {
 
       if (data.success) {
         setFormState('success');
+        setHcaptchaToken('');
+        if (hcaptchaRef.current) {
+          hcaptchaRef.current.resetCaptcha();
+        }
         setFormData({
           name: '',
           job_title: '',
@@ -66,10 +82,18 @@ export default function Contact() {
       }
     } catch (error) {
       setFormState('idle');
+      setHcaptchaToken('');
+      if (hcaptchaRef.current) {
+        hcaptchaRef.current.resetCaptcha();
+      }
       toast.error('Failed to submit form', {
         description: error instanceof Error ? error.message : 'Please try again or contact us directly.',
       });
     }
+  };
+
+  const handleHCaptchaChange = (token: string) => {
+    setHcaptchaToken(token);
   };
 
   return (
@@ -147,7 +171,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Email Us</h4>
-                      <p className="text-gray-500 leading-relaxed">DRamage@healthalliancesocal.com</p>
+                      <p className="text-gray-500 leading-relaxed">info@healthalliancesocal.com</p>
                     </div>
                   </div>
                 </div>
@@ -274,7 +298,7 @@ export default function Contact() {
                         required
                         type="text"
                         name="facility_name"
-                        placeholder="Health Care Center of So Cal"
+                        placeholder="health care center"
                         value={formData.facility_name}
                         onChange={handleChange}
                         className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
@@ -306,6 +330,15 @@ export default function Contact() {
                         value={formData.message}
                         onChange={handleChange}
                         className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all resize-none"
+                      />
+                    </div>
+
+                    <div className="flex justify-center py-4">
+                      <HCaptcha
+                        ref={hcaptchaRef}
+                        sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                        reCaptchaCompat={false}
+                        onVerify={handleHCaptchaChange}
                       />
                     </div>
 

@@ -71,7 +71,7 @@ export default function HIPAA() {
                 Health Alliance SoCal<br />
                 501 E. Hardy St. Ste. 425<br />
                 Inglewood, CA 90301<br />
-                DRamage@healthalliancesocal.com
+                info@healthalliancesocal.com
               </p>
             </div>
           </div>

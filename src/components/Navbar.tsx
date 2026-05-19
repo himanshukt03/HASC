@@ -77,24 +77,25 @@ export default function Navbar() {
           {navLinks.map((link) => {
             if (link.name === 'Services') {
               return (
-                <div key={link.path} className="relative">
-                  <button
-                    onMouseEnter={() => setActiveDropdown('services')}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                    onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
+                <div
+                  key={link.path}
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown('services')}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <Link
+                    to="/services"
                     className={cn(
                       'flex items-center gap-1 text-sm font-semibold transition-colors hover:text-brand-primary-text',
                       isServicesActive ? 'text-brand-primary-text' : 'text-gray-600'
                     )}
-                    aria-haspopup="true"
-                    aria-expanded={activeDropdown === 'services'}
                   >
                     Services
                     <ChevronDown
                       size={13}
                       className={cn('transition-transform duration-200', activeDropdown === 'services' && 'rotate-180')}
                     />
-                  </button>
+                  </Link>
 
                   <AnimatePresence>
                     {activeDropdown === 'services' && (
@@ -103,51 +104,49 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.98 }}
                         transition={{ duration: 0.15, ease: 'easeOut' }}
-                        onMouseEnter={() => setActiveDropdown('services')}
-                        onMouseLeave={() => setActiveDropdown(null)}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[580px] bg-white rounded-2xl shadow-2xl ring-1 ring-black/6 overflow-hidden"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[700px] bg-white rounded-2xl shadow-2xl ring-1 ring-black/6 overflow-hidden"
                       >
                         <div className="flex">
                           {/* Left panel */}
-                          <div className="w-44 shrink-0 bg-brand-primary p-6 flex flex-col justify-between">
+                          <div className="w-56 shrink-0 bg-brand-primary p-8 flex flex-col justify-between">
                             <div>
-                              <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-2">
+                              <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-3">
                                 Our Services
                               </p>
-                              <h3 className="text-white font-semibold text-sm leading-snug mb-3">
+                              <h3 className="text-white font-semibold text-base leading-snug mb-4">
                                 Behavioral health across every level of care
                               </h3>
-                              <p className="text-white/60 text-[11px] leading-relaxed">
+                              <p className="text-white/70 text-sm leading-relaxed">
                                 Eight specialized service lines — each a dedicated clinical partnership.
                               </p>
                             </div>
                             <Link
                               to="/services"
                               onClick={() => setActiveDropdown(null)}
-                              className="inline-flex items-center gap-1.5 text-xs font-bold text-white/90 hover:text-white mt-5 group"
+                              className="inline-flex items-center gap-2 text-sm font-bold text-white/90 hover:text-white mt-6 group"
                             >
                               View all
-                              <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
+                              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                           </div>
 
                           {/* Right panel — 2-col grid */}
-                          <div className="flex-1 p-4 grid grid-cols-2 gap-1 content-start">
+                          <div className="flex-1 p-6 grid grid-cols-2 gap-3 content-start">
                             {allServices.map((service) => (
                               <Link
                                 key={service.slug}
                                 to={`/services/${service.slug}`}
                                 onClick={() => setActiveDropdown(null)}
                                 className={cn(
-                                  'flex items-center gap-3 rounded-xl px-3 py-2.5 hover:bg-brand-accent/60 transition-colors group',
+                                  'flex items-center gap-3 rounded-xl px-4 py-3.5 hover:bg-brand-accent/60 transition-colors group',
                                   location.pathname === `/services/${service.slug}` &&
                                     'bg-brand-accent/40'
                                 )}
                               >
-                                <div className="w-7 h-7 rounded-lg bg-brand-accent flex items-center justify-center text-brand-primary-text shrink-0 group-hover:bg-brand-primary group-hover:text-white transition-colors">
-                                  <service.icon size={13} />
+                                <div className="w-9 h-9 rounded-lg bg-brand-accent flex items-center justify-center text-brand-primary-text shrink-0 group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                                  <service.icon size={16} />
                                 </div>
-                                <span className="text-[11.5px] font-semibold text-brand-ink leading-snug group-hover:text-brand-primary-text transition-colors">
+                                <span className="text-sm font-semibold text-brand-ink leading-snug group-hover:text-brand-primary-text transition-colors">
                                   {service.navLabel}
                                 </span>
                               </Link>
@@ -156,14 +155,14 @@ export default function Navbar() {
                         </div>
 
                         {/* Footer strip */}
-                        <div className="border-t border-gray-100 bg-gray-50/60 px-5 py-2.5 flex items-center justify-between">
-                          <p className="text-[11px] text-gray-400 font-medium">
+                        <div className="border-t border-gray-100 bg-gray-50/60 px-6 py-3 flex items-center justify-between">
+                          <p className="text-xs text-gray-400 font-medium">
                             Southern California's behavioral health partner
                           </p>
                           <Link
                             to="/contact"
                             onClick={() => setActiveDropdown(null)}
-                            className="text-[11px] font-bold text-brand-primary-text hover:underline"
+                            className="text-xs font-bold text-brand-primary-text hover:underline"
                           >
                             Contact us →
                           </Link>
@@ -177,24 +176,25 @@ export default function Navbar() {
 
             if (link.name === 'Locations') {
               return (
-                <div key={link.path} className="relative">
-                  <button
-                    onMouseEnter={() => setActiveDropdown('locations')}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                    onClick={() => setActiveDropdown(activeDropdown === 'locations' ? null : 'locations')}
+                <div
+                  key={link.path}
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown('locations')}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <Link
+                    to="/locations"
                     className={cn(
                       'flex items-center gap-1 text-sm font-semibold transition-colors hover:text-brand-primary-text',
                       isLocationsActive ? 'text-brand-primary-text' : 'text-gray-600'
                     )}
-                    aria-haspopup="true"
-                    aria-expanded={activeDropdown === 'locations'}
                   >
                     Locations
                     <ChevronDown
                       size={13}
                       className={cn('transition-transform duration-200', activeDropdown === 'locations' && 'rotate-180')}
                     />
-                  </button>
+                  </Link>
 
                   <AnimatePresence>
                     {activeDropdown === 'locations' && (
@@ -203,47 +203,48 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.98 }}
                         transition={{ duration: 0.15, ease: 'easeOut' }}
-                        onMouseEnter={() => setActiveDropdown('locations')}
-                        onMouseLeave={() => setActiveDropdown(null)}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[360px] bg-white rounded-2xl shadow-2xl ring-1 ring-black/6 overflow-hidden"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[500px] bg-white rounded-2xl shadow-2xl ring-1 ring-black/6 overflow-hidden"
                       >
                         <div className="flex">
                           {/* Left panel */}
-                          <div className="w-36 shrink-0 bg-brand-secondary p-5 flex flex-col justify-between">
+                          <div className="w-48 shrink-0 bg-brand-secondary p-8 flex flex-col justify-between">
                             <div>
-                              <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-2">
+                              <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-3">
                                 We Serve
                               </p>
-                              <h3 className="text-white font-semibold text-sm leading-snug mb-2">
+                              <h3 className="text-white font-semibold text-base leading-snug mb-4">
                                 Southern California Counties
                               </h3>
+                              <p className="text-white/70 text-sm leading-relaxed">
+                                Five strategically served counties across Southern California
+                              </p>
                             </div>
                             <Link
                               to="/locations"
                               onClick={() => setActiveDropdown(null)}
-                              className="inline-flex items-center gap-1.5 text-xs font-bold text-white/90 hover:text-white mt-4 group"
+                              className="inline-flex items-center gap-2 text-sm font-bold text-white/90 hover:text-white mt-6 group"
                             >
                               View all
-                              <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
+                              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                           </div>
 
                           {/* Right panel */}
-                          <div className="flex-1 p-3 flex flex-col gap-0.5">
+                          <div className="flex-1 p-6 flex flex-col gap-2">
                             {allLocations.map((loc) => (
                               <Link
                                 key={loc.slug}
                                 to={`/locations/${loc.slug}`}
                                 onClick={() => setActiveDropdown(null)}
                                 className={cn(
-                                  'flex items-center gap-3 rounded-xl px-3 py-2.5 hover:bg-brand-accent/60 transition-colors group',
+                                  'flex items-center gap-3 rounded-xl px-4 py-3.5 hover:bg-brand-accent/60 transition-colors group',
                                   location.pathname === `/locations/${loc.slug}` && 'bg-brand-accent/40'
                                 )}
                               >
-                                <div className="w-7 h-7 rounded-lg bg-brand-accent flex items-center justify-center text-brand-secondary shrink-0 group-hover:bg-brand-secondary group-hover:text-white transition-colors">
-                                  <MapPin size={12} />
+                                <div className="w-9 h-9 rounded-lg bg-brand-accent flex items-center justify-center text-brand-secondary shrink-0 group-hover:bg-brand-secondary group-hover:text-white transition-colors">
+                                  <MapPin size={15} />
                                 </div>
-                                <span className="text-[11.5px] font-semibold text-brand-ink leading-snug group-hover:text-brand-primary-text transition-colors">
+                                <span className="text-sm font-semibold text-brand-ink leading-snug group-hover:text-brand-primary-text transition-colors">
                                   {loc.county}
                                 </span>
                               </Link>

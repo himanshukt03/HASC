@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Printer } from 'lucide-react';
+import { allServices } from '../pages/services/serviceData';
 
 export default function Footer() {
   return (
     <footer className="bg-brand-primary text-brand-primary-content py-20">
-      <div className="container-custom grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
         {/* Brand */}
         <div className="flex flex-col gap-6">
           <Link to="/" className="flex items-center gap-2 group">
@@ -36,15 +37,29 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Service Areas */}
+        <div className="flex flex-col gap-6">
+          <h4 className="text-lg font-serif font-semibold">Service Areas</h4>
+          <ul className="flex flex-col gap-3 text-brand-accent/80 text-sm">
+            <li><Link to="/locations/los-angeles-county" className="hover:text-white transition-colors">Los Angeles County</Link></li>
+            <li><Link to="/locations/orange-county" className="hover:text-white transition-colors">Orange County</Link></li>
+            <li><Link to="/locations/san-diego-county" className="hover:text-white transition-colors">San Diego County</Link></li>
+            <li><Link to="/locations/riverside-county" className="hover:text-white transition-colors">Riverside County</Link></li>
+            <li><Link to="/locations/ventura-county" className="hover:text-white transition-colors">Ventura County</Link></li>
+          </ul>
+        </div>
+
         {/* Services */}
         <div className="flex flex-col gap-6">
           <h4 className="text-lg font-serif font-semibold">Our Services</h4>
           <ul className="flex flex-col gap-3 text-brand-accent/80 text-sm">
-            <li>Psychiatric Evaluations</li>
-            <li>Medication Management</li>
-            <li>CMS Compliance Support</li>
-            <li>Staff Training</li>
-            <li>Family Counseling</li>
+            {allServices.map((service) => (
+              <li key={service.slug}>
+                <Link to={`/services/${service.slug}`} className="hover:text-white transition-colors">
+                  {service.navLabel}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -66,7 +81,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Mail size={20} className="text-brand-accent shrink-0" />
-              <span>DRamage@healthalliancesocal.com</span>
+              <span>info@healthalliancesocal.com</span>
             </li>
           </ul>
         </div>

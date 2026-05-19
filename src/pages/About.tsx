@@ -39,12 +39,56 @@ const team = [
 ];
 
 export default function About() {
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'MedicalOrganization',
+        '@id': 'https://www.healthalliancesocal.com/#organization',
+        name: 'Health Alliance SoCal',
+        alternateName: 'HASC',
+        medicalSpecialty: 'Psychiatry',
+        knowsAbout: [
+          'Geriatric Psychiatry',
+          'Behavioral Health in Long-Term Care',
+          'CMS F-Tag 758 Compliance',
+          'Psychotropic Medication Management',
+          'Dementia Behavioral Management',
+        ],
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://www.healthalliancesocal.com/about#danielle-ramage',
+        name: 'Danielle Ramage',
+        honorificSuffix: 'DNP, PMHNP-BC',
+        jobTitle: 'Co-Founder',
+        worksFor: { '@id': 'https://www.healthalliancesocal.com/#organization' },
+        hasCredential: [
+          { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Doctor of Nursing Practice' },
+          { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Psychiatric Mental Health Nurse Practitioner, Board Certified' },
+        ],
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://www.healthalliancesocal.com/about#anil-sharma',
+        name: 'Anil Sharma',
+        honorificSuffix: 'MD',
+        jobTitle: 'Co-Founder',
+        worksFor: { '@id': 'https://www.healthalliancesocal.com/#organization' },
+        hasCredential: [
+          { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Medical Doctor' },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col">
       <SEO
         title="About Us"
         description="Learn about Health Alliance SoCal's mission to elevate behavioral healthcare in long-term care facilities through clinical excellence and compassionate service."
         keywords="Health Alliance SoCal, HASC, behavioral health provider, psychiatric services long-term care, clinical excellence healthcare, SNF psychiatry Southern California"
+        schema={JSON.stringify(aboutSchema)}
       />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
