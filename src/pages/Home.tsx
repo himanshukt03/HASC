@@ -174,8 +174,8 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Psychiatric Services Los Angeles | Behavioral Health Assisted Living | Mental Health Care"
-        description="Expert psychiatric and behavioral health services for assisted living, skilled nursing facilities, and memory care. Quality mental health care for adults with mental illness, schizophrenia, depression, and behavioral health needs across Southern California."
+        title="Health Alliance SoCal | Psychiatric & Behavioral Health Care"
+        description="Specialized psychiatric and behavioral health care for residents and families across Southern California. Clinical facility offering skilled nursing, memory care, and expert mental health services."
         keywords="psychiatric services los angeles, behavioral health assisted living, assisted living for mentally ill, assisted living mental health, psychiatric nursing home, mental health assisted living facilities, assisted living for adults with mental illness, nursing home for mentally ill, schizophrenia assisted living, mental health assisted living near me, behavioral health care los angeles county, mental health care california, psychiatric care facilities, long-term care psychiatry, dementia behavioral management, CMS F-Tag 758 compliance"
         schema={JSON.stringify(homeFaqSchema)}
       />
