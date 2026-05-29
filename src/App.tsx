@@ -6,6 +6,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import { lazy, Suspense, ReactNode } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import {
@@ -79,6 +80,7 @@ export default function App() {
       <Layout>
         <AnimatedRoutes />
       </Layout>
+      <SpeedInsights />
     </Router>
   );
 }
