@@ -169,7 +169,7 @@ const locationDataRaw: RawLocation[] = [
     badge: 'Los Angeles County',
     geo: { latitude: 34.0522, longitude: -118.2437 },
     hasMap: 'https://maps.google.com/?q=Los+Angeles+County,+CA',
-    keywords: 'behavioral health Los Angeles County, psychiatry Los Angeles County, SNF psychiatry Los Angeles, assisted living behavioral health Los Angeles, memory care psychiatry LA County, CMS F-Tag 758 compliance Los Angeles, geriatric psychiatry Southern California, HASC, Health Alliance SoCal',
+    keywords: 'psychiatric services los angeles county, behavioral health los angeles, SNF psychiatry los angeles, assisted living psychiatry los angeles county, assisted living mental health los angeles, mental health assisted living near me, assisted living for mentally ill los angeles, psychiatric nursing home los angeles, nursing home for mentally ill los angeles, behavioral health assisted living los angeles, mental health assisted living facilities los angeles, assisted living for adults with mental illness los angeles, assisted housing for mentally ill los angeles, group homes for mentally disabled adults los angeles, memory care psychiatry LA county, behavioral health care long beach, psychiatry pasadena, mental health services glendale, dementia behavioral management los angeles, CMS F-Tag 758 compliance los angeles, psychotropic medication management los angeles, HASC',
     heroImage:
       'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -282,7 +282,7 @@ const locationDataRaw: RawLocation[] = [
     badge: 'Orange County',
     geo: { latitude: 33.7175, longitude: -117.8311 },
     hasMap: 'https://maps.google.com/?q=Orange+County,+CA',
-    keywords: 'behavioral health Orange County, psychiatry Orange County, SNF psychiatry OC, assisted living behavioral health Orange County, memory care psychiatry Orange County, GDR compliance Orange County, family-centered psychiatric care, HASC, Health Alliance SoCal',
+    keywords: 'psychiatric services orange county, behavioral health orange county, assisted living mental health orange county, mental health assisted living near me orange county, assisted living for mentally ill orange county, psychiatric nursing home orange county, assisted living for adults with mental illness orange county, psychiatric assisted living orange county, SNF psychiatry orange county, assisted living psychiatry OC, memory care psychiatry orange county, psychiatry anaheim, behavioral health irvine, psychiatry huntington beach, mental health assisted living facilities orange county, GDR compliance orange county, psychotropic medication management OC, CMS F-Tag 758 compliance orange county, HASC',
     heroImage:
       'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -393,7 +393,7 @@ const locationDataRaw: RawLocation[] = [
     badge: 'San Diego County',
     geo: { latitude: 32.7157, longitude: -117.1611 },
     hasMap: 'https://maps.google.com/?q=San+Diego+County,+CA',
-    keywords: 'behavioral health San Diego County, psychiatry San Diego County, veteran mental health care, PTSD treatment San Diego, SNF psychiatry San Diego, coastal to inland psychiatric coverage, dementia behavioral management San Diego, HASC, Health Alliance SoCal',
+    keywords: 'psychiatric services san diego county, behavioral health san diego, assisted living mental health san diego, mental health assisted living near me san diego, assisted living for mentally ill san diego county, psychiatric nursing home san diego, assisted living for adults with mental illness san diego, psychiatric assisted living san diego, SNF psychiatry san diego county, assisted living psychiatry san diego, memory care psychiatry san diego, psychiatry oceanside, behavioral health escondido, veteran mental health care san diego, PTSD treatment san diego, dementia behavioral management san diego, mental health assisted living facilities san diego, coastal to inland psychiatric coverage, psychotropic medication management san diego, HASC',
     heroImage:
       'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -506,7 +506,7 @@ const locationDataRaw: RawLocation[] = [
     badge: 'Riverside County',
     geo: { latitude: 33.9806, longitude: -116.4194 },
     hasMap: 'https://maps.google.com/?q=Riverside+County,+CA',
-    keywords: 'behavioral health Riverside County, Inland Empire psychiatry, SNF psychiatry Riverside, telepsychiatry long-term care, Coachella Valley psychiatric care, Temecula Valley memory care, HASC, Health Alliance SoCal',
+    keywords: 'psychiatric services riverside county, behavioral health inland empire, assisted living mental health riverside, mental health assisted living near me riverside, assisted living for mentally ill riverside county, psychiatric nursing home riverside, assisted living for adults with mental illness riverside, psychiatric assisted living riverside, SNF psychiatry riverside, assisted living psychiatry riverside county, memory care psychiatry riverside, telepsychiatry long-term care riverside, Coachella Valley psychiatric care, Temecula Valley memory care, psychiatry palm springs, behavioral health corona, mental health assisted living facilities riverside, dementia behavioral management riverside, psychotropic medication management inland empire, HASC',
     heroImage:
       'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -617,7 +617,7 @@ const locationDataRaw: RawLocation[] = [
     badge: 'Ventura County',
     geo: { latitude: 34.2805, longitude: -119.2945 },
     hasMap: 'https://maps.google.com/?q=Ventura+County,+CA',
-    keywords: 'behavioral health Ventura County, psychiatry Thousand Oaks, Simi Valley memory care, coastal to inland psychiatric services, assisted living psychiatry Ventura, board and care mental health support, HASC, Health Alliance SoCal',
+    keywords: 'psychiatric services ventura county, behavioral health ventura, assisted living mental health ventura, mental health assisted living near me ventura, assisted living for mentally ill ventura county, psychiatric nursing home ventura, assisted living for adults with mental illness ventura, psychiatric assisted living ventura, SNF psychiatry ventura county, assisted living psychiatry ventura, memory care psychiatry ventura, psychiatry thousand oaks, behavioral health simi valley, psychiatry oxnard, mental health assisted living facilities ventura, board and care mental health ventura, coastal to inland psychiatric services ventura, psychotropic medication management ventura county, dementia behavioral management ventura, HASC',
     heroImage:
       'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200',
     tagline:

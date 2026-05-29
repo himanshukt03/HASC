@@ -112,9 +112,9 @@ export default function FAQ() {
   return (
     <div className="flex flex-col">
       <SEO
-        title="FAQ"
-        description="Find answers to common questions about our psychiatric services, facility partnerships, and patient care standards."
-        keywords="psychiatric services FAQ, behavioral health questions, HASC support, long-term care psychiatry FAQs, SNF partnership questions"
+        title="Psychiatric Services FAQ | Behavioral Health Questions | Los Angeles Long-Term Care"
+        description="Common questions about psychiatric services, behavioral health partnerships, facility partnerships, F-Tag 758 compliance, psychotropic medication management, and dementia behavioral health. Get answers from HASC."
+        keywords="psychiatric services FAQ, behavioral health questions, SNF psychiatry FAQ, long-term care psychiatry questions, F-Tag 758 compliance FAQ, psychotropic medication management questions, dementia behavioral health support, facility partnership process, HASC support, behavioral health provider questions"
         schema={JSON.stringify(faqPageSchema)}
       />
       {/* Hero Section */}

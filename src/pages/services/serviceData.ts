@@ -41,7 +41,7 @@ export const allServices: ServiceData[] = [
     metaDescription:
       'Health Alliance SoCal partners with skilled nursing facilities across Southern California to deliver integrated behavioral health care, CMS-compliant psychotropic management, and resident stabilization support.',
     keywords:
-      'skilled nursing facility psychiatry, SNF behavioral health, psychiatric services skilled nursing, CMS behavioral health SNF, psychotropic management skilled nursing',
+      'skilled nursing facility psychiatry, SNF psychiatry los angeles, psychiatric services skilled nursing, behavioral health SNF los angeles county, psychotropic management skilled nursing, CMS behavioral health SNF, geriatric psychiatry services, long-term care psychiatry, nursing home psychiatric care',
     heroImage:
       'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -131,18 +131,19 @@ export const allServices: ServiceData[] = [
     navLabel: 'Assisted Living Communities',
     badge: 'Assisted Living',
     icon: Heart,
-    title: 'Behavioral Health Support for Assisted Living Communities',
+    title: 'Psychiatric & Behavioral Health Services for Assisted Living | Mental Health Care',
     metaDescription:
-      'Health Alliance SoCal partners with assisted living communities to provide integrated psychiatric support that promotes resident independence, emotional well-being, and staff confidence across Southern California.',
+      'Behavioral health and psychiatric care for assisted living facilities. Expert mental health support for adults with mental illness, schizophrenia, depression, and behavioral health conditions. Helping families find quality care in Los Angeles, Orange County, San Diego, Riverside & Ventura.',
     keywords:
-      'assisted living psychiatry, behavioral health assisted living, psychiatric care assisted living, mental health assisted living Southern California, ALF behavioral health',
+      'behavioral health assisted living, psychiatric assisted living, assisted living mental health, assisted living for mentally ill, mental health assisted living facilities, assisted living for adults with mental illness, assisted living for schizophrenia, psychiatric nursing home, nursing home for mentally ill, assisted housing for mentally ill, group homes for mentally disabled adults, mental health assisted living near me, assisted living for adults with mental illness near me, ALF psychiatry los angeles, behavioral health provider ALF, psychiatric services assisted living california, mental health residential care',
     heroImage:
       'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1200',
     tagline:
       'Empowering residents to thrive emotionally while supporting the staff who care for them every day.',
     intro: [
-      'Assisted living communities strive to balance resident independence with appropriate levels of support — a balance that becomes significantly more complex when behavioral health needs arise. Health Alliance SoCal partners with assisted living communities to provide integrated psychiatric care that respects resident autonomy while addressing the mental health challenges that accompany aging.',
-      'Our clinicians understand the unique culture of assisted living settings and work collaboratively with your staff to develop individualized behavioral health strategies — without disrupting the community environment residents call home.',
+      'Assisted living communities provide a supportive environment for adults with mental illness, depression, anxiety, schizophrenia, and other behavioral health conditions. These facilities serve as psychiatric nursing homes and mental health residential care options, helping residents maintain independence while receiving professional support. If you\'re looking for mental health assisted living facilities for yourself or a loved one, Health Alliance SoCal partners with quality assisted living communities across Southern California to ensure residents receive excellent psychiatric and behavioral health care.',
+      'Assisted living communities strive to balance resident independence with appropriate levels of support — a balance that becomes significantly more complex when behavioral health needs arise. Our clinicians understand the unique culture of assisted living settings and work collaboratively with your staff to develop individualized behavioral health strategies for conditions like schizophrenia, depression, anxiety, and other mental health challenges that may accompany aging.',
+      'Whether you\'re searching for "assisted living for mentally ill near me" or "psychiatric assisted living facilities," our partnership with assisted living communities ensures residents receive evidence-based psychiatric care, safe medication management, and compassionate support from board-certified clinicians.',
     ],
     features: [
       {
@@ -229,7 +230,7 @@ export const allServices: ServiceData[] = [
     metaDescription:
       'Health Alliance SoCal partners with memory care units to deliver expert behavioral health support for residents with dementia and cognitive impairment — integrating psychiatric care into every aspect of daily life.',
     keywords:
-      'memory care behavioral health, dementia psychiatric care, Alzheimer\'s behavioral health, memory care psychiatry Southern California, cognitive impairment behavioral management',
+      'memory care behavioral health, dementia psychiatric care, dementia behavioral management los angeles, memory care psychiatry southern california, BPSD treatment, Alzheimer\'s behavioral health services, cognitive impairment psychiatric care, dementia agitation management, memory care psychiatrist los angeles county',
     heroImage:
       'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -323,7 +324,7 @@ export const allServices: ServiceData[] = [
     metaDescription:
       'Health Alliance SoCal brings professional behavioral health services to board and care homes, providing personalized psychiatric oversight that supports residents and the dedicated caregivers who serve them.',
     keywords:
-      'board and care psychiatry, residential care home mental health, psychiatric services board care home, behavioral health residential care Southern California',
+      'board and care mental health, residential care facility psychiatry, board and care home psychiatry los angeles, behavioral health residential care, psychiatric oversight small residential homes, personalized mental health services board care',
     heroImage:
       'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -417,7 +418,7 @@ export const allServices: ServiceData[] = [
     metaDescription:
       'Health Alliance SoCal offers secure telepsychiatry services for skilled nursing, assisted living, and residential care facilities — expanding access to expert behavioral health care without geographic barriers.',
     keywords:
-      'telepsychiatry long-term care, telehealth psychiatry skilled nursing, virtual psychiatric care assisted living, remote behavioral health SNF, telepsychiatry California long-term care',
+      'telepsychiatry long-term care, telehealth psychiatry skilled nursing, virtual psychiatric care assisted living, remote behavioral health services, telepsychiatry los angeles county, virtual psychiatrist long-term care, telehealth mental health services SNF',
     heroImage:
       'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -511,7 +512,7 @@ export const allServices: ServiceData[] = [
     metaDescription:
       'Health Alliance SoCal provides specialized CMS F-Tag 758 compliance support for skilled nursing facilities — including psychotropic oversight, GDR documentation, and survey-ready behavioral health records.',
     keywords:
-      'CMS F-Tag 758 compliance, F-Tag 758 psychotropic medication, GDR compliance skilled nursing, CMS behavioral health compliance SNF, psychotropic oversight long-term care',
+      'CMS F-Tag 758 compliance, F-Tag 758 psychotropic medication, GDR compliance skilled nursing, gradual dose reduction program, CMS behavioral health compliance SNF, psychotropic medication oversight, F-Tag 758 support los angeles, survey-ready behavioral health documentation',
     heroImage:
       'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -605,7 +606,7 @@ export const allServices: ServiceData[] = [
     metaDescription:
       'Health Alliance SoCal provides expert psychotropic medication management for skilled nursing, assisted living, and memory care settings — prioritizing resident safety, clinical efficacy, and CMS compliance.',
     keywords:
-      'psychotropic medication management long-term care, psychiatric medication management SNF, medication management assisted living, GDR psychotropic reduction skilled nursing, antipsychotic medication review',
+      'psychotropic medication management long-term care, psychiatric medication management SNF, medication management assisted living, GDR psychotropic reduction, antipsychotic medication review, psychotropic medication oversight los angeles, safe medication management seniors, medication monitoring nursing homes',
     heroImage:
       'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1200',
     tagline:
@@ -699,7 +700,7 @@ export const allServices: ServiceData[] = [
     metaDescription:
       'Health Alliance SoCal partners with long-term care facilities to provide expert dementia behavioral management — combining evidence-based psychiatric interventions with compassionate, person-centered care strategies.',
     keywords:
-      'dementia behavioral management, Alzheimer\'s behavioral health, BPSD treatment long-term care, dementia agitation management, behavioral management memory care Southern California',
+      'dementia behavioral management, dementia behavioral management los angeles, BPSD treatment long-term care, behavioral and psychological symptoms dementia, dementia agitation management, Alzheimer\'s behavioral health, memory care behavioral strategies, evidence-based dementia care',
     heroImage:
       'https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&q=80&w=1200',
     tagline:

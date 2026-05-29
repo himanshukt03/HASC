@@ -17,9 +17,9 @@ export default function Services() {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Psychiatric Services"
-        description="Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes across Southern California to deliver integrated behavioral health services."
-        keywords="psychiatric services long-term care, behavioral health SNF, assisted living psychiatry, memory care behavioral health, CMS compliance behavioral health, Southern California psychiatry, HASC, Health Alliance SoCal"
+        title="Psychiatric & Behavioral Health Services | Assisted Living, Nursing Homes, Mental Health Care"
+        description="Find quality behavioral health and psychiatric services for assisted living communities, skilled nursing facilities, and memory care units. Expert mental health care for adults with mental illness, schizophrenia, depression, and behavioral health needs. Available across California."
+        keywords="psychiatric services long-term care, behavioral health assisted living, assisted living for mentally ill, psychiatric nursing home, nursing home for mentally ill, mental health assisted living facilities, assisted living for adults with mental illness, psychiatric assisted living, mental health assisted living near me, behavioral health SNF, memory care psychiatric care, board and care mental health, psychotropic medication management, CMS F-Tag 758 compliance, telepsychiatry services, dementia behavioral management, geriatric psychiatry southern california, mental health care california"
       />
 
       {/* ── HERO ── */}

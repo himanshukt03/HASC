@@ -44,9 +44,9 @@ export default function Locations() {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Locations We Serve"
-        description="Health Alliance SoCal provides integrated behavioral health and psychiatric care across Los Angeles, Orange, San Diego, Riverside, and Ventura counties — partnering with long-term care facilities throughout Southern California."
-        keywords="behavioral health Southern California, psychiatry Los Angeles County, behavioral health Orange County, psychiatry San Diego County, long-term care psychiatry Riverside County, Ventura County behavioral health, HASC, Health Alliance SoCal, psychiatric services Southern California"
+        title="Mental Health & Psychiatric Services Southern California | Assisted Living, Nursing Homes"
+        description="Find behavioral health and psychiatric care across Los Angeles, Orange, San Diego, Riverside, and Ventura counties. Expert mental health services for assisted living communities, skilled nursing facilities, and psychiatric nursing homes. Quality care for adults with mental illness."
+        keywords="behavioral health southern california, psychiatric services los angeles county, mental health assisted living near me, assisted living for mentally ill california, psychiatric nursing home california, nursing home for mentally ill, assisted living for adults with mental illness, mental health assisted living facilities, psychiatric assisted living california, psychiatry orange county, behavioral health san diego county, riverside county psychiatric services, ventura county behavioral health, long-term care psychiatry southern california, SNF psychiatry california, assisted living psychiatry southern california, dementia behavioral management california, group homes for mentally disabled adults"
       />
 
       {/* ── HERO ── */}

@@ -85,9 +85,9 @@ export default function About() {
   return (
     <div className="flex flex-col">
       <SEO
-        title="About Us"
-        description="Learn about Health Alliance SoCal's mission to elevate behavioral healthcare in long-term care facilities through clinical excellence and compassionate service."
-        keywords="Health Alliance SoCal, HASC, behavioral health provider, psychiatric services long-term care, clinical excellence healthcare, SNF psychiatry Southern California"
+        title="About Health Alliance SoCal | Board-Certified Psychiatric Care Provider"
+        description="Meet HASC: Board-certified behavioral health experts bringing integrated psychiatric partnerships to long-term care facilities across Southern California. Evidence-based geriatric psychiatry, CMS compliance expertise, and compassionate care for residents."
+        keywords="health alliance socal, HASC behavioral health, psychiatric services provider southern california, board-certified psychiatry, geriatric psychiatric care, long-term care psychiatry specialist, CMS-aligned behavioral health, mental health provider los angeles county, skilled nursing facility psychiatry partner"
         schema={JSON.stringify(aboutSchema)}
       />
       {/* Hero Section */}
