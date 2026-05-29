@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { BookOpen, ExternalLink, ChevronDown, ChevronUp, Users, Heart, Scale, AlertTriangle } from 'lucide-react';
 import { cn } from '../lib/utils';
 import SEO from '../components/SEO';
