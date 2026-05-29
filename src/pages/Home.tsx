@@ -214,14 +214,8 @@ export default function Home() {
                   <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <Link
-                  to="/about"
-                  className="bg-white text-brand-primary-text border border-brand-primary/15 px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent transition-colors flex items-center justify-center w-full sm:w-auto text-center"
-                >
-                  Learn About Our Approach
-                </Link>
-                <Link
                   to="/services"
-                  className="bg-brand-accent text-brand-primary-text px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent/80 transition-colors flex items-center justify-center w-full sm:w-auto text-center"
+                  className="bg-white text-brand-primary-text border border-brand-primary/15 px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent transition-colors flex items-center justify-center w-full sm:w-auto text-center"
                 >
                   View All Services
                 </Link>
