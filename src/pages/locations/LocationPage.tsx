@@ -52,11 +52,18 @@ export default function LocationPage() {
 
   const related = allLocations.filter((l) => l.slug !== location.slug).slice(0, 3);
 
+  // Generate geo-targeted SEO title including major cities
+  const majorCities = location.areasServed?.slice(0, 3).join(', ') || location.county;
+  const seoTitle = `Psychiatric & Behavioral Health Services in ${location.county} | ${majorCities}`;
+
+  // Generate geo-targeted description with specific services and cities
+  const seoDescription = `Expert psychiatric and behavioral health care in ${location.county} including ${majorCities}. Specialized services for skilled nursing facilities, assisted living communities, and memory care. Board-certified clinicians providing CMS-compliant behavioral health partnerships.`;
+
   return (
     <div className="flex flex-col">
       <SEO
-        title={`Behavioral Health Services in ${location.county}`}
-        description={`Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, and memory care units in ${location.county} to deliver integrated behavioral health care and psychiatric support.`}
+        title={seoTitle}
+        description={seoDescription}
         keywords={location.keywords ?? `behavioral health ${location.county}, HASC, psychiatry ${location.county}, skilled nursing psychiatry ${location.county}, long-term care behavioral health ${location.county}, ${location.county} psychiatric services, Health Alliance SoCal`}
         ogImage={location.heroImage}
         ogImageAlt={`Behavioral health services in ${location.county}`}
