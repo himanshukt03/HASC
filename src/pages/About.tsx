@@ -146,7 +146,7 @@ export default function About() {
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-6">Our Story</h2>
               <div className="space-y-5 text-gray-600 leading-relaxed">
                 <p>
-                  Health Alliance SoCal emerged from a recognized gap in the Southern California healthcare landscape. While physical health services in skilled nursing facilities were robust, behavioral health often remained underserved, leading to poor resident outcomes and regulatory challenges.
+                  Health Alliance SoCal emerged from a recognized gap in the Southern California healthcare landscape. While physical health services in skilled nursing facilities were robust, <Link to="/services" className="text-brand-primary-text font-semibold hover:underline">behavioral health</Link> often remained underserved, leading to poor resident outcomes and regulatory challenges.
                 </p>
                 <p>
                   Our founders—board-certified clinicians and healthcare administrators—envisioned a partnership model that would integrate seamless psychiatric care directly into the facility's workflow.
@@ -231,7 +231,7 @@ export default function About() {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-4">Our Core Values</h2>
             <p className="text-gray-600">
-              These principles guide every clinical decision we make and every partnership we build.
+              These principles guide every clinical decision we make and every partnership we build. Learn more about our <Link to="/standards" className="text-brand-primary-text font-semibold hover:underline">clinical standards</Link>.
             </p>
           </div>
 

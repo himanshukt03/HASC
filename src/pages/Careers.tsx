@@ -151,10 +151,10 @@ export default function Careers() {
                     {pos.description}
                   </p>
                 </div>
-                <button className="bg-brand-primary text-brand-primary-content px-6 py-3 rounded-full font-semibold text-sm hover:bg-brand-secondary transition-all shadow-md flex items-center gap-2 shrink-0">
+                <Link to="/contact" className="bg-brand-primary text-brand-primary-content px-6 py-3 rounded-full font-semibold text-sm hover:bg-brand-secondary transition-all shadow-md flex items-center gap-2 shrink-0 no-underline">
                   Apply Now
                   <ArrowRight size={18} />
-                </button>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -181,6 +181,27 @@ export default function Careers() {
                 Send Your Resume
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Learn More Section */}
+      <section className="section-padding bg-brand-accent/20 border-t border-brand-border">
+        <div className="container-custom">
+          <h2 className="text-2xl font-serif font-bold text-brand-ink mb-8">Learn More About HASC</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link to="/about" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">About Us</h3>
+              <p className="text-sm text-gray-600">Meet our founding team and learn our mission.</p>
+            </Link>
+            <Link to="/services" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Our Services</h3>
+              <p className="text-sm text-gray-600">Explore the psychiatric care services we provide.</p>
+            </Link>
+            <Link to="/standards" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Clinical Standards</h3>
+              <p className="text-sm text-gray-600">Learn about our high clinical standards.</p>
+            </Link>
           </div>
         </div>
       </section>

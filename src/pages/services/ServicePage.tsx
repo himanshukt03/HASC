@@ -1,8 +1,9 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, ArrowLeft, CheckCircle2, PhoneCall } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CheckCircle2, PhoneCall, MapPin } from 'lucide-react';
 import SEO from '../../components/SEO';
 import { allServices, getServiceBySlug } from './serviceData';
+import { allLocations } from '../locations/locationData';
 
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -362,6 +363,49 @@ export default function ServicePage() {
           </div>
         </section>
       )}
+
+      {/* ── AVAILABLE ACROSS SOUTHERN CALIFORNIA ── */}
+      <section className="section-padding bg-white border-t border-brand-border/60">
+        <div className="container-custom">
+          <div className="max-w-2xl mb-12">
+            <div className="flex items-center gap-3 mb-3">
+              <MapPin size={18} className="text-brand-primary-text" />
+              <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest">
+                Service Coverage
+              </p>
+            </div>
+            <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink leading-snug">
+              Available Across Southern California
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {allLocations.map((location, i) => (
+              <motion.div
+                key={location.slug}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <Link
+                  to={`/locations/${location.slug}`}
+                  className="group block bg-brand-accent/30 rounded-2xl border border-brand-border p-5 hover:border-brand-primary/40 hover:bg-brand-accent/50 hover:shadow-md transition-all duration-300"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <MapPin size={18} className="text-brand-primary-text shrink-0" />
+                    <ArrowRight size={14} className="text-brand-primary-text opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <h3 className="font-serif font-semibold text-brand-ink text-base leading-snug group-hover:text-brand-primary-text transition-colors">
+                    {location.county}
+                  </h3>
+                  <p className="text-xs text-gray-500 mt-2">Explore services</p>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── CTA ── */}
       <section className="section-padding bg-[#faf9f7] border-t border-brand-border/60">

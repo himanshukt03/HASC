@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 const standards = [
   {
     title: 'Evidence-Based Prescribing',
-    description: 'Our clinical protocols are rooted in the latest psychiatric research and geriatric medicine guidelines.',
+    description: 'Our clinical protocols are rooted in the latest psychiatric research and geriatric medicine guidelines. Explore our approach to behavioral health management.',
     icon: Target,
     image: '/images/Evidence-Based_Prescribing.webp',
     details: [
@@ -18,7 +18,7 @@ const standards = [
   },
   {
     title: 'CMS Psychotropic Standards',
-    description: 'We ensure your facility stays ahead of CMS regulations regarding psychotropic medication use.',
+    description: 'We ensure your facility stays ahead of CMS regulations regarding psychotropic medication use and compliance requirements.',
     icon: ShieldCheck,
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200',
     details: [
@@ -91,7 +91,17 @@ export default function Standards() {
                   </div>
                   <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-5">{standard.title}</h2>
                   <p className="text-gray-600 leading-relaxed mb-7">
-                    {standard.description}
+                    {standard.title === 'Evidence-Based Prescribing' ? (
+                      <>
+                        {standard.description.split(' Explore')[0]} <Link to="/services/dementia-behavioral-management" className="text-brand-primary-text font-semibold hover:underline">Explore our behavioral health management</Link> approach.
+                      </>
+                    ) : standard.title === 'CMS Psychotropic Standards' ? (
+                      <>
+                        We ensure your facility stays ahead of CMS regulations regarding <Link to="/services/psychotropic-medication-management" className="text-brand-primary-text font-semibold hover:underline">psychotropic medication use</Link> and <Link to="/services/cms-f-tag-758-support" className="text-brand-primary-text font-semibold hover:underline">compliance requirements</Link>.
+                      </>
+                    ) : (
+                      standard.description
+                    )}
                   </p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                     {standard.details.map((detail) => (
@@ -166,14 +176,14 @@ export default function Standards() {
                     decoding="async"
                   />
                 </div>
-                <div className="absolute -bottom-6 -left-6 bg-brand-primary p-6 rounded-2xl text-brand-primary-content shadow-xl max-w-xs">
+                <Link to="/about" className="absolute -bottom-6 -left-6 bg-brand-primary p-6 rounded-2xl text-brand-primary-content shadow-xl max-w-xs hover:shadow-2xl transition-all">
                   <p className="text-sm italic font-medium leading-relaxed">
                     "Our commitment to clinical standards ensures that every resident receives the highest quality of care, every time."
                   </p>
                   <p className="mt-4 text-xs uppercase tracking-widest font-bold text-brand-accent">
                     — Danielle Ramage DNP, PMHNP-BC, Co-Founder
                   </p>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -189,13 +199,27 @@ export default function Standards() {
           <p className="text-gray-500 mb-10 leading-relaxed">
             Experience the difference that specialized psychiatric leadership and rigorous clinical standards can make in your facility.
           </p>
-          <Link
-            to="/contact"
-            className="bg-brand-primary text-brand-primary-content px-10 py-4 rounded-full font-bold hover:bg-brand-secondary transition-all shadow-md flex items-center justify-center gap-2 mx-auto w-fit"
-          >
-            Request a Partnership Proposal
-            <ArrowRight size={20} />
-          </Link>
+          <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 justify-center">
+            <Link
+              to="/contact"
+              className="bg-brand-primary text-brand-primary-content px-10 py-4 rounded-full font-bold hover:bg-brand-secondary transition-all shadow-md flex items-center justify-center gap-2 flex-1 sm:flex-none"
+            >
+              Request a Partnership Proposal
+              <ArrowRight size={20} />
+            </Link>
+            <Link
+              to="/services"
+              className="bg-white border border-brand-primary/20 text-brand-primary-text px-10 py-4 rounded-full font-bold hover:bg-brand-accent transition-all shadow-sm flex-1 sm:flex-none text-center"
+            >
+              Explore Our Services
+            </Link>
+            <Link
+              to="/locations"
+              className="bg-white border border-brand-primary/20 text-brand-primary-text px-10 py-4 rounded-full font-bold hover:bg-brand-accent transition-all shadow-sm flex-1 sm:flex-none text-center"
+            >
+              Service Areas
+            </Link>
+          </div>
         </div>
       </section>
     </div>

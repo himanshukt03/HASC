@@ -372,18 +372,18 @@ export default function Contact() {
         <div className="container-custom">
           <h2 className="text-2xl font-serif font-bold text-brand-ink mb-8">Learn More</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="/services" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+            <Link to="/services" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
               <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Our Services</h3>
               <p className="text-sm text-gray-600">Explore our specialized psychiatric services across all facility types.</p>
-            </a>
-            <a href="/about" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+            </Link>
+            <Link to="/about" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
               <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">About Us</h3>
               <p className="text-sm text-gray-600">Meet our clinical leadership and learn about our mission.</p>
-            </a>
-            <a href="/faq" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+            </Link>
+            <Link to="/faq" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
               <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">FAQ</h3>
               <p className="text-sm text-gray-600">Find answers to common questions about our services.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -219,6 +219,12 @@ export default function Home() {
                 >
                   Learn About Our Approach
                 </Link>
+                <Link
+                  to="/services"
+                  className="bg-brand-accent text-brand-primary-text px-4 sm:px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent/80 transition-colors flex items-center justify-center w-full sm:w-auto text-center"
+                >
+                  View All Services
+                </Link>
               </div>
 
               <div className="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-5">
@@ -400,36 +406,51 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="group bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-400 border border-brand-border/50"
-              >
-                <div className="aspect-[3/2] overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                    width={800}
-                    height={533}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="p-5">
-                  <div className="w-9 h-9 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shadow-sm mb-3 group-hover:bg-brand-primary group-hover:text-brand-primary-content transition-colors">
-                    <service.icon size={18} />
-                  </div>
-                  <h3 className="font-serif font-semibold text-brand-ink text-lg mb-2">{service.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                </div>
-              </motion.div>
-            ))}
+            {services.map((service, index) => {
+              const serviceLinks: { [key: string]: string } = {
+                'Skilled Nursing Facilities': '/services/skilled-nursing-facility-psychiatry',
+                'Assisted Living Communities': '/services/assisted-living-psychiatry',
+                'Memory Care Units': '/services/memory-care-behavioral-health',
+                'Families': '/contact',
+              };
+              const href = serviceLinks[service.title] || '/services';
+
+              return (
+                <Link
+                  key={service.title}
+                  to={href}
+                  className="no-underline"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.08 }}
+                    className="group bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-400 border border-brand-border/50 h-full"
+                  >
+                    <div className="aspect-[3/2] overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        referrerPolicy="no-referrer"
+                        width={800}
+                        height={533}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <div className="w-9 h-9 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shadow-sm mb-3 group-hover:bg-brand-primary group-hover:text-brand-primary-content transition-colors">
+                        <service.icon size={18} />
+                      </div>
+                      <h3 className="font-serif font-semibold text-brand-ink text-lg mb-2">{service.title}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                    </div>
+                  </motion.div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -834,6 +855,12 @@ export default function Home() {
               className="bg-white border border-brand-primary/20 text-brand-primary-text px-4 sm:px-7 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent transition-colors flex-1 sm:flex-none text-center shadow-sm"
             >
               Contact Our Team
+            </Link>
+            <Link
+              to="/faq"
+              className="bg-brand-accent text-brand-primary-text px-4 sm:px-7 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-brand-accent/80 transition-colors flex-1 sm:flex-none text-center shadow-sm"
+            >
+              View FAQ
             </Link>
           </div>
         </div>

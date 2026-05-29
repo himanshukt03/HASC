@@ -646,6 +646,34 @@ export default function Resources() {
           </AnimatePresence>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 border-t border-brand-border">
+        <div className="container-custom">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-ink mb-4">Ready for More Support?</h2>
+            <p className="text-gray-600">Explore our services, speak with our team, or find answers to common questions.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <Link to="/services" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all text-center">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2">Our Services</h3>
+              <p className="text-sm text-gray-600">Specialized psychiatric care</p>
+            </Link>
+            <Link to="/faq" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all text-center">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2">FAQ</h3>
+              <p className="text-sm text-gray-600">Common questions answered</p>
+            </Link>
+            <Link to="/standards" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all text-center">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2">Clinical Standards</h3>
+              <p className="text-sm text-gray-600">Our rigorous standards</p>
+            </Link>
+            <Link to="/contact" className="bg-brand-primary text-brand-primary-content p-6 rounded-xl border border-brand-primary hover:bg-brand-secondary transition-all text-center">
+              <h3 className="font-serif font-bold mb-2">Contact Us</h3>
+              <p className="text-sm text-brand-primary-content/80">Talk to our team</p>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -255,6 +255,31 @@ export default function FAQ() {
           </div>
         </div>
       </section>
+
+      {/* Related Pages Section */}
+      <section className="section-padding bg-brand-accent/20 border-t border-brand-border">
+        <div className="container-custom">
+          <h2 className="text-2xl font-serif font-bold text-brand-ink mb-8">Explore Related Resources</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <Link to="/services" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Our Services</h3>
+              <p className="text-sm text-gray-600">Explore our specialized psychiatric services.</p>
+            </Link>
+            <Link to="/locations" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Service Areas</h3>
+              <p className="text-sm text-gray-600">Find locations across Southern California.</p>
+            </Link>
+            <Link to="/resources" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Resources</h3>
+              <p className="text-sm text-gray-600">Access educational materials and guides.</p>
+            </Link>
+            <Link to="/contact" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Contact Us</h3>
+              <p className="text-sm text-gray-600">Request a partnership or inquiry.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
