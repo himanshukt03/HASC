@@ -14,6 +14,7 @@ const navLinks = [
   { name: 'FAQ', path: '/faq' },
   { name: 'Resources', path: '/resources' },
   { name: 'Careers', path: '/careers' },
+  { name: 'Standards', path: '/standards' },
 ];
 
 type DropdownKey = 'services' | 'locations' | null;

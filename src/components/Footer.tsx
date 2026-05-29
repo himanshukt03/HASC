@@ -27,6 +27,7 @@ export default function Footer() {
         <div className="flex flex-col gap-6">
           <h4 className="text-lg font-serif font-semibold">Quick Links</h4>
           <ul className="flex flex-col gap-3 text-brand-accent/80 text-sm">
+            <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
             <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
             <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
@@ -34,6 +35,7 @@ export default function Footer() {
             <li><Link to="/portal" className="hover:text-white transition-colors">Facility Portal</Link></li>
             <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
             <li><Link to="/standards" className="hover:text-white transition-colors">Clinical Standards</Link></li>
+            <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
           </ul>
         </div>
 
@@ -89,10 +91,12 @@ export default function Footer() {
 
       <div className="container-custom mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-brand-accent/50 uppercase tracking-widest font-medium">
         <span>© 2026 Health Alliance SoCal. All Rights Reserved.</span>
-        <div className="flex gap-8">
-          <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-          <Link to="/hipaa" className="hover:text-white transition-colors">HIPAA Compliance</Link>
+        <div className="flex flex-wrap gap-3 md:gap-8">
+          <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+          <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
+          <Link to="/hipaa" className="hover:text-white transition-colors">HIPAA</Link>
+          <Link to="/resources" className="hover:text-white transition-colors">Resources</Link>
+          <Link to="/standards" className="hover:text-white transition-colors">Standards</Link>
         </div>
       </div>
     </footer>

@@ -99,9 +99,9 @@ export default function Contact() {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Contact Us"
-        description="Get in touch with Health Alliance SoCal to discuss psychiatric partnerships for your skilled nursing or memory care facility."
-        keywords="contact Health Alliance SoCal, HASC partnerships, psychiatric services inquiries, behavioral health partnership request, SNF psychiatry contact"
+        title="Request Psychiatric Partnership | Contact Behavioral Health Services Los Angeles"
+        description="Contact Health Alliance SoCal to request a behavioral health partnership for your skilled nursing facility, assisted living, or memory care unit. Available across LA County, Orange County, San Diego, Riverside & Ventura."
+        keywords="contact health alliance socal, psychiatric services partnership request, behavioral health facility partnership los angeles, SNF psychiatry contact, memory care psychiatric services inquiry, request behavioral health partnership, long-term care psychiatry consultation, HASC partnership inquiry"
       />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
@@ -363,6 +363,27 @@ export default function Contact() {
                 )}
               </AnimatePresence>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Links Section */}
+      <section className="section-padding bg-brand-accent/20 border-t border-brand-border">
+        <div className="container-custom">
+          <h2 className="text-2xl font-serif font-bold text-brand-ink mb-8">Learn More</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="/services" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Our Services</h3>
+              <p className="text-sm text-gray-600">Explore our specialized psychiatric services across all facility types.</p>
+            </a>
+            <a href="/about" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">About Us</h3>
+              <p className="text-sm text-gray-600">Meet our clinical leadership and learn about our mission.</p>
+            </a>
+            <a href="/faq" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
+              <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">FAQ</h3>
+              <p className="text-sm text-gray-600">Find answers to common questions about our services.</p>
+            </a>
           </div>
         </div>
       </section>
