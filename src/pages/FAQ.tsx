@@ -16,8 +16,8 @@ const faqs = [
   {
     id: 1,
     category: 'general',
-    question: 'What areas of Southern California do you serve?',
-    answer: 'Health Alliance SoCal provides specialized psychiatric services to facilities across Los Angeles, Orange, San Diego, Riverside, and Ventura counties. We are continuously expanding our network to reach more communities.',
+    question: 'What areas of California do you serve?',
+    answer: 'Health Alliance SoCal provides specialized psychiatric services to facilities across California — Los Angeles, Orange, San Diego, Riverside, and Ventura counties in Southern California, and Humboldt County (including Eureka and Fortuna) in Northern California. We are continuously expanding our network to reach more communities.',
   },
   {
     id: 2,
@@ -65,7 +65,7 @@ const faqs = [
     id: 9,
     category: 'facilities',
     question: 'What types of long-term care facilities does Health Alliance SoCal serve?',
-    answer: 'Health Alliance SoCal partners with skilled nursing facilities (SNFs), assisted living communities (ALCs), memory care units, and board and care homes across Southern California. We adapt our clinical model to fit the unique regulatory environment and resident population of each facility type.',
+    answer: 'Health Alliance SoCal partners with skilled nursing facilities (SNFs), assisted living communities (ALCs), memory care units, and board and care homes across Southern and Northern California. We adapt our clinical model to fit the unique regulatory environment and resident population of each facility type.',
   },
   {
     id: 10,
@@ -268,7 +268,7 @@ export default function FAQ() {
             </Link>
             <Link to="/locations" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
               <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Service Areas</h3>
-              <p className="text-sm text-gray-600">Find locations across Southern California.</p>
+              <p className="text-sm text-gray-600">Find locations across Southern and Northern California.</p>
             </Link>
             <Link to="/resources" className="bg-white p-6 rounded-xl border border-brand-border hover:border-brand-primary hover:shadow-md transition-all group">
               <h3 className="font-serif font-bold text-brand-primary-text mb-2 group-hover:text-brand-primary">Resources</h3>

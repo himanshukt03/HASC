@@ -375,11 +375,11 @@ export default function ServicePage() {
               </p>
             </div>
             <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink leading-snug">
-              Available Across Southern California
+              Available Across California
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {allLocations.map((location, i) => (
               <motion.div
                 key={location.slug}

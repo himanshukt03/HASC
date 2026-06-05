@@ -38,7 +38,7 @@ export default function Services() {
               Integrated Psychiatric Services Across Every Level of Care
             </h1>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mb-8">
-              Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes to deliver seamless, evidence-based behavioral health care across Southern California.
+              Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes to deliver seamless, evidence-based behavioral health care across Southern and Northern California.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link

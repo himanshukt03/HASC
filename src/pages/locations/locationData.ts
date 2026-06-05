@@ -171,7 +171,7 @@ const locationDataRaw: RawLocation[] = [
     hasMap: 'https://maps.google.com/?q=Los+Angeles+County,+CA',
     keywords: 'psychiatric services los angeles county, behavioral health los angeles, SNF psychiatry los angeles, assisted living psychiatry los angeles county, assisted living mental health los angeles, mental health assisted living near me, assisted living for mentally ill los angeles, psychiatric nursing home los angeles, nursing home for mentally ill los angeles, behavioral health assisted living los angeles, mental health assisted living facilities los angeles, assisted living for adults with mental illness los angeles, assisted housing for mentally ill los angeles, group homes for mentally disabled adults los angeles, memory care psychiatry LA county, behavioral health care long beach, psychiatry pasadena, mental health services glendale, psychiatry torrance, behavioral health burbank, assisted living psychiatry santa monica, mental health services downey, memory care glendale, dementia behavioral management los angeles, CMS F-Tag 758 compliance los angeles, psychotropic medication management los angeles, psychiatrist near me los angeles, behavioral health provider los angeles county, HASC',
     heroImage:
-      'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1597982087634-9884f03198ce?auto=format&fit=crop&q=80&w=1200',
     tagline:
       'Bringing integrated behavioral health partnership to skilled nursing facilities, assisted living communities, and memory care units across LA County.',
     intro: [
@@ -284,7 +284,7 @@ const locationDataRaw: RawLocation[] = [
     hasMap: 'https://maps.google.com/?q=Orange+County,+CA',
     keywords: 'psychiatric services orange county, behavioral health orange county, assisted living mental health orange county, mental health assisted living near me orange county, assisted living for mentally ill orange county, psychiatric nursing home orange county, assisted living for adults with mental illness orange county, psychiatric assisted living orange county, SNF psychiatry orange county, assisted living psychiatry OC, memory care psychiatry orange county, psychiatry anaheim, behavioral health irvine, psychiatry huntington beach, psychiatry santa ana, mental health services costa mesa, behavioral health dana point, memory care laguna hills, assisted living psychiatry orange, dementia behavioral management orange county, mental health assisted living facilities orange county, GDR compliance orange county, psychotropic medication management OC, CMS F-Tag 758 compliance orange county, psychiatrist near me orange county, behavioral health provider OC, HASC',
     heroImage:
-      'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1633156619138-c990aec02c0d?auto=format&fit=crop&q=80&w=1200',
     tagline:
       "Partnering with Orange County's long-term care communities to deliver integrated behavioral health care that residents and families can count on.",
     intro: [
@@ -395,7 +395,7 @@ const locationDataRaw: RawLocation[] = [
     hasMap: 'https://maps.google.com/?q=San+Diego+County,+CA',
     keywords: 'psychiatric services san diego county, behavioral health san diego, assisted living mental health san diego, mental health assisted living near me san diego, assisted living for mentally ill san diego county, psychiatric nursing home san diego, assisted living for adults with mental illness san diego, psychiatric assisted living san diego, SNF psychiatry san diego county, assisted living psychiatry san diego, memory care psychiatry san diego, psychiatry oceanside, behavioral health escondido, psychiatry el cajon, mental health services chula vista, behavioral health carlsbad, memory care la jolla, veteran mental health care san diego, PTSD treatment san diego, dementia behavioral management san diego, mental health assisted living facilities san diego, coastal to inland psychiatric coverage, psychotropic medication management san diego, psychiatrist near me san diego, behavioral health provider san diego county, CMS F-Tag 758 compliance san diego, HASC',
     heroImage:
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1603725117928-6f09697f34aa?auto=format&fit=crop&q=80&w=1200',
     tagline:
       "Expert behavioral health partnership for San Diego County's long-term care facilities — from the coast to the inland communities.",
     intro: [
@@ -508,12 +508,12 @@ const locationDataRaw: RawLocation[] = [
     hasMap: 'https://maps.google.com/?q=Riverside+County,+CA',
     keywords: 'psychiatric services riverside county, behavioral health inland empire, assisted living mental health riverside, mental health assisted living near me riverside, assisted living for mentally ill riverside county, psychiatric nursing home riverside, assisted living for adults with mental illness riverside, psychiatric assisted living riverside, SNF psychiatry riverside, assisted living psychiatry riverside county, memory care psychiatry riverside, telepsychiatry long-term care riverside, Coachella Valley psychiatric care, psychiatry palm springs, psychiatry indio, behavioral health corona, behavioral health moreno valley, memory care temecula, mental health services victorville, assisted living psychiatry ontario, dementia behavioral management riverside, mental health assisted living facilities riverside, psychotropic medication management inland empire, psychiatrist near me riverside, behavioral health provider riverside county, CMS F-Tag 758 compliance riverside, HASC',
     heroImage:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1574876999742-a8be3a43f151?auto=format&fit=crop&q=80&w=1200',
     tagline:
       "Closing the behavioral health gap in Riverside County's long-term care sector — one facility partnership at a time.",
     intro: [
       "Riverside County is one of California's fastest-growing counties, with a senior population expanding rapidly across its Inland Empire communities. Yet access to consistent, high-quality behavioral health services in the region's long-term care facilities has historically lagged behind more urban counties. Health Alliance SoCal is committed to closing that gap.",
-      'We partner with skilled nursing facilities, assisted living communities, memory care units, and board and care homes throughout Riverside County — from Riverside and Moreno Valley to Temecula and Palm Springs — bringing the same clinical standards and collaborative care model that defines our work across Southern California. Riverside County facilities deserve a behavioral health partner as committed to their residents as they are.',
+      'We partner with skilled nursing facilities, assisted living communities, memory care units, and board and care homes throughout Riverside County — from Riverside and Moreno Valley to Temecula and Palm Springs — bringing the same clinical standards and collaborative care model that defines our work across California. Riverside County facilities deserve a behavioral health partner as committed to their residents as they are.',
     ],
     stats: [
       { value: 'Growing', label: 'Senior Population' },
@@ -619,12 +619,12 @@ const locationDataRaw: RawLocation[] = [
     hasMap: 'https://maps.google.com/?q=Ventura+County,+CA',
     keywords: 'psychiatric services ventura county, behavioral health ventura, assisted living mental health ventura, mental health assisted living near me ventura, assisted living for mentally ill ventura county, psychiatric nursing home ventura, assisted living for adults with mental illness ventura, psychiatric assisted living ventura, SNF psychiatry ventura county, assisted living psychiatry ventura, memory care psychiatry ventura, psychiatry thousand oaks, behavioral health simi valley, psychiatry oxnard, psychiatry camarillo, memory care westlake village, behavioral health port hueneme, mental health services moorpark, assisted living psychiatry newbury park, dementia behavioral management ventura, mental health assisted living facilities ventura, board and care mental health ventura, coastal to inland psychiatric services ventura, psychotropic medication management ventura county, psychiatrist near me ventura, behavioral health provider ventura county, CMS F-Tag 758 compliance ventura, HASC',
     heroImage:
-      'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1610224736592-ce444a93b7f0?auto=format&fit=crop&q=80&w=1200',
     tagline:
       "A dedicated behavioral health partnership for Ventura County's skilled nursing, assisted living, and memory care communities.",
     intro: [
       "Ventura County's long-term care sector serves a diverse and growing senior population across its coastal and inland communities. From Oxnard and Ventura along the coast to Thousand Oaks and Simi Valley in the east, the county's facilities range from small board and care homes to large continuing care retirement communities — each with distinct behavioral health needs.",
-      "Health Alliance SoCal partners with Ventura County facilities to provide the same integrated, CMS-aligned behavioral health services that define our work across Southern California. Our clinical team builds genuine relationships with facility staff and residents, becoming a trusted extension of the care team rather than an outside consultant who simply shows up for appointments.",
+      "Health Alliance SoCal partners with Ventura County facilities to provide the same integrated, CMS-aligned behavioral health services that define our work across California. Our clinical team builds genuine relationships with facility staff and residents, becoming a trusted extension of the care team rather than an outside consultant who simply shows up for appointments.",
     ],
     stats: [
       { value: 'Coastal', label: 'to Inland Coverage' },
@@ -716,6 +716,117 @@ const locationDataRaw: RawLocation[] = [
           'How do I request a partnership for my Ventura County facility?',
         answer:
           "Contact Health Alliance SoCal at 310.462.3879 or complete the partnership request form online. Our clinical leadership team will respond within 24 business hours to discuss your Ventura County facility's behavioral health needs and outline how a partnership with us would work.",
+      },
+    ],
+  },
+
+  // ── HUMBOLDT COUNTY ───────────────────────────────────────────────────────
+  {
+    slug: 'humboldt-county',
+    county: 'Humboldt County',
+    navLabel: 'Humboldt County',
+    badge: 'Northern California',
+    geo: { latitude: 40.8021, longitude: -124.1637 },
+    hasMap: 'https://maps.google.com/?q=Humboldt+County,+CA',
+    keywords: 'psychiatric services humboldt county, behavioral health eureka, behavioral health fortuna, SNF psychiatry humboldt county, assisted living psychiatry eureka, memory care psychiatry humboldt, mental health assisted living near me eureka, psychiatric nursing home humboldt county, behavioral health northern california, psychiatric services northern california, dementia behavioral management humboldt, psychotropic medication management humboldt county, CMS F-Tag 758 compliance humboldt, telepsychiatry long-term care humboldt, rural behavioral health northern california, psychiatrist near me eureka, behavioral health provider humboldt county, assisted living mental health eureka, psychiatric assisted living arcata, memory care behavioral health fortuna, north coast behavioral health, telepsychiatry eureka, telepsychiatry fortuna, HASC',
+    heroImage:
+      'https://images.unsplash.com/photo-1710020329246-094bb7c76e98?auto=format&fit=crop&q=80&w=1200',
+    tagline:
+      "Bringing integrated, evidence-based behavioral health partnership to Humboldt County's skilled nursing, assisted living, and memory care communities along the North Coast.",
+    intro: [
+      "Humboldt County's rural North Coast presents a long-term care landscape unlike anywhere else in California. Spread across redwood forests, coastal towns, and remote inland communities, the county's skilled nursing facilities, assisted living communities, memory care units, and board and care homes have historically faced a persistent gap in consistent psychiatric access — with distance, geography, and a shortage of local specialists leaving many remote facilities underserved.",
+      'Health Alliance SoCal now actively serves Humboldt County — including Eureka, Fortuna, and the surrounding North Coast communities — bringing the same evidence-based, CMS-aligned behavioral health care we deliver statewide. With a telepsychiatry-first model designed to bridge geographic distance alongside in-person coverage, we ensure that even the most remote Humboldt County facilities have reliable, high-quality psychiatric partnership their residents can count on.',
+    ],
+    stats: [
+      { value: 'Northern', label: 'California Coverage' },
+      { value: 'Rural', label: 'Access Specialists' },
+      { value: 'Tele +', label: 'In-Person Care' },
+      { value: 'CMS', label: 'F-Tag 758 Experts' },
+    ],
+    servicesOffered: [
+      {
+        title: 'Telepsychiatry for Long-Term Care',
+        description:
+          'Reliable telehealth psychiatric coverage that bridges distance for remote Humboldt County facilities.',
+        slug: 'telepsychiatry-long-term-care',
+      },
+      {
+        title: 'Skilled Nursing Facility Psychiatry',
+        description:
+          'Integrated psychiatric partnerships for SNFs across Humboldt County and the North Coast.',
+        slug: 'skilled-nursing-facility-psychiatry',
+      },
+      {
+        title: 'Memory Care Behavioral Health',
+        description:
+          'Specialized dementia-focused psychiatric care for Humboldt County memory care units.',
+        slug: 'memory-care-behavioral-health',
+      },
+      {
+        title: 'CMS F-Tag 758 Compliance',
+        description:
+          'Psychotropic oversight and survey-readiness support for North Coast facilities.',
+        slug: 'cms-f-tag-758-support',
+      },
+    ],
+    areasServed: [
+      'Eureka', 'Fortuna', 'Arcata', 'McKinleyville', 'Rio Dell',
+      'Ferndale', 'Blue Lake', 'Trinidad', 'Loleta', 'Hydesville',
+      'Cutten', 'Myrtletown', 'Willow Creek', 'Garberville',
+    ],
+    localHighlights: [
+      {
+        title: 'Closing the Rural Behavioral Health Gap',
+        description:
+          "Humboldt County's remote North Coast geography has long left its long-term care facilities with limited access to consistent psychiatric expertise. Health Alliance SoCal is committed to closing that gap, bringing the same clinical standards and collaborative care model we deliver in California's urban centers to the communities of the North Coast.",
+      },
+      {
+        title: 'Telepsychiatry-First Coverage for Remote Facilities',
+        description:
+          "Distance should never determine the quality of behavioral health care a resident receives. Our telepsychiatry-first model delivers reliable, scheduled psychiatric coverage to even the most geographically isolated Humboldt County facilities, complemented by in-person care where it matters most.",
+      },
+      {
+        title: 'Local Knowledge of North Coast Care Communities',
+        description:
+          "From Eureka and Fortuna to the smaller communities of Ferndale, Trinidad, and Willow Creek, we understand the distinct character of Humboldt County's care settings. We partner with each facility's team to deliver behavioral health support tailored to the realities of rural North Coast long-term care.",
+      },
+    ],
+    faq: [
+      {
+        question:
+          'Does Health Alliance SoCal serve Humboldt County long-term care facilities?',
+        answer:
+          'Yes. Health Alliance SoCal now actively partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes throughout Humboldt County — including Eureka, Fortuna, Arcata, and the surrounding North Coast communities.',
+      },
+      {
+        question:
+          'What behavioral health services are available for Humboldt County facilities?',
+        answer:
+          'In Humboldt County, Health Alliance SoCal provides Telepsychiatry for Long-Term Care, Skilled Nursing Facility Psychiatry, Memory Care Behavioral Health, CMS F-Tag 758 Compliance support, Psychotropic Medication Management, and Dementia Behavioral Management. Each service is delivered as an integrated, collaborative partnership with your care team.',
+      },
+      {
+        question:
+          'Which cities in Humboldt County does Health Alliance SoCal serve?',
+        answer:
+          'Health Alliance SoCal serves long-term care facilities across Humboldt County including Eureka, Fortuna, Arcata, McKinleyville, Rio Dell, Ferndale, Blue Lake, Trinidad, Loleta, Hydesville, Cutten, Myrtletown, Willow Creek, Garberville, and surrounding North Coast communities.',
+      },
+      {
+        question:
+          'Do you offer telepsychiatry for rural Humboldt County facilities?',
+        answer:
+          "Yes. Given Humboldt County's rural North Coast geography, Health Alliance SoCal uses a telepsychiatry-first model to deliver reliable, scheduled psychiatric coverage to even the most geographically remote facilities — complemented by in-person care. This ensures distance never limits a resident's access to consistent behavioral health partnership.",
+      },
+      {
+        question:
+          'Is Health Alliance SoCal expanding into Northern California?',
+        answer:
+          "Yes. While Health Alliance SoCal began serving Southern California, we have expanded into Northern California with active operations in Humboldt County — including Eureka, Fortuna, and surrounding communities. We bring the same evidence-based, CMS-aligned behavioral health care to the North Coast that we deliver across the rest of California.",
+      },
+      {
+        question:
+          'How do I start a behavioral health partnership for my Humboldt County facility?',
+        answer:
+          "To begin a partnership with Health Alliance SoCal in Humboldt County, contact us at 310.462.3879 or complete the partnership request form on our website. A member of our clinical leadership team will reach out within 24 business hours to discuss your North Coast facility's specific behavioral health needs.",
       },
     ],
   },

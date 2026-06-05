@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Printer } from 'lucide-react';
 import { allServices } from '../pages/services/serviceData';
+import { socialLinks } from '../lib/socials';
 
 export default function Footer() {
   return (
@@ -19,8 +20,22 @@ export default function Footer() {
             />
           </Link>
           <p className="text-brand-accent/70 text-sm leading-relaxed max-w-xs">
-            Specialized psychiatric care for skilled nursing, assisted living, and memory care facilities across Southern California.
+            Specialized psychiatric care for skilled nursing, assisted living, and memory care facilities across Southern and Northern California.
           </p>
+          <div className="flex items-center gap-3">
+            {socialLinks.map(({ name, href, Icon }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Follow Health Alliance SoCal on ${name}`}
+                className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-brand-accent hover:text-white transition-colors"
+              >
+                <Icon size={18} />
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Links */}
@@ -48,6 +63,7 @@ export default function Footer() {
             <li><Link to="/locations/san-diego-county" className="hover:text-white transition-colors">San Diego County</Link></li>
             <li><Link to="/locations/riverside-county" className="hover:text-white transition-colors">Riverside County</Link></li>
             <li><Link to="/locations/ventura-county" className="hover:text-white transition-colors">Ventura County</Link></li>
+            <li><Link to="/locations/humboldt-county" className="hover:text-white transition-colors">Humboldt County</Link></li>
           </ul>
         </div>
 

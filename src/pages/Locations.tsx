@@ -6,22 +6,24 @@ import { allLocations } from './locations/locationData';
 
 const countyImages: Record<string, string> = {
   'los-angeles-county':
-    'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1597982087634-9884f03198ce?auto=format&fit=crop&q=80&w=800',
   'orange-county':
-    'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1633156619138-c990aec02c0d?auto=format&fit=crop&q=80&w=800',
   'san-diego-county':
-    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1603725117928-6f09697f34aa?auto=format&fit=crop&q=80&w=800',
   'riverside-county':
-    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1574876999742-a8be3a43f151?auto=format&fit=crop&q=80&w=800',
   'ventura-county':
-    'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1610224736592-ce444a93b7f0?auto=format&fit=crop&q=80&w=800',
+  'humboldt-county':
+    'https://images.unsplash.com/photo-1710020329246-094bb7c76e98?auto=format&fit=crop&q=80&w=800',
 };
 
 const whyLocal = [
   {
     title: 'County-Specific Regulatory Knowledge',
     description:
-      'California DHCS requirements layer on top of federal CMS standards. Our team understands both — and the nuances that vary across Southern California counties.',
+      'California DHCS requirements layer on top of federal CMS standards. Our team understands both — and the nuances that vary across California counties.',
   },
   {
     title: 'On-the-Ground Clinical Presence',
@@ -36,7 +38,7 @@ const whyLocal = [
   {
     title: 'Expanding Coverage',
     description:
-      'We are actively growing our presence across Southern California. If your county isn\'t listed, reach out — we may already be serving facilities nearby.',
+      'We are actively growing our presence across California — from Southern California to the North Coast of Northern California. If your county isn\'t listed, reach out — we may already be serving facilities nearby.',
   },
 ];
 
@@ -44,9 +46,9 @@ export default function Locations() {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Mental Health & Psychiatric Services Southern California | Assisted Living, Nursing Homes"
-        description="Find behavioral health and psychiatric care across Los Angeles, Orange, San Diego, Riverside, and Ventura counties. Expert mental health services for assisted living communities, skilled nursing facilities, and psychiatric nursing homes. Quality care for adults with mental illness."
-        keywords="behavioral health southern california, psychiatric services los angeles county, mental health assisted living near me, assisted living for mentally ill california, psychiatric nursing home california, nursing home for mentally ill, assisted living for adults with mental illness, mental health assisted living facilities, psychiatric assisted living california, psychiatry orange county, behavioral health san diego county, riverside county psychiatric services, ventura county behavioral health, long-term care psychiatry southern california, SNF psychiatry california, assisted living psychiatry southern california, dementia behavioral management california, group homes for mentally disabled adults"
+        title="Mental Health & Psychiatric Services Across California | Assisted Living, Nursing Homes"
+        description="Find behavioral health and psychiatric care across California — Los Angeles, Orange, San Diego, Riverside, and Ventura counties in Southern California, plus Humboldt County (Eureka & Fortuna) in Northern California. Expert mental health services for assisted living communities, skilled nursing facilities, and psychiatric nursing homes."
+        keywords="behavioral health california, behavioral health southern california, behavioral health northern california, psychiatric services los angeles county, psychiatric services humboldt county, mental health assisted living near me, assisted living for mentally ill california, psychiatric nursing home california, nursing home for mentally ill, assisted living for adults with mental illness, mental health assisted living facilities, psychiatric assisted living california, psychiatry orange county, behavioral health san diego county, riverside county psychiatric services, ventura county behavioral health, behavioral health eureka, behavioral health fortuna, long-term care psychiatry california, SNF psychiatry california, assisted living psychiatry california, dementia behavioral management california, group homes for mentally disabled adults"
       />
 
       {/* ── HERO ── */}
@@ -59,13 +61,13 @@ export default function Locations() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-brand-border text-brand-secondary text-xs font-semibold uppercase tracking-widest mb-6">
               <MapPin size={14} />
-              <span>Southern California</span>
+              <span>Southern &amp; Northern California</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif font-bold text-brand-ink leading-[1.2] mb-5">
-              Serving Long-Term Care Facilities Across Southern California
+              Serving Long-Term Care Facilities Across California
             </h1>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mb-8">
-              Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes in five Southern California counties — providing the same integrated behavioral health partnership in every community we serve.
+              Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes in six counties spanning both Southern and Northern California — providing the same integrated behavioral health partnership in every community we serve.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
@@ -94,7 +96,7 @@ export default function Locations() {
               Counties We Serve
             </p>
             <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink leading-snug">
-              Our Southern California Service Area
+              Our California Service Area
             </h2>
             <p className="text-gray-500 text-[0.95rem] leading-relaxed mt-3">
               Select a county to learn about our behavioral health services, areas covered, and the local expertise we bring to each community.

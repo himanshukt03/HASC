@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.healthalliancesocal.com)"
+      "WebFetch(domain:www.healthalliancesocal.com)",
+      "WebFetch(domain:unsplash.com)"
     ]
   }
 }

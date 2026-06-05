@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Building2, Send, CheckCircle2, ShieldCheck, Award,
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { toast } from 'sonner';
 import { cn } from '../lib/utils';
+import { socialLinks } from '../lib/socials';
 import SEO from '../components/SEO';
 
 const WEB3FORMS_ACCESS_KEY = 'e7e66c3d-2b75-4c14-90d3-c1fc7d3ddb1b';
@@ -138,42 +139,61 @@ export default function Contact() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-serif font-semibold text-brand-primary-text mb-6">Get in Touch</h2>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-6">
-                    <div className="w-11 h-11 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
-                      <MapPin size={22} />
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
+                      <MapPin size={20} />
                     </div>
                     <div>
-                      <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Our Headquarters</h4>
+                      <h4 className="text-base font-serif font-bold text-brand-primary-text mb-0.5">Our Headquarters</h4>
                       <p className="text-gray-500 leading-relaxed">501 E. Hardy St. Ste. 425<br />Inglewood, CA 90301</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-6">
-                    <div className="w-11 h-11 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
-                      <Phone size={22} />
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
+                      <Phone size={20} />
                     </div>
                     <div>
-                      <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Call Us</h4>
+                      <h4 className="text-base font-serif font-bold text-brand-primary-text mb-0.5">Call Us</h4>
                       <p className="text-gray-500 leading-relaxed">310.462.3879<br />Mon-Fri, 8am - 6pm PST</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-6">
-                    <div className="w-11 h-11 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
-                      <Printer size={22} />
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
+                      <Printer size={20} />
                     </div>
                     <div>
-                      <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Fax</h4>
+                      <h4 className="text-base font-serif font-bold text-brand-primary-text mb-0.5">Fax</h4>
                       <p className="text-gray-500 leading-relaxed">310.356.3417</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-6">
-                    <div className="w-11 h-11 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
-                      <Mail size={22} />
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shrink-0 shadow-sm">
+                      <Mail size={20} />
                     </div>
                     <div>
-                      <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-1">Email Us</h4>
+                      <h4 className="text-base font-serif font-bold text-brand-primary-text mb-0.5">Email Us</h4>
                       <p className="text-gray-500 leading-relaxed">info@healthalliancesocal.com</p>
                     </div>
+                  </div>
+                </div>
+
+                {/* Social links */}
+                <div className="mt-8 pt-8 border-t border-brand-border">
+                  <h4 className="text-lg font-serif font-bold text-brand-primary-text mb-4">Follow Us</h4>
+                  <div className="flex flex-wrap items-center gap-3">
+                    {socialLinks.map(({ name, href, Icon }) => (
+                      <a
+                        key={name}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Follow Health Alliance SoCal on ${name}`}
+                        className="w-11 h-11 bg-brand-accent rounded-xl flex items-center justify-center text-brand-primary-text shadow-sm hover:bg-brand-primary hover:text-brand-primary-content transition-colors"
+                      >
+                        <Icon size={20} />
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -249,7 +269,7 @@ export default function Contact() {
                           placeholder="John Doe"
                           value={formData.name}
                           onChange={handleChange}
-                          className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
+                          className="bg-white border border-gray-200 rounded-xl py-2.5 px-4 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
                       <div className="flex flex-col gap-2">
@@ -261,7 +281,7 @@ export default function Contact() {
                           placeholder="Administrator"
                           value={formData.job_title}
                           onChange={handleChange}
-                          className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
+                          className="bg-white border border-gray-200 rounded-xl py-2.5 px-4 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
                     </div>
@@ -276,7 +296,7 @@ export default function Contact() {
                           placeholder="john@facility.com"
                           value={formData.email}
                           onChange={handleChange}
-                          className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
+                          className="bg-white border border-gray-200 rounded-xl py-2.5 px-4 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
                       <div className="flex flex-col gap-2">
@@ -288,7 +308,7 @@ export default function Contact() {
                           placeholder="(555) 000-0000"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
+                          className="bg-white border border-gray-200 rounded-xl py-2.5 px-4 focus:ring-2 focus:ring-brand-primary transition-all"
                         />
                       </div>
                     </div>
@@ -302,7 +322,7 @@ export default function Contact() {
                         placeholder="health care center"
                         value={formData.facility_name}
                         onChange={handleChange}
-                        className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all"
+                        className="bg-white border border-gray-200 rounded-xl py-2.5 px-4 focus:ring-2 focus:ring-brand-primary transition-all"
                       />
                     </div>
 
@@ -312,7 +332,7 @@ export default function Contact() {
                         name="facility_type"
                         value={formData.facility_type}
                         onChange={handleChange}
-                        className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all appearance-none"
+                        className="bg-white border border-gray-200 rounded-xl py-2.5 px-4 focus:ring-2 focus:ring-brand-primary transition-all appearance-none"
                       >
                         <option>Skilled Nursing (SNF)</option>
                         <option>Assisted Living (ALF)</option>
@@ -330,7 +350,7 @@ export default function Contact() {
                         placeholder="Tell us about your facility's specific needs..."
                         value={formData.message}
                         onChange={handleChange}
-                        className="bg-white border border-gray-200 rounded-xl py-3 px-5 focus:ring-2 focus:ring-brand-primary transition-all resize-none"
+                        className="bg-white border border-gray-200 rounded-xl py-2.5 px-4 focus:ring-2 focus:ring-brand-primary transition-all resize-none"
                       />
                     </div>
 

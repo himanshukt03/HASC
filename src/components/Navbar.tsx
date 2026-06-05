@@ -63,7 +63,14 @@ export default function Navbar() {
       )}
     >
       <div className="container-custom flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group shrink-0">
+        <Link
+          to="/"
+          onClick={() => {
+            setActiveDropdown(null);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="flex items-center gap-2 group shrink-0"
+        >
           <img
             src="/HASC_logo.png"
             alt="Health Alliance SoCal"
@@ -158,7 +165,7 @@ export default function Navbar() {
                         {/* Footer strip */}
                         <div className="border-t border-gray-100 bg-gray-50/60 px-6 py-3 flex items-center justify-between">
                           <p className="text-xs text-gray-400 font-medium">
-                            Southern California's behavioral health partner
+                            California's behavioral health partner
                           </p>
                           <Link
                             to="/contact"
@@ -214,10 +221,10 @@ export default function Navbar() {
                                 We Serve
                               </p>
                               <h3 className="text-white font-semibold text-base leading-snug mb-4">
-                                Southern California Counties
+                                California Counties
                               </h3>
                               <p className="text-white/70 text-sm leading-relaxed">
-                                Five strategically served counties across Southern California
+                                Counties served across Southern and Northern California
                               </p>
                             </div>
                             <Link

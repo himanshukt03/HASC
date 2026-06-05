@@ -131,7 +131,7 @@ export default function Home() {
             name: 'What is Health Alliance SoCal?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Health Alliance SoCal (HASC) is a behavioral health and psychiatric care provider that partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes across Southern California.',
+              text: 'Health Alliance SoCal (HASC) is a behavioral health and psychiatric care provider that partners with skilled nursing facilities, assisted living communities, memory care units, and board and care homes across Southern and Northern California.',
             },
           },
           {
@@ -139,7 +139,7 @@ export default function Home() {
             name: 'What counties does Health Alliance SoCal serve?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Health Alliance SoCal provides services in Los Angeles County, Orange County, San Diego County, Riverside County, and Ventura County, California.',
+              text: 'Health Alliance SoCal provides services across California — in Los Angeles County, Orange County, San Diego County, Riverside County, and Ventura County in Southern California, and Humboldt County (including Eureka and Fortuna) in Northern California.',
             },
           },
           {
@@ -147,7 +147,7 @@ export default function Home() {
             name: 'What types of facilities does Health Alliance SoCal serve?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'HASC partners with skilled nursing facilities (SNFs), assisted living communities, memory care units, and board and care homes across Southern California.',
+              text: 'HASC partners with skilled nursing facilities (SNFs), assisted living communities, memory care units, and board and care homes across Southern and Northern California.',
             },
           },
           {
@@ -175,7 +175,7 @@ export default function Home() {
     <div className="flex flex-col">
       <SEO
         title="Health Alliance SoCal | Psychiatric & Behavioral Health Care"
-        description="Specialized psychiatric and behavioral health care for residents and families across Southern California. Clinical facility offering skilled nursing, memory care, and expert mental health services."
+        description="Specialized psychiatric and behavioral health care for residents and families across California — from Southern California to the North Coast. Clinical facility offering skilled nursing, memory care, and expert mental health services."
         keywords="psychiatric services los angeles, behavioral health assisted living, assisted living for mentally ill, assisted living mental health, psychiatric nursing home, mental health assisted living facilities, assisted living for adults with mental illness, nursing home for mentally ill, schizophrenia assisted living, mental health assisted living near me, behavioral health care los angeles county, mental health care california, psychiatric care facilities, long-term care psychiatry, dementia behavioral management, CMS F-Tag 758 compliance"
         schema={JSON.stringify(homeFaqSchema)}
       />
@@ -309,8 +309,11 @@ export default function Home() {
               <p className="text-gray-500 text-[0.95rem] leading-relaxed mb-4">
                 Behavioral health care in long-term settings is about more than symptoms—it's about understanding each resident's history, environment, and emotional needs.
               </p>
-              <p className="text-gray-500 text-[0.95rem] leading-relaxed">
+              <p className="text-gray-500 text-[0.95rem] leading-relaxed mb-4">
                 Our team works collaboratively with residents, families, and facility staff to create care plans that are both clinically appropriate and deeply compassionate.
+              </p>
+              <p className="text-gray-500 text-[0.95rem] leading-relaxed">
+                That same standard of care now reaches communities across California. From the skilled nursing facilities of Southern California to the assisted living and memory care communities of the North Coast in Northern California, we bring consistent, evidence-based behavioral health partnership to every facility we serve—pairing in-person visits with telepsychiatry so that no resident is left behind by distance or geography.
               </p>
             </motion.div>
 
@@ -680,7 +683,7 @@ export default function Home() {
               "Their team not only understands regulatory expectations—they genuinely care about our residents. We've seen meaningful improvements in both clinical outcomes and overall well-being."
             </blockquote>
             <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest">
-              — Facility Administrator, Southern California
+              — Facility Administrator, California
             </p>
           </div>
         </div>

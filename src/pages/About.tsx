@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Target, Users, Heart, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { socialLinks } from '../lib/socials';
 import SEO from '../components/SEO';
 
 const values = [
@@ -86,8 +87,8 @@ export default function About() {
     <div className="flex flex-col">
       <SEO
         title="About Health Alliance SoCal | Board-Certified Psychiatric Care Provider"
-        description="Meet HASC: Board-certified behavioral health experts bringing integrated psychiatric partnerships to long-term care facilities across Southern California. Evidence-based geriatric psychiatry, CMS compliance expertise, and compassionate care for residents."
-        keywords="health alliance socal, HASC behavioral health, psychiatric services provider southern california, board-certified psychiatry, geriatric psychiatric care, long-term care psychiatry specialist, CMS-aligned behavioral health, mental health provider los angeles county, skilled nursing facility psychiatry partner"
+        description="Meet HASC: Board-certified behavioral health experts bringing integrated psychiatric partnerships to long-term care facilities across California, from Southern California to the North Coast. Evidence-based geriatric psychiatry, CMS compliance expertise, and compassionate care for residents."
+        keywords="health alliance socal, HASC behavioral health, psychiatric services provider california, psychiatric services provider southern california, psychiatric services provider northern california, board-certified psychiatry, geriatric psychiatric care, long-term care psychiatry specialist, CMS-aligned behavioral health, mental health provider los angeles county, mental health provider humboldt county, skilled nursing facility psychiatry partner"
         schema={JSON.stringify(aboutSchema)}
       />
       {/* Hero Section */}
@@ -330,6 +331,27 @@ export default function About() {
             >
               Explore Our Services
             </Link>
+          </div>
+
+          {/* Social links */}
+          <div className="mt-12 pt-10 border-t border-brand-border/60">
+            <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-4">
+              Follow Us On Our Socials
+            </p>
+            <div className="flex items-center justify-center gap-3">
+              {socialLinks.map(({ name, href, Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Follow Health Alliance SoCal on ${name}`}
+                  className="w-12 h-12 bg-white border border-brand-primary/15 rounded-xl flex items-center justify-center text-brand-primary-text shadow-sm hover:bg-brand-primary hover:text-brand-primary-content hover:border-brand-primary transition-colors"
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>

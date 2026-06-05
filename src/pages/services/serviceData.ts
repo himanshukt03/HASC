@@ -39,7 +39,7 @@ export const allServices: ServiceData[] = [
     icon: Building2,
     title: 'Psychiatric Care Partnerships for Skilled Nursing Facilities',
     metaDescription:
-      'Health Alliance SoCal partners with skilled nursing facilities across Southern California to deliver integrated behavioral health care, CMS-compliant psychotropic management, and resident stabilization support.',
+      'Health Alliance SoCal partners with skilled nursing facilities across Southern and Northern California to deliver integrated behavioral health care, CMS-compliant psychotropic management, and resident stabilization support.',
     keywords:
       'skilled nursing facility psychiatry, SNF psychiatry los angeles, psychiatric services skilled nursing, behavioral health SNF los angeles county, psychotropic management skilled nursing, CMS behavioral health SNF, geriatric psychiatry services, long-term care psychiatry, nursing home psychiatric care',
     heroImage:
@@ -141,7 +141,7 @@ export const allServices: ServiceData[] = [
     tagline:
       'Empowering residents to thrive emotionally while supporting the staff who care for them every day.',
     intro: [
-      'Assisted living communities provide a supportive environment for adults with mental illness, depression, anxiety, schizophrenia, and other behavioral health conditions. These facilities serve as psychiatric nursing homes and mental health residential care options, helping residents maintain independence while receiving professional support. If you\'re looking for mental health assisted living facilities for yourself or a loved one, Health Alliance SoCal partners with quality assisted living communities across Southern California to ensure residents receive excellent psychiatric and behavioral health care.',
+      'Assisted living communities provide a supportive environment for adults with mental illness, depression, anxiety, schizophrenia, and other behavioral health conditions. These facilities serve as psychiatric nursing homes and mental health residential care options, helping residents maintain independence while receiving professional support. If you\'re looking for mental health assisted living facilities for yourself or a loved one, Health Alliance SoCal partners with quality assisted living communities across Southern and Northern California to ensure residents receive excellent psychiatric and behavioral health care.',
       'Assisted living communities strive to balance resident independence with appropriate levels of support — a balance that becomes significantly more complex when behavioral health needs arise. Our clinicians understand the unique culture of assisted living settings and work collaboratively with your staff to develop individualized behavioral health strategies for conditions like schizophrenia, depression, anxiety, and other mental health challenges that may accompany aging.',
       'Whether you\'re searching for "assisted living for mentally ill near me" or "psychiatric assisted living facilities," our partnership with assisted living communities ensures residents receive evidence-based psychiatric care, safe medication management, and compassionate support from board-certified clinicians.',
     ],

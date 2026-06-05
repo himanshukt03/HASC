@@ -52,8 +52,8 @@ export default function Careers() {
     <div className="flex flex-col">
       <SEO
         title="Careers"
-        description="Join Health Alliance SoCal and build a career with purpose. Explore open psychiatric and clinical positions in Southern California."
-        keywords="psychiatric careers, behavioral health jobs, nursing positions, HASC careers, long-term care healthcare jobs, Southern California medical positions"
+        description="Join Health Alliance SoCal and build a career with purpose. Explore open psychiatric and clinical positions across California."
+        keywords="psychiatric careers, behavioral health jobs, nursing positions, HASC careers, long-term care healthcare jobs, California medical positions, Southern California medical positions, Northern California medical positions"
       />
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-white via-brand-accent/40 to-brand-accent/60">
@@ -73,7 +73,7 @@ export default function Careers() {
               Build a Career with Purpose
             </h1>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl">
-              We are looking for passionate clinical professionals to help us set the gold standard for behavioral health services in Southern California.
+              We are looking for passionate clinical professionals to help us set the gold standard for behavioral health services across California.
             </p>
           </motion.div>
         </div>
