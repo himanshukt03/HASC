@@ -135,8 +135,8 @@ export default function Standards() {
       {/* Quality Assurance Section */}
       <section className="section-padding bg-brand-paper">
         <div className="container-custom">
-          <div className="bg-white rounded-2xl p-8 md:p-14 shadow-sm relative overflow-hidden">
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div className="bg-white rounded-2xl p-6 md:p-10 shadow-sm relative overflow-hidden max-w-5xl mx-auto">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_20rem] gap-10 lg:gap-14 items-center">
               <div>
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary-text mb-6">Our Quality Assurance Commitment</h2>
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -166,7 +166,7 @@ export default function Standards() {
               <div className="relative">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1200"
+                    src="https://images.unsplash.com/photo-1758691462858-f1286e5daf40?auto=format&fit=crop&q=80&w=1200"
                     alt="Health Alliance SoCal quality assurance and clinical standards"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
