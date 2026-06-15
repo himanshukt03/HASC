@@ -43,7 +43,7 @@ export const allServices: ServiceData[] = [
     keywords:
       'skilled nursing facility psychiatry, SNF psychiatry los angeles, psychiatric services skilled nursing, behavioral health SNF los angeles county, psychotropic management skilled nursing, CMS behavioral health SNF, geriatric psychiatry services, long-term care psychiatry, nursing home psychiatric care',
     heroImage:
-      'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1765896387387-0538bc9f997e?auto=format&fit=crop&q=80&w=1200',
     tagline:
       'Integrated behavioral health care that becomes part of your care team — supporting residents, staff, and families at every level.',
     intro: [
@@ -232,7 +232,7 @@ export const allServices: ServiceData[] = [
     keywords:
       'memory care behavioral health, dementia psychiatric care, dementia behavioral management los angeles, memory care psychiatry southern california, BPSD treatment, Alzheimer\'s behavioral health services, cognitive impairment psychiatric care, dementia agitation management, memory care psychiatrist los angeles county',
     heroImage:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1762955911431-4c44c7c3f408?auto=format&fit=crop&q=80&w=1200',
     tagline:
       'Expert dementia-focused psychiatric care that honors dignity, reduces distress, and supports the people who provide care every day.',
     intro: [
@@ -326,7 +326,7 @@ export const allServices: ServiceData[] = [
     keywords:
       'board and care mental health, residential care facility psychiatry, board and care home psychiatry los angeles, behavioral health residential care, psychiatric oversight small residential homes, personalized mental health services board care',
     heroImage:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1773227055624-07b515ba87c5?auto=format&fit=crop&q=80&w=1200',
     tagline:
       'Bringing professional psychiatric partnership to small residential care homes — with the personal attention each resident deserves.',
     intro: [
@@ -420,7 +420,7 @@ export const allServices: ServiceData[] = [
     keywords:
       'telepsychiatry long-term care, telehealth psychiatry skilled nursing, virtual psychiatric care assisted living, remote behavioral health services, telepsychiatry los angeles county, virtual psychiatrist long-term care, telehealth mental health services SNF',
     heroImage:
-      'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1758691462743-f9fc9e430d39?auto=format&fit=crop&q=80&w=1200',
     tagline:
       'Expert psychiatric care delivered securely and conveniently — expanding access to behavioral health across every facility we serve.',
     intro: [
@@ -702,7 +702,7 @@ export const allServices: ServiceData[] = [
     keywords:
       'dementia behavioral management, dementia behavioral management los angeles, BPSD treatment long-term care, behavioral and psychological symptoms dementia, dementia agitation management, Alzheimer\'s behavioral health, memory care behavioral strategies, evidence-based dementia care',
     heroImage:
-      'https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1773227060313-7623fd5bfa64?auto=format&fit=crop&q=80&w=1200',
     tagline:
       'Expert, evidence-based behavioral management for residents with dementia — honoring who they are while addressing the challenges they face.',
     intro: [

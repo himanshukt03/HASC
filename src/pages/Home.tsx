@@ -20,7 +20,7 @@ const services = [
     title: 'Assisted Living Communities',
     description: 'Behavioral health support tailored for assisted living residents and staff.',
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1758691462858-f1286e5daf40?auto=format&fit=crop&q=80&w=800',
   },
   {
     title: 'Memory Care Units',
@@ -249,8 +249,8 @@ export default function Home() {
                   width={1200}
                   height={750}
                   loading="eager"
-                  decoding="async"
                   fetchPriority="high"
+                  decoding="async"
                 />
               </div>
             </motion.div>
