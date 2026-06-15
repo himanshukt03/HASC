@@ -8,17 +8,22 @@ interface SEOProps {
   ogImage?: string;
   ogImageAlt?: string;
   schema?: string;
+  /** When true, emit `noindex, follow` so the page is excluded from search results (e.g. gated/login pages). */
+  noindex?: boolean;
 }
 
-export default function SEO({ title, description, keywords, ogImage, ogImageAlt, schema }: SEOProps) {
+export default function SEO({ title, description, keywords, ogImage, ogImageAlt, schema, noindex }: SEOProps) {
   const location = useLocation();
 
   useEffect(() => {
-    // Update title
-    const fullTitle = title === 'Home' 
-      ? 'Health Alliance SoCal | Specialized Psychiatric Care'
-      : `${title} | Health Alliance SoCal`;
-      
+    const BRAND = 'Health Alliance SoCal';
+    // Update title — avoid duplicating the brand when the title already contains it
+    const fullTitle = title === 'Home'
+      ? `${BRAND} | Specialized Psychiatric Care`
+      : title.includes(BRAND)
+        ? title
+        : `${title} | ${BRAND}`;
+
     document.title = fullTitle;
 
     // Update meta description
@@ -88,7 +93,7 @@ export default function SEO({ title, description, keywords, ogImage, ogImageAlt,
     }
 
     // Open Graph URL
-    const canonicalUrl = `https://www.healthalliancesocal.com${location.pathname === '/' ? '' : location.pathname}`;
+    const canonicalUrl = `https://www.healthalliancesocal.com${location.pathname === '/' ? '/' : location.pathname}`;
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
     else {
@@ -154,7 +159,7 @@ export default function SEO({ title, description, keywords, ogImage, ogImageAlt,
     
     // Update Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
-    const url = `https://www.healthalliancesocal.com${location.pathname === '/' ? '' : location.pathname}`;
+    const url = `https://www.healthalliancesocal.com${location.pathname === '/' ? '/' : location.pathname}`;
     if (canonical) {
       canonical.setAttribute('href', url);
     } else {
@@ -162,6 +167,18 @@ export default function SEO({ title, description, keywords, ogImage, ogImageAlt,
       canonical.setAttribute('rel', 'canonical');
       canonical.setAttribute('href', url);
       document.head.appendChild(canonical);
+    }
+
+    // Update robots directive (default: index, follow)
+    const robotsContent = noindex ? 'noindex, follow' : 'index, follow';
+    let robots = document.querySelector('meta[name="robots"]');
+    if (robots) {
+      robots.setAttribute('content', robotsContent);
+    } else {
+      robots = document.createElement('meta');
+      robots.setAttribute('name', 'robots');
+      robots.setAttribute('content', robotsContent);
+      document.head.appendChild(robots);
     }
 
     // Update JSON-LD Schema if provided
@@ -177,7 +194,7 @@ export default function SEO({ title, description, keywords, ogImage, ogImageAlt,
         document.head.appendChild(schemaTag);
       }
     }
-  }, [title, description, keywords, ogImage, ogImageAlt, schema, location.pathname]);
+  }, [title, description, keywords, ogImage, ogImageAlt, schema, noindex, location.pathname]);
 
   return null;
 }
