@@ -75,9 +75,10 @@ export default function Portal() {
   if (!isLoggedIn) {
     return (
       <div className="min-h-screen bg-brand-accent/30 flex items-center justify-center p-6 pt-20">
-        <SEO 
-          title="Facility Portal" 
+        <SEO
+          title="Facility Portal"
           description="Access the Health Alliance SoCal facility education portal for psychiatric training and resources."
+          noindex
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
@@ -127,9 +128,10 @@ export default function Portal() {
 
   return (
     <div className="flex min-h-screen bg-brand-accent/10 pt-16">
-      <SEO 
-        title="Facility Portal" 
+      <SEO
+        title="Facility Portal"
         description="Access the Health Alliance SoCal facility education portal for psychiatric training and resources."
+        noindex
       />
       {/* Sidebar */}
       <aside className="hidden lg:flex flex-col w-64 bg-white border-r border-brand-border p-6 sticky top-16 h-[calc(100vh-64px)]">

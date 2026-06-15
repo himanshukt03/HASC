@@ -10,6 +10,7 @@ export default function NotFound() {
         title="Page Not Found"
         description="The page you're looking for doesn't exist. Return to Health Alliance SoCal's main website."
         keywords="404 error, page not found, HASC"
+        noindex
       />
 
       {/* Hero Section */}
