@@ -14,12 +14,41 @@ import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
-import puppeteer from 'puppeteer';
+import type { Browser } from 'puppeteer-core';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, '..', 'dist');
 const PORT = 4178;
 const BASE = `http://localhost:${PORT}`;
+
+/**
+ * Launch Chromium for whichever environment we're in.
+ * - On Vercel/Lambda: puppeteer-core + @sparticuz/chromium (a Chromium build that
+ *   ships the shared libraries the build container lacks — fixes libnspr4.so errors).
+ * - Locally: full puppeteer with its bundled Chromium (works on macOS/Windows/Linux).
+ */
+async function launchBrowser(): Promise<Browser> {
+  const isServerless =
+    !!process.env.VERCEL ||
+    !!process.env.AWS_LAMBDA_FUNCTION_VERSION ||
+    !!process.env.AWS_EXECUTION_ENV;
+
+  if (isServerless) {
+    const chromium = (await import('@sparticuz/chromium')).default;
+    const puppeteerCore = (await import('puppeteer-core')).default;
+    return puppeteerCore.launch({
+      args: chromium.args,
+      executablePath: await chromium.executablePath(),
+      headless: true,
+    });
+  }
+
+  const puppeteer = (await import('puppeteer')).default;
+  return puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  }) as unknown as Browser;
+}
 
 /** Pull the route list straight from the built sitemap — single source of truth. */
 function getRoutes(): string[] {
@@ -39,10 +68,7 @@ async function main() {
   app.get('*', (_req, res) => res.sendFile(join(DIST, 'index.html')));
   const server = app.listen(PORT);
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+  const browser = await launchBrowser();
 
   let ok = 0;
   let homeOk = false;
@@ -51,6 +77,8 @@ async function main() {
     for (const route of routes) {
       const page = await browser.newPage();
       try {
+        // Capture the desktop layout consistently across environments.
+        await page.setViewport({ width: 1366, height: 900 });
         // Block third-party requests (fonts, GA, Unsplash) for fast, deterministic idle.
         await page.setRequestInterception(true);
         page.on('request', (req) => {
