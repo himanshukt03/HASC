@@ -375,7 +375,7 @@ export default function ServicePage() {
               </p>
             </div>
             <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink leading-snug">
-              Available Across California
+              Where We Provide {service.navLabel}
             </h2>
           </div>
 
@@ -397,9 +397,11 @@ export default function ServicePage() {
                     <ArrowRight size={14} className="text-brand-primary-text opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <h3 className="font-serif font-semibold text-brand-ink text-base leading-snug group-hover:text-brand-primary-text transition-colors">
-                    {location.county}
+                    {service.navLabel} in {location.county}
                   </h3>
-                  <p className="text-xs text-gray-500 mt-2">Explore services</p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    {location.areasServed?.slice(0, 3).join(' · ') || 'Explore services'}
+                  </p>
                 </Link>
               </motion.div>
             ))}

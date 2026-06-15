@@ -59,6 +59,18 @@ export default function LocationPage() {
   // Generate geo-targeted description with specific services and cities
   const seoDescription = `Expert psychiatric and behavioral health care in ${location.county} including ${majorCities}. Specialized services for skilled nursing facilities, assisted living communities, and memory care. Board-certified clinicians providing CMS-compliant behavioral health partnerships.`;
 
+  // City-level service blurbs — turn the served-city list into unique, rankable
+  // "[service] in [city]" body content. Rotating templates avoid boilerplate
+  // repetition while covering the full service-keyword space.
+  const cityBlurbs: ((city: string) => string)[] = [
+    (city) => `Behavioral health and psychiatric partnerships for skilled nursing facilities in ${city}.`,
+    (city) => `Assisted living and memory care behavioral health support throughout ${city}.`,
+    (city) => `CMS-compliant psychotropic medication management for ${city} long-term care teams.`,
+    (city) => `On-site and telepsychiatry psychiatric coverage for residential and board & care facilities in ${city}.`,
+    (city) => `Dementia behavioral management and resident stabilization for memory care communities in ${city}.`,
+    (city) => `Geriatric psychiatry and CMS F-Tag 758 compliance support for facilities across ${city}.`,
+  ];
+
   return (
     <div className="flex flex-col">
       <SEO
@@ -315,51 +327,49 @@ export default function LocationPage() {
       {/* ── AREAS SERVED ── */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="max-w-2xl mb-10">
+            <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-3">
+              Coverage Area
+            </p>
+            <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink mb-5 leading-snug">
+              Which Cities in {location.county} Do We Serve?
+            </h2>
+            <p className="text-gray-500 text-[0.95rem] leading-relaxed">
+              Health Alliance SoCal partners with skilled nursing facilities, assisted living communities, memory care units, and board &amp; care homes throughout {location.county}, including the cities and communities below. Don't see your area listed? Contact us — we're always expanding our coverage.
+            </p>
+          </div>
 
-            <div>
-              <p className="text-brand-primary-text text-xs font-bold uppercase tracking-widest mb-3">
-                Coverage Area
-              </p>
-              <h2 className="font-serif font-bold text-2xl md:text-3xl text-brand-ink mb-5 leading-snug">
-                Which Cities in {location.county} Do We Serve?
-              </h2>
-              <p className="text-gray-500 text-[0.95rem] leading-relaxed mb-8">
-                Health Alliance SoCal partners with long-term care facilities throughout {location.county}, including facilities in the following cities and communities. Don't see your area listed? Contact us — we're always expanding our coverage.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-brand-primary text-brand-primary-content px-6 py-3 rounded-xl font-semibold text-sm hover:bg-brand-secondary transition-colors shadow-md group"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {location.areasServed.map((area, i) => (
+              <motion.div
+                key={area}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (i % 6) * 0.05 }}
+                className="bg-brand-accent/20 rounded-xl border border-brand-border p-5 hover:border-brand-primary/25 hover:bg-brand-accent/30 transition-all duration-300"
               >
-                Ask About Your Area
-                <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl border border-brand-border p-6 shadow-sm"
-            >
-              <div className="flex items-center gap-2 mb-5 pb-4 border-b border-gray-100">
-                <MapPin size={16} className="text-brand-secondary" />
-                <span className="font-semibold text-brand-ink text-sm">{location.county} Service Area</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {location.areasServed.map((area) => (
-                  <span
-                    key={area}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-brand-accent/50 border border-brand-border/60 text-brand-primary-text text-xs font-semibold"
-                  >
-                    <MapPin size={9} />
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin size={13} className="text-brand-secondary shrink-0" />
+                  <h3 className="font-serif font-semibold text-brand-ink text-sm leading-snug">
                     {area}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+                  </h3>
+                </div>
+                <p className="text-gray-600 text-xs leading-relaxed">
+                  {cityBlurbs[i % cityBlurbs.length](area)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
 
+          <div className="mt-10">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-brand-primary text-brand-primary-content px-6 py-3 rounded-xl font-semibold text-sm hover:bg-brand-secondary transition-colors shadow-md group"
+            >
+              Ask About Your Area
+              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
