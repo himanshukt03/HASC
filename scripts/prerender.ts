@@ -50,6 +50,37 @@ async function launchBrowser(): Promise<Browser> {
   }) as unknown as Browser;
 }
 
+/**
+ * Inline the main CSS bundle into dist/index.html so it no longer render-blocks.
+ *
+ * Vite emits the entry stylesheet as a synchronous `<link rel="stylesheet">` in the
+ * <head>, which blocks first paint. The whole bundle is small (~70KB / ~11KB gzip),
+ * so inlining it into a <style> tag removes the blocking network round-trip entirely
+ * with no flash of unstyled content. We do this before prerendering boots, so every
+ * captured route inherits the inlined styles automatically.
+ */
+function inlineEntryCss(): void {
+  const indexPath = join(DIST, 'index.html');
+  let html = readFileSync(indexPath, 'utf-8');
+
+  html = html.replace(
+    /<link\b[^>]*\bhref="(\/assets\/[^"]+\.css)"[^>]*>/g,
+    (tag, href: string) => {
+      // Only inline render-blocking stylesheet links (skip preload/prefetch/icon).
+      if (!/rel="stylesheet"/.test(tag)) return tag;
+      try {
+        const css = readFileSync(join(DIST, href.replace(/^\//, '')), 'utf-8');
+        return `<style>${css}</style>`;
+      } catch {
+        return tag; // leave the link if the file can't be read
+      }
+    },
+  );
+
+  writeFileSync(indexPath, html, 'utf-8');
+  console.log('[prerender] inlined entry CSS into dist/index.html');
+}
+
 /** Pull the route list straight from the built sitemap — single source of truth. */
 function getRoutes(): string[] {
   const xml = readFileSync(join(DIST, 'sitemap.xml'), 'utf-8');
@@ -59,6 +90,9 @@ function getRoutes(): string[] {
 }
 
 async function main() {
+  // Inline the entry CSS first so every prerendered route picks it up.
+  inlineEntryCss();
+
   const routes = getRoutes();
   console.log(`[prerender] ${routes.length} routes from sitemap`);
 
